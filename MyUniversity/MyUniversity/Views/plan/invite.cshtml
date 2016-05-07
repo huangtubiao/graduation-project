@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "邀请监督";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Help/publish.css" rel="stylesheet" />
+<link href="~/Content/plancontrol/invite.css" rel="stylesheet" />
+@Html.Partial("_SquareSidebar")
+<div class="col-right">
+    <div class="con-left">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="navigation">
+                    <a href="/plan">全部计划</a> &gt; 
+                    <a href="/plan/write">写新计划</a> &gt; 
+                    <a href="/plan/invite">邀请监督</a>
+                </div>
+                <ul id="notice-tit">
+                    <li><a>我的好友</a></li>
+                    <li class="onactive"><a>圈外人</a></li>
+                </ul>
+            </div>
+            <div class="panel-section">
+                <div class="section-header">
+                    <h4>输入成员邮箱</h4>
+                </div>
+                <div class="section-body">
+                    <div class="invite_members">
+                        <input type="text" class="while-btn" placeholder="输入邮箱地址">
+                        <a class="remove">删除</a>
+                    </div>
+                    <div class="invite_members">
+                        <input type="text" class="while-btn" placeholder="输入邮箱地址">
+                        <a class="remove">删除</a>
+                    </div>
+                    <a class="add-more">再添加一个</a>
+                </div>
+            </div>
+            <div class="panel-section">
+                <div class="section-header">
+                    <h4>说点什么</h4>
+                </div>
+                <div class="invite-reason">
+                    <textarea id="reason-text" class="while-btn" rows="3" placeholder="邀请原因"></textarea>
+                </div>
+            </div>
+            <div class="panel-section">
+                <div class="section-body">
+                    <button class="university-btn">发送邀请</button>
+                    <button class="btn-cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="con-right">
+        <div class="panel bbs-sendques">
+            <div class="panel-body">
+                <span class="i-calendar"><i class="iconfont">&#xe62d</i></span>
+                <h1 class="title-write">邀请TA吗？ 那就勇敢的去邀请吧！</h1>
+                <dl>
+                    <dt>TA是如何监督你呢？</dt>
+                    <dd>1、TA可以知道你每天是否按时打卡。 </dd>
+                    <dd>2、并且可以向你发送私信，进行督促你。</dd>
+                    <dd>3、如果你与TA互相监督，梦想还会远吗？</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plan/write.js"></script>

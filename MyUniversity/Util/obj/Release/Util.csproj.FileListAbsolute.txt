@@ -1,0 +1,14 @@
+E:\git\MyUniversity\Util\bin\Release\Util.dll
+E:\git\MyUniversity\Util\bin\Release\Util.pdb
+E:\git\MyUniversity\Util\bin\Release\System.Web.Http.WebHost.dll
+E:\git\MyUniversity\Util\bin\Release\System.Web.Http.dll
+E:\git\MyUniversity\Util\bin\Release\System.Net.Http.Formatting.dll
+E:\git\MyUniversity\Util\bin\Release\System.Web.Http.WebHost.xml
+E:\git\MyUniversity\Util\bin\Release\System.Web.Http.xml
+E:\git\MyUniversity\Util\bin\Release\System.Net.Http.Formatting.xml
+E:\git\MyUniversity\Util\bin\Release\zh-Hans\System.Web.Http.WebHost.resources.dll
+E:\git\MyUniversity\Util\bin\Release\zh-Hans\System.Web.Http.resources.dll
+E:\git\MyUniversity\Util\bin\Release\zh-Hans\System.Net.Http.Formatting.resources.dll
+E:\git\MyUniversity\Util\obj\Release\Util.csprojResolveAssemblyReference.cache
+E:\git\MyUniversity\Util\obj\Release\Util.dll
+E:\git\MyUniversity\Util\obj\Release\Util.pdb

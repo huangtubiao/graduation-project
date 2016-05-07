@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "您成功完成了今天的打卡日志";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Help/savesuccess.css" rel="stylesheet" />
+<div class="wrap-success">
+    <div class="panel">
+        <div class="panel-heading">
+            <h2 class="panel-title">计划日志打卡成功</h2>
+        </div>
+        <div class="sendques">
+            <div class="success-img"><i class="iconfont">&#xe633</i></div>
+            <h3>今天成功完成计划啦！棒棒哒！</h3>
+            <p>明天继续加油！不要让监督您的人失望了。</p>
+            <p class="back-my-plan"><a href="/plan/myplan" class="university-btn back-wenda">返回我的计划</a></p>
+            <p>
+                <a href="/plan/detail/@ViewData["planId"]" class="myques">查看我的打卡日志</a>
+            </p>
+        </div>
+    </div>
+</div>

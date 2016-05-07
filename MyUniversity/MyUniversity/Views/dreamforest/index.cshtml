@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "梦想森";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/dreamforest/index.css" rel="stylesheet" />
+<div class="dream-banner">
+    <h3 class="intro-title">在这里，寻找您的梦想森。</h3>
+    <p>在奋斗的路上，一直希望找到一个志同道合的TA，然后我们一起向前走。</p>
+    <p class="second-p">只希望为你做些改变，求学路上，不再让你孤单。</p>
+    <form action="/dreamforest/search" method="GET">
+        <div class="search-block">
+            <div class="input-group">
+                <input name="q" type="text" class="while-btn" autofocus="" placeholder="写下您的愿望，例如： 想考研、想考雅思 ...">
+                <span class="input-group-btn">
+                    <button class="btn university-btn" type="submit">搜 索</button>
+                </span>
+            </div>
+            <!-- /input-group -->
+        </div>
+    </form>
+</div>

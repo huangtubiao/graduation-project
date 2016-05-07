@@ -1,0 +1,35 @@
+﻿<div class="l sidebar">
+    <div class="nav-menu">
+        <ul id="notice-tit">
+            <li class="cur">
+                <a class="nav-title">全部</a>
+            </li>
+            <li class="my-school">
+                <a class="nav-title">校内</a>
+            </li>
+            <a class="menu-cur"></a>
+        </ul>
+        <div class="wenda-my">
+            <h3>我的</h3>
+            <ul class="wenda-tab">
+                <li>
+                    <a class="private-letter" @(ViewBag.Title == "我的关注" ? "id=active" : "")>关注</a>
+                </li>
+                <li>
+                    <a class="private-letter" @(ViewBag.Title == "我的私信" ? "id=active" : "")>私信<span class="superior-remind">@ViewData["letterCount"]</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="wenda-my square">
+            <h3>广场</h3>
+            <ul class="wenda-tab">
+                <li>
+                    <a id="project-more">案多多</a>
+                </li>
+                <li>
+                    <a class="to_become_sperior">成为方案高手</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@using MyUniversity.Models;
+<div class="con-right">
+    <div class="newplan" style="display: none;">
+        <a href="/plan/write" class="newplan-btn"><i class="iconfont">&#xe645</i>写新计划</a>
+    </div>
+    <div class="panel clearfix today-time">
+        <a class="avatar wenda-head">
+            <img src="~/image/tt.PNG" />
+        </a>
+        <div class="hello-right">
+            <h4 class="ng-binding">老男人，上午好！</h4>
+            <span>星期六，2015年05月16日</span>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-heading">
+            <h2 class="panel-title">今日计划</h2>
+        </div>
+        <div class="today-plan-body">
+            <i class="iconfont">&#xe65c</i>
+            <span>今天居然木有计划</span>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-heading">
+            <h2 class="panel-title">他们成功实现了计划</h2>
+        </div>
+        <ul>
+            @foreach (User u in ViewData["finishPlanUser"] as List<User>)
+            {
+                <li class="padtop">
+                    <a href="/account/person/@u.userId" class="wenda-head roll-head">
+                        <img src="@u.userImg" width="40" height="40">
+                    </a>
+                    <a class="rankingnickname">@u.userName
+                        <i class="iconfont sex"></i>
+                    </a>
+                    <span class="archieve">完成计划数 @u.planFinishNum</span>
+                    <i class="iconfont rankingnum"></i>
+                    <span class="rankingnum span-num"></span>
+                    <input class="user-sex" type="hidden" value="@u.userSex" />
+                </li>
+            }
+        </ul>
+    </div>
+
+</div>

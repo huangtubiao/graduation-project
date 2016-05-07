@@ -1,0 +1,297 @@
+﻿
+#main {
+    padding-top: 0px;
+    background: #fff;
+}
+
+.con-left {
+    width: 800px;
+}
+
+.con-right {
+    width: 290px;
+    float:right;
+}
+
+.containers {
+    width: initial;
+}
+
+#superior-top {
+    border-top: 1px solid #edf1f2;
+}
+
+.st-wrap {
+    width: 1150px;
+    margin: 0 auto;
+}
+
+.title {
+    line-height: 78px;
+    border-bottom: 1px solid #dae0e3;
+}
+
+    .title h4 {
+        float: left;
+        color: #14191e;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 40px;
+        width: 48%;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        height: 40px;
+        margin-top: 40px;
+    }
+
+.con-left .nav {
+    padding: 20px 0px 0px 0px;
+    margin-bottom: 0px;
+}
+
+.st-item {
+    float: left;
+    width: 46%;
+    padding-left: 20px;
+}
+
+    .st-item .header {
+        margin-bottom: 10px;
+    }
+
+        .st-item .header h4 {
+            float: left;
+            color: #14191e;
+            font-size: 23px;
+        }
+
+        .st-item .header .remain-second {
+            line-height: 43px;
+            margin-left: 10px;
+            font-size: 16px;
+            color: #787d82;
+        }
+
+.project-header {
+    width: 136px;
+}
+
+.vitality-header {
+    width: 160px;
+}
+
+.rank-nums {
+    margin-right: 15px;
+    font-size: 13px;
+    color: #14191e;
+}
+
+.rank-user img {
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.rank-user span {
+    color: #14191e;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+}
+
+.rank-name li {
+    float: left;
+    margin: 0px 10px;
+}
+
+.st-item-one {
+    width: 65%;
+}
+
+.st-item-two {
+    width: 30%;
+}
+
+.st-item-one .rank-nums {
+    width: 26px;
+    display: block;
+    float: left;
+}
+
+.st-item-one .project-user-name {
+    width: 149px;
+    display: block;
+    float: left;
+}
+
+.st-item-one .project-num {
+    width: 78px;
+    float: left;
+    position: relative;
+    top: 2px;
+    color: #78ca99;
+}
+
+.st-item-one .focus-num {
+    width: 61px;
+    float: left;
+    position: relative;
+    top: 2px;
+}
+
+.st-item-one .exp-num {
+    width: 50px;
+    position: relative;
+    top: 2px;
+}
+
+.st-item-one .user-num {
+    margin-left: 0px;
+    margin-right: 13px;
+}
+
+.st-item-one .st-user-name {
+    margin: 0px 10px 0px 0px;
+}
+
+.st-item-one .solution-num {
+    margin-left: 83px;
+}
+
+.rank-name {
+    margin-bottom: 10px;
+}
+
+.num {
+    /*background: #17AD7F;
+    color: #fff;
+    padding: 0px 6px;
+    border-radius: 10px;
+    font-size: 13px;*/
+}
+
+.integral-ranking {
+    margin-bottom: 20px;
+}
+
+.arrow i {
+    color: #c8cdd2;
+}
+
+.integral-ranking .k {
+    color: #787d82;
+    font-size: 13px;
+}
+
+.st-item-two .user-num {
+    margin: 0px 13px 0px 0px;
+}
+
+.st-item-two .st-user-name {
+    margin: 0px 48px 0px 0px;
+}
+
+.st-item-two .solution-num {
+    margin: 0px 0px 0px 0px;
+}
+
+.st-item-two .rank-nums {
+    width: 26px;
+    display: block;
+    float: left;
+}
+
+.st-item-two .integral-ranking {
+    margin-bottom: 15px;
+}
+/*右边*/
+.wenda-my .user-info {
+    position: relative;
+    height: 40px;
+    padding-left: 50px;
+}
+
+    .wenda-my .user-info a.user-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .wenda-my .user-info img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .wenda-my .user-info p.username {
+        font-size: 12px;
+        color: #14191e;
+    }
+
+.wenda-my .user-about {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 48px;
+    border-top: 1px solid #edf1f2;
+    border-bottom: 1px solid #edf1f2;
+}
+
+    .wenda-my .user-about li {
+        display: inline-block;
+    }
+
+        .wenda-my .user-about li a {
+            line-height: 20px;
+            font-weight: 600;
+            color: #14191e;
+        }
+
+        .wenda-my .user-about li.repl {
+            margin: 0 20px;
+            padding: 0 30px;
+            border-left: 1px solid #d0d6d9;
+            border-right: 1px solid #d0d6d9;
+        }
+
+            .wenda-my .user-about li.repl span {
+                color: #f47a55;
+            }
+
+        .wenda-my .user-about li.project-my span {
+            color: #f7af49;
+        }
+
+        .wenda-my .user-about li.rank-my span {
+            color: #88b244;
+        }
+
+.panel {
+    padding: 0px;
+}
+
+/*成为方案高手*/
+.become-superior {
+    display:none;
+    padding-bottom: 20px;
+}
+
+    .become-superior .bs-tips a {
+        height: 110px;
+        width: 110px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        background: #eee;
+        line-height: 110px;
+        border-radius: 50%;
+        color: #14191e;
+    }
+
+        .become-superior .bs-tips a:hover {
+            color: #17AD7F;
+        }

@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = ViewData["articleTitle"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/plancontrol/detail.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/share.css" rel="stylesheet" />
+<div id="my-share">
+    <div class="con-left">
+        <div class="detail-content">
+            @foreach (Article m in ViewData["article"] as IQueryable<Article>)
+            {
+                <div class="panel-heading">
+                    <h2 class="panel-title panel-title-me">@m.articleTitle</h2>
+                    <a href="/projectsuperior/draft" class="university-btn to-share">我要分享</a>
+                </div>
+                <div class="share">
+                    <div class="share-user">
+                        <a href="/account/person/@m.userId">
+                            <img src="@m.User.userImg">
+                        </a>
+                        <span>@m.User.userName</span><i class="share-diver"></i>
+                        <span>@m.articleTime</span><i class="share-diver"></i>
+                        <span>@m.articleViewNum 阅读</span><i class="share-diver"></i>
+                        <span>@m.articlePraiseNum 点赞</span>
+                    </div>
+                </div>
+                <div class="wenda-list">
+                    <div class="detail-plan">
+                        <div class="plan-content">
+                            @m.articleContent
+                        </div>
+                    </div>
+                    <div class="plan-content-addon">
+                        <span class="plan-num plan-comment r"><em>@m.articleCommentNum</em><i class="iconfont">&#xe63b</i></span>
+                        <span class="plan-num plan-cheer r"><em>@m.articleShareNum</em><i class="iconfont">&#xe658</i></span>
+                    </div>
+                </div>
+                <input id="planId" type="hidden" value="2" />
+            }
+
+            <div class="plloadlistdata">
+                <div class="pl-container">
+
+                    <div class="pl-list">
+                        <div class="wenda-listcon">
+                            <div class="headslider">
+                                <a class="wenda-head">
+                                    <img src="~/image/tt.PNG">
+                                </a>
+                                <a href="/account/person/2" class="wenda-nickname">个省份的</a>
+                                <i class="iconfont"></i>
+                                <input class="user-sex" type="hidden" value="奋斗" />
+                            </div>
+                            <div class="wendaslider pl-write">
+                                <div class="pl-what">
+                                    说东风公司
+                                </div>
+                                <div class="pl-time">
+                                    412341
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pl-input-wrap">
+                <div class="pl-input-inner">
+                    <textarea id="comment" class="js-placeholder" placeholder="扯淡、吐槽、督促、鼓励……想说啥就说啥！"></textarea>
+                    <span class="num-limit"><span id="js-pl-limit">0</span>/300</span>
+                </div>
+                <div class="pl-input-btm">
+                    <a class="university-btn r" onclick="comment();">发表评论</a>
+                    <i class="iconfont r i-success">&#xe664</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="con-right">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title my-share-title">我的分享</h2>
+            </div>
+            <div class="share-tip">
+                暂时没有新的回复
+            </div>
+        </div>
+    </div>
+</div>
+

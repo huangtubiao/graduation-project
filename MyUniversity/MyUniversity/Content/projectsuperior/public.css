@@ -1,0 +1,73 @@
+﻿.honormore {
+    position: absolute;
+    font-size: 12px;
+    color: #14191e;
+    right: 0;
+    top: 14px;
+    display: none;
+}
+
+    .honormore:hover {
+        color: #78CA99;
+    }
+
+    .honormore i {
+        font-size: 15px;
+    }
+
+.archieve:hover {
+    color: #78CA99;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.rankingnickname:hover {
+    color: #78CA99;
+}
+
+.list-tag {
+    padding: 5px 10px;
+}
+
+    .list-tag:hover {
+        background: #D7E0E2;
+    }
+
+#notice-tit li {
+    float: initial;
+}
+
+
+#active {
+    color: #78CA99;
+}
+
+.remind {
+    color: #FDBD60;
+    font-size: 12px;
+    margin-bottom: 6px;
+    margin-top: -5px;
+}
+
+#search-suggest span {
+    color: #14191e;
+    margin: 0px 2px;
+}
+
+#select-school-pop {
+    width: 410px;
+    display: none;
+    z-index: 1012;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -220px 0 0 -200px;
+}
+
+.related-result {
+    color: #78CA99;
+    border-bottom: 1px solid #78CA99;
+    font-size: 13px;
+    line-height: 23px;
+    margin-top: 10px;
+}

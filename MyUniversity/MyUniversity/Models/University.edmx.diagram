@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f63c270d2ad44dcebec8bd11e844cc63" Name="关系图1">
+        <EntityTypeShape EntityType="UniversityModel.City" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityModel.Depart" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityModel.FollowType" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityModel.Love" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityModel.Plancomment" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityModel.Province" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityModel.RecentVisitor" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <AssociationConnector Association="UniversityModel.FK_City_Province" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UniversityModel.Answer" Width="1.5" PointX="5.25" PointY="19.75" />
+        <EntityTypeShape EntityType="UniversityModel.RecoverAnswer" Width="1.5" PointX="8.75" PointY="19.375" />
+        <AssociationConnector Association="UniversityModel.FK_RecoverAnswer_Answer" />
+        <EntityTypeShape EntityType="UniversityModel.hotSuperior" Width="1.5" PointX="7.125" PointY="20.75" />
+        <EntityTypeShape EntityType="UniversityModel.QCategory" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="UniversityModel.Question" Width="1.5" PointX="4.5161490461398612" PointY="24.261742588254503" />
+        <AssociationConnector Association="UniversityModel.FK_Answer_Question" />
+        <AssociationConnector Association="UniversityModel.FK_Question_QCategory" />
+        <AssociationConnector Association="UniversityModel.FK_Question_Question" />
+        <EntityTypeShape EntityType="UniversityModel.Supervice" Width="1.5" PointX="7" PointY="26.5" />
+        <EntityTypeShape EntityType="UniversityModel.Plan" Width="1.5" PointX="0.5" PointY="26.125" />
+        <AssociationConnector Association="UniversityModel.FK_Plancomment_Plan" />
+        <AssociationConnector Association="UniversityModel.FK_Supervice_Plan" />
+        <EntityTypeShape EntityType="UniversityModel.PlanComeOn" Width="1.5" PointX="7" PointY="23.375" />
+        <AssociationConnector Association="UniversityModel.FK_PlanComeOn_PlanComeOn" />
+        <EntityTypeShape EntityType="UniversityModel.Clocklog" Width="1.5" PointX="9" PointY="25.375" />
+        <AssociationConnector Association="UniversityModel.FK_Clocklog_Plan" />
+        <EntityTypeShape EntityType="UniversityModel.Contact" Width="1.5" PointX="10.25" PointY="29.125" />
+        <EntityTypeShape EntityType="UniversityModel.LastChat" Width="1.5" PointX="10.25" PointY="31.625" />
+        <EntityTypeShape EntityType="UniversityModel.Message" Width="1.5" PointX="1.6818316549443786" PointY="15.730540431910447" />
+        <AssociationConnector Association="UniversityModel.FK_Message_LastChat" />
+        <EntityTypeShape EntityType="UniversityModel.Follows" Width="1.5" PointX="2.9904724205799735" PointY="25.130999472518916" />
+        <EntityTypeShape EntityType="UniversityModel.Article" Width="1.5" PointX="6.3502633470810315" PointY="9.2164460463525941" />
+        <EntityTypeShape EntityType="UniversityModel.ArticleComment" Width="1.5" PointX="7.9863388743187951" PointY="30.894028692922568" />
+        <AssociationConnector Association="UniversityModel.FK_ArticleComment_Article" />
+        <EntityTypeShape EntityType="UniversityModel.School" Width="1.5" PointX="8.7427232976736136" PointY="8.7736834328499071" />
+        <AssociationConnector Association="UniversityModel.FK_School_City" />
+        <AssociationConnector Association="UniversityModel.FK_Depart_School" />
+        <AssociationConnector Association="UniversityModel.FK_School_Province" />
+        <EntityTypeShape EntityType="UniversityModel.ProjectRecord" Width="1.5" PointX="5.2850916335755453" PointY="23.751091252896511" />
+        <EntityTypeShape EntityType="UniversityModel.User" Width="1.5" PointX="0.63262513681902788" PointY="31.157532944883002" />
+        <AssociationConnector Association="UniversityModel.FK_Answer_User" />
+        <AssociationConnector Association="UniversityModel.FK_Article_User" />
+        <AssociationConnector Association="UniversityModel.FK_ArticleComment_User" />
+        <AssociationConnector Association="UniversityModel.FK_Clocklog_User" />
+        <AssociationConnector Association="UniversityModel.FK_Contact_User" />
+        <AssociationConnector Association="UniversityModel.FK_Contact_User1" />
+        <AssociationConnector Association="UniversityModel.FK_Follows_User" />
+        <AssociationConnector Association="UniversityModel.FK_Follows_User1" />
+        <AssociationConnector Association="UniversityModel.FK_LastChat_User" />
+        <AssociationConnector Association="UniversityModel.FK_LastChat_User1" />
+        <AssociationConnector Association="UniversityModel.FK_Love_User" />
+        <AssociationConnector Association="UniversityModel.FK_Love_User1" />
+        <AssociationConnector Association="UniversityModel.FK_Message_User" />
+        <AssociationConnector Association="UniversityModel.FK_Message_User1" />
+        <AssociationConnector Association="UniversityModel.FK_Plan_User" />
+        <AssociationConnector Association="UniversityModel.FK_PlanComeOn_User" />
+        <AssociationConnector Association="UniversityModel.FK_Plancomment_User" />
+        <AssociationConnector Association="UniversityModel.FK_projectRecord_User" />
+        <AssociationConnector Association="UniversityModel.FK_projectRecord_User1" />
+        <AssociationConnector Association="UniversityModel.FK_Question_User" />
+        <AssociationConnector Association="UniversityModel.FK_Question_User1" />
+        <AssociationConnector Association="UniversityModel.FK_RecentVisitor_User" />
+        <AssociationConnector Association="UniversityModel.FK_RecentVisitor_User1" />
+        <AssociationConnector Association="UniversityModel.FK_RecoverAnswer_User" />
+        <AssociationConnector Association="UniversityModel.FK_RecoverAnswer_User1" />
+        <AssociationConnector Association="UniversityModel.FK_Supervice_User" />
+        <EntityTypeShape EntityType="UniversityModel.SuperiorLetter" Width="1.5" PointX="0.19772206628589056" PointY="23.576767381083577" />
+        <AssociationConnector Association="UniversityModel.FK_SuperiorLetter_SuperiorLetter" />
+        <AssociationConnector Association="UniversityModel.FK_SuperiorLetter_User" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

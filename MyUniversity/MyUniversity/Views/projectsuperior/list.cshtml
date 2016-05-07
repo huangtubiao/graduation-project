@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "搜索方案高手";
+    ViewBag.currentPage = "方案高手";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/findschoolmate.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/list.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/public.css" rel="stylesheet" />
+<!--左边搜索列表-->
+<div class="con-left">
+    <div class="find-about">
+        <div class="nav nav-search search-superior">
+            <input type="text" id="search-write" maxlength="30" class="input sprites" value="@ViewData["search"]" placeholder="请输入要寻找的方案高手，如：电脑维修高手" onkeydown="javascript:if(event.keyCode == 13)searchByBeatEnter();">
+            <i class="iconfont search-i">&#xe66f</i>
+            <a id="btn-search" onclick="btnSearch();">搜索</a>
+
+            <a class="university-btn to-superior dropdown-toggle"><span class="now-selected">全部</span> <i class="searchtype_arrow"></i></a>
+            <ul id="menu" class="range-select">
+                <li>
+                    <a class="now-show">校内</a>
+                </li>
+            </ul>
+            <!--搜索智能提醒-->
+            <div id="search-suggest">
+                <h4>搜索到相关结果</h4>
+                <ul id="search-result">
+                    <li>搜索结果1</li>
+                    <li>搜索结果2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav nav-list">
+            <div class="newpost">
+                <h3 class="declare tip">为你搜索到“<span class="highlight">@ViewData["search"]</span>”的方案高手</h3>
+            </div>
+            <div id="notice-con">
+                <div class="search-superior depart-superior clearfix" style="display: none;">
+                    <span>院系：</span>
+                    <a class="selected item-depart">全部院系</a>
+                    <!--友好院系搜索-->
+                    <a class="item-depart">计算机系</a>
+                    <a class="item-depart">外语系</a>
+                    <a class="item-depart">服装系</a>
+                    <a class="item-depart">数学系</a>
+                    <a class="item-depart">体育系</a>
+                    <a class="depart-more" title="更多" onclick="showDepartment();"><i class="iconfont">&#xe66d</i></a>
+
+                    <a id="address-school"><i class="iconfont school-icon">&#xe60f</i></a>
+                    <a class="select-shcool" onclick="showSchool();">全部大学</a>
+                </div>
+                <!--全部-->
+                <div id="mod-1" class="mod" style="display: none">
+                    <div class="uncontent" style="display: none;">
+                        <i class="iconfont">&#xe685</i>
+                        <p>目前还没有相关“<span class="highlight">@ViewData["search"]</span>”的内容</p>
+                    </div>
+                    @foreach (User l in ViewData["allSuperiors"] as IQueryable<User>)
+                    {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/projectsuperior/space/@l.userId" class="superior-head">
+                                        <img src="@l.userImg">
+                                    </a>
+                                    @Html.ActionLink(l.userName, "space", "projectsuperior", new { id = l.userId }, new { @class = "wenda-nickname" })
+                                    <i class="iconfont girlsex-img">&#xe639</i>
+                                    <input type="hidden" class="userSex" value="@l.userSex" />
+                                </div>
+                                <div class="wendaslider">
+                                    <a href="/projectsuperior/space/@l.userId" class="experience-nums">
+                                        <div class="ys">
+                                            <div class="number">
+                                                @l.userRank
+                                            </div>
+                                            <div>经验</div>
+                                        </div>
+                                        <div class="browsenum">
+                                            <div class="number">
+                                                @l.userVisitedNum
+                                            </div>
+                                            <div>去看</div>
+                                        </div>
+                                    </a>
+                                    <div class="ability">
+                                        <i class="iconfont">&#xe63f</i>
+                                        <a href="/projectsuperior/space/@l.userId">@l.userMerit</a>
+                                    </div>
+                                    <div class="question">
+                                        <i class="iconfont">&#xe62c</i>
+                                        <div class="replydes">
+                                            <span class="replycontent">@l.userMeritIntro</span>
+                                        </div>
+                                    </div>
+                                    <div class="department-rank">
+                                        <a>@l.userSchool</a>
+                                        <a class="depart">@l.userDepart</a>
+                                        <a class="list-tag pri-letter"><i class="iconfont">&#xe63b</i>私信</a>
+                                        <input type="hidden" value="@l.userId" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="loading-girl">
+                        <i class="iconfont">&#xe643</i>
+                    </div>
+                    <input type="hidden" value="@ViewData["totalGroups"]" id="allGroups" />
+                </div>
+                <!--校内-->
+                <div id="mod-2" class="mod" style="display: none">
+                    <div class="uncontent" style="display: none;">
+                        <i class="iconfont">&#xe685</i>
+                        <p>目前还没有相关“<span class="highlight">@ViewData["search"]</span>”的内容</p>
+                    </div>
+                    @{
+                        if ((ViewData["superior"] as IQueryable<User>).Count() != 0)
+                        {
+                            foreach (User l in ViewData["superior"] as IQueryable<User>)
+                            {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/projectsuperior/space/@l.userId" class="superior-head">
+                                        <img src="@l.userImg">
+                                    </a>
+                                    @Html.ActionLink(l.userName, "space", "projectsuperior", new { id = l.userId }, new { @class = "wenda-nickname" })
+                                    <i class="iconfont girlsex-img">&#xe639</i>
+                                    <input type="hidden" class="userSex" value="@l.userSex" />
+                                </div>
+                                <div class="wendaslider">
+                                    <a href="/projectsuperior/space/@l.userId" class="experience-nums">
+                                        <div class="ys">
+                                            <div class="number">
+                                                @l.userRank
+                                            </div>
+                                            <div>经验</div>
+                                        </div>
+                                        <div class="browsenum">
+                                            <div class="number">
+                                                @l.userVisitedNum
+                                            </div>
+                                            <div>去看</div>
+                                        </div>
+                                    </a>
+                                    <div class="ability">
+                                        <i class="iconfont">&#xe63f</i>
+                                        <a href="/projectsuperior/space/@l.userId">@l.userMerit</a>
+                                    </div>
+                                    <div class="question">
+                                        <i class="iconfont">&#xe62c</i>
+                                        <div class="replydes">
+                                            <span class="replycontent">@l.userIntro</span>
+                                        </div>
+                                    </div>
+                                    <div class="department-rank">
+                                        <a>@l.userSchool</a>
+                                        <a class="depart">@l.userDepart</a>
+                                        <a class="list-tag pri-letter"><i class="iconfont">&#xe63b</i>私信</a>
+                                        <input type="hidden" value="@l.userId" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            }
+                        }
+                    }
+                    <div class="loading">
+                        <i class="iconfont">&#xe643</i>
+                    </div>
+                    <input type="hidden" value="@ViewData["mySuperiorGroups"]" id="mySchoolGroups" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--右边推荐列表-->
+<div class="con-right">
+    @Html.Partial("_SuperiorRightSidebar")
+</div>
+<input type="hidden" id="search-wrod" value="@ViewData["search"]" />
+@Html.Partial("_SelectSchoolOrDepart")
+<script src="~/Scripts/projectsuperior/index.js"></script>
+<script src="~/Scripts/projectsuperior/list.js"></script>

@@ -1,0 +1,283 @@
+﻿@{
+    Layout = null;
+}
+
+@using MyUniversity.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Home.css" rel="stylesheet" />
+    <link href="~/Content/account/register.css" rel="stylesheet" />
+    <link href="//at.alicdn.com/t/font_1432311926_995848.css" rel="stylesheet" />
+    <title>注册</title>
+</head>
+<body class="register">
+    <div class="register-wrap" style="margin-top:80px;">
+        <div class="text">
+            <p>希望在求学的路上</p>
+            <div>为你做些改变，不再让你孤单。</div>
+        </div>
+        <!--注册第一步-->
+        <div id="first-info" class="register-box">
+            <div class="register-head">
+                <h4>教育信息</h4>
+            </div>
+            <div class="register-content">
+                <ul>
+                    <li id="school" data-toggle="modal" data-target="#myModal">
+                        <a>学校</a>
+                        <span class="select-school s">请选择学校</span>
+                    </li>
+                    <li data-toggle="modal" data-target="#myModalDepart">
+                        <a>学院</a>
+                        <span class="select-depart s">请选择院系</span>
+                    </li>
+                    <li data-toggle="modal" data-target="#myModalYear">
+                        <a>入学年份</a>
+                        <span class="select-startYear s">请选择入学年份</span>
+                    </li>
+                    <li class="myModalEducation">
+                        <a>学历</a>
+                        <span class="select-degree s">本科/专科</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-register">
+                <a class="first-step university-btn">确认</a>
+            </div>
+        </div>
+        <!--注册第二步-->
+        <div id="second-info" class="register-box" style="display: none;">
+            <div class="register-head">
+                <h4>注册新账号</h4>
+            </div>
+            <div class="register-phonePaw">
+                <ul>
+                    <li>
+                        <span>手机号码</span>
+                        <input id="registerPhone" autofocus="" placeholder="请输入你的手机号码（中国86）" />
+                    </li>
+                    <li>
+                        <span>密码</span>
+                        <input type="password" id="registerPaw" placeholder="请设置6-16位密码" onkeydown="javascript:if(event.keyCode == 13) btnRegister();" />
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-reg ister">
+                <a class="first-step university-btn" onclick="btnRegister();">注册</a>
+                <i class="iconfont">&#xe650</i>
+            </div>
+        </div>
+        <!--注册第二步错误提示-->
+        <div class="modal fade register-second-tip">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title warning" id="">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-data education-show send-code-tip">
+                            <p>即将发送验证码短信到</p>
+                            <p id="write-phone">15018673312</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-warning" onclick="nextSendCode();">继续</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--输入有效的手机号码-->
+        <div class="modal fade effective-phone">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title warning" id="">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-data education-show send-code-tip">
+                            <p>请输入有效的手机号码</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" onclick="closeErrorTip();">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--手机号码已被注册-->
+        <div class="modal fade phone-registered">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title warning" id="">手机号码已被注册，您可以</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-data phone-registered">
+                            <ul>
+                                <li>
+                                    <a id="to-login">直接登录</a>
+                                </li>
+                                <li>
+                                    <a id="get-paw">找回密码</a>
+                                </li>
+                                <li>
+                                    <a id="change-phone">换个号码</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" onclick="closeRegisteredTip();">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--注册第二步结束-->
+    </div>
+    <!-- 选择学校 Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-school" onclick="backUrl();"><i class="iconfont">&#xe620</i></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="iconfont">&#xe620</i></button>
+                    <h4 class="modal-title" id="myModalLabel">选择学校</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="school-search">
+                        <div class="school-input">
+                            <input id="search-write" type="text" placeholder="请输入学校全称或者拼音缩写" />
+                        </div>
+                    </div>
+                    <div class="modal-data school-show">
+                        <div id="school-show">
+                            <span>我们支持全国4000多所学校，并得到大多数的官方认证和数据提供</span>
+                            <h4>附近的学校</h4>
+                            <ul id="near-schools">
+                            </ul>
+                            <h4>热门的学校</h4>
+                            <ul>
+                                @foreach (School s in ViewData["hotSchools"] as IQueryable<School>)
+                                {
+                                    <li><a>@s.schoolName</a></li> 
+                                }
+                            </ul>
+                        </div>
+                        <!--搜索智能提醒-->
+                        <div id="search-school" style="display: none;">
+                            <h4>搜索到相关结果</h4>
+                            <ul id="search-result">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 选择院系 Modal -->
+    <div class="modal fade" id="myModalDepart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog department">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-depart" onclick="backSchool();"><i class="iconfont">&#xe620</i></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="iconfont">&#xe620</i></button>
+                    <h4 class="modal-title" id="">选择院系</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="school-search">
+                        <div class="school-input">
+                            <input id="write-depart" type="text" placeholder="请输入院系全称或者拼音缩写" />
+                        </div>
+                    </div>
+                    <div class="modal-data department-show">
+                        <ul id="depart-add">
+                        </ul>
+                        <ul id="search-depart">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 入学年份 Modal -->
+    <div class="modal fade" id="myModalYear" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog year">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-year" onclick="backDepart();"><i class="iconfont">&#xe620</i></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="iconfont">&#xe620</i></button>
+                    <h4 class="modal-title" id="">入学年份</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-data year-show">
+                        <h4>选择你的入学年份</h4>
+                        <ul>
+                            <li><a>2015年</a></li>
+                            <li><a>2014年</a></li>
+                            <li><a>2013年</a></li>
+                            <li><a>2012年</a></li>
+                            <li><a>2011年</a></li>
+                            <li><a>2010年</a></li>
+                            <li><a>2009年</a></li>
+                            <li><a>2008年</a></li>
+                            <li><a>2007年</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--选择学生身份-->
+    <div class="degree modal fade" id="myModalEducation">
+        <div class="modal-dialog department">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="">选择</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-data education-show">
+                        <ul>
+                            <li><a>本科/专科</a></li>
+                            <li><a>研究生</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--登录-->
+    <div id="login">
+        <div class="login-header">
+            <h4>登录</h4>
+            <i class="iconfont" onclick="offlogin();">&#xe630</i>
+        </div>
+        <div class="login-body">
+            <div class="wrap">
+                <form id="loginForm" action="/account/login" method="post">
+                    <div class="lg-group">
+                        <span><i class="iconfont">&#xe62e</i></span>
+                        <input type="text" id="phone" name="phone" autocomplete="off" class="ipt-phone" placeholder="请输入登录账号">
+                    </div>
+                    <div class="lg-group">
+                        <span><i class="iconfont">&#xe62f</i></span>
+                        <input type="password" id="password" name="password" autocomplete="off" class="ipt-pwd" placeholder="请输入密码" onkeydown="javascript:if(event.keyCode == 13) return;">
+                    </div>
+                    <div class="lg-btn">
+                        <button type="submit" id="signin-btn" class="btn-green university-btn">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop in"></div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="~/Scripts/account/bootstrap.min.js"></script>
+    <script src="~/Scripts/account/register.js"></script>
+    <script src="~/Scripts/home/home.js"></script>
+</body>
+</html>

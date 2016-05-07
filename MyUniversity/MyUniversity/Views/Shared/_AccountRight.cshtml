@@ -1,0 +1,55 @@
+﻿@using MyUniversity.Models;
+<div class="con-right">
+    <div class="panel">
+        @foreach (User u in ViewData["user"] as IQueryable<User>)
+        {
+            <div class="person-center">
+                <a class="person_pic">
+                    <img src="@u.userImg" width="80" height="80">
+                </a>
+                <h3>
+                    <a id="user-name">@u.userName</a>
+                    <p class="merit">@u.userMerit</p>
+                </h3>
+                <p></p>
+                <br class="clear">
+                <div class="discrip"><span id="user-intro">@u.userIntro</span><i class="iconfont">&#xe62c</i></div>
+                <div class="mp-item">
+                    <div class="mp-atag">
+                        <span class="mp-title">经验</span>
+                        <span class="mp-num">@u.userRank</span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel">
+        <ul class="space-data">
+            <li><i class="iconfont">&#xe62c</i> 分享：<a href="#">12</a></li>
+            <li><i class="iconfont">&#xe62b</i> 计划监督：<a href="#">1条</a></li>
+            <li><i class="iconfont">&#xe689</i> 快乐校园：<a href="#">0条</a></li>
+        </ul>
+    </div>
+    <div class="panel">
+        <div class="panel-heading">
+            <h2 class="panel-title">最近访客</h2>
+        </div>
+        <div class="good-helpers">
+            <ul>
+                @foreach (RecentVisitor l in ViewData["recentVisitors"] as List<RecentVisitor>)
+                {
+                    <li class="padtop">
+                        <a class="wenda-head roll-head">
+                            <img src="@l.User1.userImg" width="40" height="40">
+                        </a>
+                        <a class="rankingnickname">@l.User1.userName
+                            <i class="iconfont sex"></i>
+                            <input type="hidden" class="user-sex" value="@l.User1.userSex" />
+                        </a>
+                        <a href="/projectsuperior/space/@l.visitorId" class="archieve">@l.User1.userMerit</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

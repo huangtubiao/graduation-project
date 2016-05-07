@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "监督我的";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/square/index.css" rel="stylesheet" />
+<link href="~/Content/plancontrol/superviceuser.css" rel="stylesheet" />
+@Html.Partial("_SquareSidebar")
+<div class="col-right">
+    <div class="con-left">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title panel-title-me">监督我的</h2>
+                <h4><a href="/plan/myplan"><i class="iconfont">&#xe650</i></a>@ViewData["planTitle"]</h4>
+            </div>
+            <div class="supervice-people">
+                <ul class="avatars">
+                    @foreach (Supervice s in ViewData["superviceUser"] as List<Supervice>)
+                    {
+                        <li class="avatar-invite">
+                            <a href="/account/person/@s.userId" class="avatar-add">
+                                <span class="avatar-face">
+                                    <img src="@s.User.userImg" />
+                                </span>
+                                <br />
+                                <span class="avatar-name">@s.User.userName</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_PlanPadTop")
+</div>
+<script src="~/Scripts/plan/superviceuser.js"></script>

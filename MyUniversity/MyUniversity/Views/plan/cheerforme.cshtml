@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "为我加油";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/square/index.css" rel="stylesheet" />
+<link href="~/Content/plancontrol/cheerforme.css" rel="stylesheet" />
+@Html.Partial("_SquareSidebar")
+<div class="col-right">
+    <div class="con-left">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title panel-title-me">为我加油</h2>
+                <h4><a href="/plan/myplan"><i class="iconfont">&#xe650</i></a>@ViewData["planTitle"]</h4>
+            </div>
+            @foreach (PlanComeOnModel p in ViewData["planComeOns"] as List<PlanComeOnModel>)
+            {
+                <div class="wenda-list">
+                    <div class="wenda-listcon">
+                        <div class="headslider">
+                            <a href="/account/person/@p.userId" class="wenda-head">
+                                <img src="@p.userImg">
+                            </a>
+                            <a href="/account/person/@p.userId" class="wenda-nickname">@p.userName</a>
+                            <i class="iconfont"></i>
+                            <input class="user-sex" type="hidden" value="@p.userSex" />
+                        </div>
+                        <div class="wendaslider">
+                            <div class="wendaquetitle">
+                                <i class="iconfont"></i>
+                                <div class="wendatitlecon">
+                                    <span>@p.planComeOnWrite</span>
+                                </div>
+                            </div>
+                            <div class="commentfooter">
+                                <div class="wenda-time"><em>@p.planComeOnTime.ToLongDateString()</em></div>
+                                <a class="cheer-reply"><i class="iconfont">&#xe63a</i>回复TA</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--回复框-->
+                    <div class="reply">
+                        <div class="js-reply-ibox">
+                            <div class="reply-iavator l">
+                                <a href="#">
+                                    <img src="~/image/tt.PNG" width="40" height="40">
+                                </a>
+                            </div>
+                            <div class="reply-iwrap">
+                                <div class="reply-iarea">
+                                    <textarea class="js-reply-ipt-default textarea-wrap" placeholder="有什么想对TA悄悄说呢..."></textarea>
+                                </div>
+                            </div>
+                            <div class="reply-ifoot">
+                                <div class="reply-footright r">
+                                    <span class="success-tips"><i class="iconfont">&#xe638</i> 提交成功</span>
+                                    <button class="university-btn btn-cancel">取消</button>
+                                    <button class="university-btn btn-submit-reply" onclick="replysbumit();">提交</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    @Html.Partial("_PlanPadTop")
+</div>
+<script src="~/Scripts/plan/cheerforme.js"></script>

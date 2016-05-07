@@ -1,0 +1,75 @@
+﻿.panel .panel-heading {
+    border-bottom: solid 1px #EDEDED;
+    height: initial;
+    line-height: initial;
+}
+
+    .panel .panel-heading a {
+        color: #14191e;
+    }
+
+.panel-title-me {
+    width: 100px;
+    background: #78ca99;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.panel-heading h4 {
+    font-size: 16px;
+    margin: -10px 0px 15px 0px;
+}
+
+    .panel-heading h4 a:hover {
+        color: #78ca99;
+    }
+
+.ques-label {
+    float: initial;
+}
+
+.editor-wrap {
+    margin-left: 0px;
+}
+
+.clock-log-write {
+    padding: 20px;
+}
+
+.i-calendar {
+    bottom: 28px;
+}
+
+    .i-calendar i {
+        font-size: 45px;
+    }
+
+.archieve {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #14191e;
+}
+
+.rankingnickname i {
+    margin-left: 4px;
+}
+
+.panel-body {
+    padding: 20px 0px 0px 0px;
+}
+
+.editor-write textarea {
+    height: 210px;
+}
+
+.rankingnickname {
+    width: 70px;
+}
+
+    .rankingnickname:hover, .archieve:hover {
+        color: #78ca99;
+    }

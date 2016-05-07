@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 0;
+}
+@using MyUniversity.Models;
+<link href="~/Content/Help/detail.css" rel="stylesheet" />
+<div class="col-right">
+    <div class="con-left">
+        @foreach (var q in ViewData["questionDetail"] as IQueryable<Question>)
+        {
+            <div class="panel my-question">
+                <div class="panel-heading">
+                    <a class="back-button" href="/help/index"><</a>
+                    <h2 class="panel-title">我的问题</h2>
+                </div>
+                <div class="hd-header">
+                    <div class="hd-header-right r">
+                        <span class="hd-edit">
+                            <i class="iconfont">&#xe62c</i>
+                        </span>
+                    </div>
+                    <div class="hd-author">
+                        @Html.ActionLinkWithImage(Url.Content("~/image/tt.PNG"), "person", "account", new { id = q.userId })
+                        @Html.ActionLink(@q.User.userName, "person", "account", new { id = q.userId })
+                        <i class="iconfont girlsex-img">&#xe639</i>
+                    </div>
+                </div>
+                <div class="hd-content">
+                    <div id="content-main">
+                        <h3 class="content-title">@q.questionTitle</h3>
+                        <div class="hd-wenda">
+                            <p>@q.questionContent</p>
+                        </div>
+                    </div>
+                    <div class="content-foot">
+                        <span>@q.questionPublishedTime</span>
+                        <span class="hd-help-ta"><i class="iconfont">&#xe60a</i> 帮助TA</span>
+                        <span class="hd-view-num r">19 浏览</span>
+                        <span class="r">@q.questionReplyNum 回答</span>
+                    </div>
+                    <input id="questionId" type="hidden" value="@q.questionId" />
+                </div>
+                @foreach (var a in ViewData["questionComments"] as List<Answer>)
+                {
+                    <div class="hd-comments">
+                        <div class="hd-comment">
+                            <div class="hd-comment-wrap">
+                                <div class="hd-comment-author">
+                                    @Html.ActionLinkWithImage(Url.Content("~/image/tttt.PNG"), "person", "account", new { id = a.userId })
+                                    @Html.ActionLink(@a.User.userName, "person", "account", new { id = a.userId }, new { @class = "hd-comment-nick" })
+                                    <i class="iconfont girlsex-img">&#xe639</i>
+                                </div>
+                                <div class="hd-comment-d">
+                                    <div class="hd-comment-inner">
+                                        <div class="hd-comment-c">
+                                            <p>@a.answerContent</p>
+                                        </div>
+                                        <div class="hd-comment-addon">
+                                            <span class="hd-comment-time">@a.answerPublishedTime</span>
+                                            <div class="hd-comment-addon-r">
+                                                <span class="js-reply-item-reply"><i class="iconfont">&#xe63b </i>回复</span>
+                                                <span class="js-hd-comment-support"><i class="iconfont">&#xe60d </i>10</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="questionUserId" type="hidden" value="@a.userId" />
+                            <input class="answerId" type="hidden" value="@a.answerId" />
+                        </div>
+
+                        <!--帮助内容列表及回复框-->
+                        <div class="answer-reply">
+                            @foreach (var r in ViewData[Convert.ToString(i)] as List<RecoverAnswer>)
+                            { 
+                                <div class="reply-item reply-user-img">
+                                    <a class="reply-item-author">
+                                        <img src="~/image/tt.PNG" />
+                                    </a>
+                                    <div class="reply-inner-item">
+                                        <p>
+                                            <a class="reply-author-name">@r.User.userName</a>
+                                            <span class="recover-text">回复</span>
+                                            <a class="reply-author-name answerUserName">@r.answerUserName</a>
+                                        </p>
+                                        <p class="reply-item-c">
+                                            @r.reAnswerContent
+                                        </p>
+                                        <div class="reply-item-foot">
+                                            <span class="reply-item-index r">#1</span>
+                                            <span>@r.reAnswerPublishedTime</span>
+                                            <span class="reply-item-reply"><i class="iconfont">&#xe63a</i> 回复</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            @{
+                            i++;
+                            }
+                            <!--回复框-->
+                            <div class="reply reply-to-reply">
+                                <div class="js-reply-ibox">
+                                    <div class="reply-iavator l">
+                                        <a href="#">
+                                            <img src="~/image/tt.PNG" width="40" height="40">
+                                        </a>
+                                    </div>
+                                    <div class="reply-iwrap">
+                                        <div class="reply-iarea">
+                                            <textarea class="js-reply-ipt-default textarea-wrap" placeholder="写下你的评论..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="reply-ifoot">
+                                        <div class="reply-footright r">
+                                            <span class="success-tips"><i class="iconfont">&#xe638</i> 提交成功</span>
+                                            <button class="university-btn btn-cancel">取消</button>
+                                            <button class="university-btn btn-submit-reply" onclick="replyReplySubmit();">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      
+                        
+                }
+                <div class="comment-input">
+                    <div class="comment-user-img l">
+                        <a class="">
+                            <img class="author-img" src="~/image/tt.PNG" />
+                        </a>
+                    </div>
+                    <div class="comment-wrap">
+                        <textarea class="comment-write"></textarea>
+                        <div class="comment-foot">
+                            <div class="r">
+                                <span class="success-tips"><i class="iconfont">&#xe638</i> 提交成功</span>
+                                <button class="university-btn" onclick="answer();">回答</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="con-right">
+        <div class="newques-container">
+            <a href="/help/publish" class="newques-btn"><i class="iconfont">&#xe605</i> 发新问题</a>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title">相关的问题</h2>
+            </div>
+            <div class="panel-body">
+                <div class="mkhotlist padtop"><a href="/qadetail/58382">如何考试不挂科？</a></div>
+                <div class="mkhotlist "><a href="/qadetail/58851">马庄哪里的饭比较好吃？</a></div>
+                <div class="mkhotlist "><a href="/qadetail/58978">如何在后山爬山？</a></div>
+                <div class="mkhotlist "><a href="/wenda/detail/239853">校园网上不了，怎么办？</a></div>
+                <div class="mkhotlist bordbottom"><a href="/qadetail/60269">如何在后山爬山？ &lt;br/&gt;</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/help/detail.js"></script>

@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "方案高手";
+    ViewBag.currentPage = "方案高手";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/findschoolmate.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/public.css" rel="stylesheet" />
+@Html.Partial("_SuperiorSidebar")
+<div class="col-right-box">
+    <div class="find-intro">
+        <h3 class="intro-title">在这里，发现你潜在的能力。</h3>
+        <p class="intro-content">搜索你想要某能力的方案高手，找到任何大学、系别的学生，邂逅大学的Ta。</p>
+        <div class="js-family">
+            <div class="idx-width">
+                <ul class="clearfix">
+                    <li class="family-item l">
+                        <ul class="clearfix family-first-item"></ul>
+                    </li>
+                    <li class="family-item l">
+                        <ul class="clearfix family-second-item"></ul>
+                    </li>
+                    <li class="family-item l">
+                        <ul class="clearfix family-third-item"></ul>
+                    </li>
+                    <li class="family-item-last l">
+                        <ul class="clearfix family-forth-item "></ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-right right-content">
+    <!--左边搜索列表-->
+    <div class="con-left">
+        <div class="find-about">
+            <div class="nav nav-search search-superior">
+                <input type="text" id="search-write" maxlength="30" class="input sprites" placeholder="请输入要寻找的方案高手，如：电脑维修高手" onkeydown="javascript:if(event.keyCode == 13)searchByBeatEnter();">
+                <i class="iconfont search-i">&#xe66f</i>
+                <a id="btn-search" onclick="btnSearch();">搜索</a>
+                <!--搜索智能提醒-->
+                <div id="search-suggest">
+                    <h4>搜索到<span></span>相关结果</h4>
+                    <ul id="search-result">
+                        <li>搜索结果1</li>
+                        <li>搜索结果2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav nav-list">
+                <div class="newpost">
+                    <ul>
+                        <li><a class="now-selected">全部</a></li>
+                    </ul>
+                    <a class="select-depart" onclick="showDepartment();">全部院系
+                        <div class="tooltip top" role="tooltip">
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner">
+                                选择院系
+                            </div>
+                        </div>
+                    </a>
+                    <a class="select-shcool" onclick="showSchool();">全部大学
+                        <div class="tooltip top" role="tooltip">
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner">
+                                选择大学
+                            </div>
+                        </div>
+                    </a>
+                    <i class="iconfont school-icon">&#xe60f</i>
+                </div>
+                <div id="notice-con">
+                    <!--全部方案高手-->
+                    <div id="mod-1" class="mod" style="display: block">
+                        @foreach (User l in ViewData["allSuperiors"] as IQueryable<User>)
+                        {
+                            <div class="wenda-list">
+                                <div class="wenda-listcon">
+                                    <div class="headslider">
+                                        <a href="/projectsuperior/space/@l.userId" class="superior-head">
+                                            <img src="@l.userImg">
+                                        </a>
+                                        @Html.ActionLink(l.userName, "space", "projectsuperior", new { id = l.userId }, new { @class = "wenda-nickname" })
+                                        <i class="iconfont girlsex-img">&#xe639</i>
+                                        <input type="hidden" class="userSex" value="@l.userSex" />
+                                    </div>
+                                    <div class="wendaslider">
+                                        <a href="/projectsuperior/space/@l.userId" class="experience-nums">
+                                            <div class="ys">
+                                                <div class="number">
+                                                    @l.userRank
+                                                </div>
+                                                <div>经验</div>
+                                            </div>
+                                            <div class="browsenum">
+                                                <div class="number">
+                                                    @l.userVisitedNum
+                                                </div>
+                                                <div>看看</div>
+                                            </div>
+                                        </a>
+                                        <div class="ability">
+                                            <i class="iconfont">&#xe63f</i>
+                                            <a onclick="window.open('/projectsuperior/space/@l.userId')">@l.userMerit</a>
+                                        </div>
+                                        <div class="question">
+                                            <i class="iconfont">&#xe62c</i>
+                                            <div class="replydes">
+                                                <span class="replycontent">@l.userMeritIntro</span>
+                                            </div>
+                                        </div>
+                                        <div class="department-rank">
+                                            <a>@l.userSchool</a>
+                                            <a class="depart">@l.userDepart</a>
+                                            <a class="list-tag pri-letter"><i class="iconfont">&#xe63b</i>私信</a>
+                                            <input type="hidden" value="@l.userId" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="loading-girl">
+                            <i class="iconfont">&#xe643</i>
+                        </div>
+                        <input type="hidden" value="@ViewData["allGroups"]" id="allGroups" />
+                    </div>
+                    <!--校内方案高手-->
+                    <div id="mod-2" class="mod" style="display: none">
+
+                        <div class="loading">
+                            <i class="iconfont">&#xe643</i>
+                        </div>
+                        <input type="hidden" value="@ViewData["mySchoolGroups"]" id="mySchoolGroups" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右边推荐列表-->
+    <div class="con-right">
+        @Html.Partial("_SuperiorRightSidebar")
+        @* <div class="become-superior">
+            <a href="/projectsuperior/become" class="become-btn"><i class="iconfont">&#xe645</i> 成为方案高手</a>
+        </div>*@
+    </div>
+</div>
+@Html.Partial("_SelectSchoolOrDepart")
+<!--用于已登录后显示动态显示用户信息-->
+<li id="chat" class="loggedin" style="display: none;">
+    <a href="/message/index/send/0" class="information">
+        <i class="iconfont">&#xe60a</i>
+    </a>
+</li>
+<li id="myImg" class="loggedin" style="display: none;">
+    <a class="account-num">
+        <img src="" />
+    </a>
+</li>
+<script type="text/javascript">
+    //到达顶部时固定页面
+    $(function () {
+        var navH = $(".sidebar").offset().top;
+        $(window).scroll(function () {
+            var scroH = $(this).scrollTop();
+            if (scroH >= navH) {
+                $(".sidebar").css({ "position": "fixed", "top": 0 });
+            } else if (scroH < navH) {
+                $(".sidebar").css({ "position": "static" });
+            }
+        })
+    });
+</script>
+<script src="~/Scripts/projectsuperior/index.js"></script>
+<script src="~/Scripts/projectsuperior/projectsuperior.js"></script>

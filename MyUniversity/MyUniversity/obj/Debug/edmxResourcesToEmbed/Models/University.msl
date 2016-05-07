@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UniversityModelStoreContainer" CdmEntityContainer="UniversityEntities">
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="UniversityModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="cityId" ColumnName="cityId" />
+          <ScalarProperty Name="cityName" ColumnName="cityName" />
+          <ScalarProperty Name="provinceId" ColumnName="provinceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Depart">
+      <EntityTypeMapping TypeName="UniversityModel.Depart">
+        <MappingFragment StoreEntitySet="Depart">
+          <ScalarProperty Name="departId" ColumnName="departId" />
+          <ScalarProperty Name="departName" ColumnName="departName" />
+          <ScalarProperty Name="schoolId" ColumnName="schoolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FollowType">
+      <EntityTypeMapping TypeName="UniversityModel.FollowType">
+        <MappingFragment StoreEntitySet="FollowType">
+          <ScalarProperty Name="followtypeId" ColumnName="followtypeId" />
+          <ScalarProperty Name="followtypeName" ColumnName="followtypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Love">
+      <EntityTypeMapping TypeName="UniversityModel.Love">
+        <MappingFragment StoreEntitySet="Love">
+          <ScalarProperty Name="loveId" ColumnName="loveId" />
+          <ScalarProperty Name="loverId" ColumnName="loverId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plancomment">
+      <EntityTypeMapping TypeName="UniversityModel.Plancomment">
+        <MappingFragment StoreEntitySet="Plancomment">
+          <ScalarProperty Name="plancommentId" ColumnName="plancommentId" />
+          <ScalarProperty Name="plancommentContent" ColumnName="plancommentContent" />
+          <ScalarProperty Name="plancommentTime" ColumnName="plancommentTime" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="planId" ColumnName="planId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Province">
+      <EntityTypeMapping TypeName="UniversityModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="provinceId" ColumnName="provinceId" />
+          <ScalarProperty Name="provinceName" ColumnName="provinceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecentVisitor">
+      <EntityTypeMapping TypeName="UniversityModel.RecentVisitor">
+        <MappingFragment StoreEntitySet="RecentVisitor">
+          <ScalarProperty Name="recentvisitorId" ColumnName="recentvisitorId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="visitorId" ColumnName="visitorId" />
+          <ScalarProperty Name="visitTime" ColumnName="visitTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answer">
+      <EntityTypeMapping TypeName="UniversityModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="answerPublishedTime" ColumnName="answerPublishedTime" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="questionId" ColumnName="questionId" />
+          <ScalarProperty Name="answerTime" ColumnName="answerTime" />
+          <ScalarProperty Name="answerContent" ColumnName="answerContent" />
+          <ScalarProperty Name="answerId" ColumnName="answerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecoverAnswer">
+      <EntityTypeMapping TypeName="UniversityModel.RecoverAnswer">
+        <MappingFragment StoreEntitySet="RecoverAnswer">
+          <ScalarProperty Name="answerUserName" ColumnName="answerUserName" />
+          <ScalarProperty Name="reAnswerPublishedTime" ColumnName="reAnswerPublishedTime" />
+          <ScalarProperty Name="answerId" ColumnName="answerId" />
+          <ScalarProperty Name="questionUserId" ColumnName="questionUserId" />
+          <ScalarProperty Name="reAnswerUserId" ColumnName="reAnswerUserId" />
+          <ScalarProperty Name="reAnswerTime" ColumnName="reAnswerTime" />
+          <ScalarProperty Name="reAnswerContent" ColumnName="reAnswerContent" />
+          <ScalarProperty Name="reAnswerId" ColumnName="reAnswerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hotSuperior">
+      <EntityTypeMapping TypeName="UniversityModel.hotSuperior">
+        <MappingFragment StoreEntitySet="hotSuperior">
+          <ScalarProperty Name="hotSuperiorNums" ColumnName="hotSuperiorNums" />
+          <ScalarProperty Name="hotSuperiorWrite" ColumnName="hotSuperiorWrite" />
+          <ScalarProperty Name="hotSuperiorId" ColumnName="hotSuperiorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QCategory">
+      <EntityTypeMapping TypeName="UniversityModel.QCategory">
+        <MappingFragment StoreEntitySet="QCategory">
+          <ScalarProperty Name="QCategoryName" ColumnName="QCategoryName" />
+          <ScalarProperty Name="QCategoryId" ColumnName="QCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question">
+      <EntityTypeMapping TypeName="UniversityModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="qCategoryId" ColumnName="qCategoryId" />
+          <ScalarProperty Name="newReplyUserImg" ColumnName="newReplyUserImg" />
+          <ScalarProperty Name="newReplyUserName" ColumnName="newReplyUserName" />
+          <ScalarProperty Name="newReplyUserId" ColumnName="newReplyUserId" />
+          <ScalarProperty Name="questionPublishedTime" ColumnName="questionPublishedTime" />
+          <ScalarProperty Name="questionNewestReply" ColumnName="questionNewestReply" />
+          <ScalarProperty Name="questionReplyNum" ColumnName="questionReplyNum" />
+          <ScalarProperty Name="questionTitle" ColumnName="questionTitle" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="questionViewNum" ColumnName="questionViewNum" />
+          <ScalarProperty Name="questionTime" ColumnName="questionTime" />
+          <ScalarProperty Name="questionContent" ColumnName="questionContent" />
+          <ScalarProperty Name="questionId" ColumnName="questionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supervice">
+      <EntityTypeMapping TypeName="UniversityModel.Supervice">
+        <MappingFragment StoreEntitySet="Supervice">
+          <ScalarProperty Name="superviceTime" ColumnName="superviceTime" />
+          <ScalarProperty Name="planId" ColumnName="planId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="superviceId" ColumnName="superviceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plan">
+      <EntityTypeMapping TypeName="UniversityModel.Plan">
+        <MappingFragment StoreEntitySet="Plan">
+          <ScalarProperty Name="planIsFinish" ColumnName="planIsFinish" />
+          <ScalarProperty Name="planEndTime" ColumnName="planEndTime" />
+          <ScalarProperty Name="planStartTime" ColumnName="planStartTime" />
+          <ScalarProperty Name="planSuperviseNum" ColumnName="planSuperviseNum" />
+          <ScalarProperty Name="planComeOnNum" ColumnName="planComeOnNum" />
+          <ScalarProperty Name="planCommentNum" ColumnName="planCommentNum" />
+          <ScalarProperty Name="planPublishedTime" ColumnName="planPublishedTime" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="planViewNum" ColumnName="planViewNum" />
+          <ScalarProperty Name="planTime" ColumnName="planTime" />
+          <ScalarProperty Name="planContent" ColumnName="planContent" />
+          <ScalarProperty Name="planTitle" ColumnName="planTitle" />
+          <ScalarProperty Name="planId" ColumnName="planId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanComeOn">
+      <EntityTypeMapping TypeName="UniversityModel.PlanComeOn">
+        <MappingFragment StoreEntitySet="PlanComeOn">
+          <ScalarProperty Name="planComeOnTime" ColumnName="planComeOnTime" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="planId" ColumnName="planId" />
+          <ScalarProperty Name="planComeOnWrite" ColumnName="planComeOnWrite" />
+          <ScalarProperty Name="planComeOnId" ColumnName="planComeOnId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clocklog">
+      <EntityTypeMapping TypeName="UniversityModel.Clocklog">
+        <MappingFragment StoreEntitySet="Clocklog">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="planId" ColumnName="planId" />
+          <ScalarProperty Name="clocklogTime" ColumnName="clocklogTime" />
+          <ScalarProperty Name="clocklogContent" ColumnName="clocklogContent" />
+          <ScalarProperty Name="clocklogId" ColumnName="clocklogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="UniversityModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="contactTime" ColumnName="contactTime" />
+          <ScalarProperty Name="contactUserId" ColumnName="contactUserId" />
+          <ScalarProperty Name="contactFriendId" ColumnName="contactFriendId" />
+          <ScalarProperty Name="contactId" ColumnName="contactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LastChat">
+      <EntityTypeMapping TypeName="UniversityModel.LastChat">
+        <MappingFragment StoreEntitySet="LastChat">
+          <ScalarProperty Name="lastChatContent" ColumnName="lastChatContent" />
+          <ScalarProperty Name="lastChatTime" ColumnName="lastChatTime" />
+          <ScalarProperty Name="lastChatUserId" ColumnName="lastChatUserId" />
+          <ScalarProperty Name="lastChatfriendId" ColumnName="lastChatfriendId" />
+          <ScalarProperty Name="lastChatId" ColumnName="lastChatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message">
+      <EntityTypeMapping TypeName="UniversityModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="messageWhoSend" ColumnName="messageWhoSend" />
+          <ScalarProperty Name="lastChatId" ColumnName="lastChatId" />
+          <ScalarProperty Name="messageReceiveUserId" ColumnName="messageReceiveUserId" />
+          <ScalarProperty Name="messageIfRead" ColumnName="messageIfRead" />
+          <ScalarProperty Name="messageTime" ColumnName="messageTime" />
+          <ScalarProperty Name="messageSendUserId" ColumnName="messageSendUserId" />
+          <ScalarProperty Name="messageContent" ColumnName="messageContent" />
+          <ScalarProperty Name="messageId" ColumnName="messageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Follows">
+      <EntityTypeMapping TypeName="UniversityModel.Follows">
+        <MappingFragment StoreEntitySet="Follows">
+          <ScalarProperty Name="followeType" ColumnName="followeType" />
+          <ScalarProperty Name="followTime" ColumnName="followTime" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="followUserId" ColumnName="followUserId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Article">
+      <EntityTypeMapping TypeName="UniversityModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="articleShareNum" ColumnName="articleShareNum" />
+          <ScalarProperty Name="articlePraiseNum" ColumnName="articlePraiseNum" />
+          <ScalarProperty Name="articleCommentNum" ColumnName="articleCommentNum" />
+          <ScalarProperty Name="articleViewNum" ColumnName="articleViewNum" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="articleTime" ColumnName="articleTime" />
+          <ScalarProperty Name="articleContent" ColumnName="articleContent" />
+          <ScalarProperty Name="articleTitle" ColumnName="articleTitle" />
+          <ScalarProperty Name="articleId" ColumnName="articleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArticleComment">
+      <EntityTypeMapping TypeName="UniversityModel.ArticleComment">
+        <MappingFragment StoreEntitySet="ArticleComment">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="articleId" ColumnName="articleId" />
+          <ScalarProperty Name="articleCommentTime" ColumnName="articleCommentTime" />
+          <ScalarProperty Name="articleCommentContent" ColumnName="articleCommentContent" />
+          <ScalarProperty Name="articleCommentId" ColumnName="articleCommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="School">
+      <EntityTypeMapping TypeName="UniversityModel.School">
+        <MappingFragment StoreEntitySet="School">
+          <ScalarProperty Name="schoolRegisterNum" ColumnName="schoolRegisterNum" />
+          <ScalarProperty Name="cityId" ColumnName="cityId" />
+          <ScalarProperty Name="provinceId" ColumnName="provinceId" />
+          <ScalarProperty Name="schoolName" ColumnName="schoolName" />
+          <ScalarProperty Name="schoolId" ColumnName="schoolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectRecord">
+      <EntityTypeMapping TypeName="UniversityModel.ProjectRecord">
+        <MappingFragment StoreEntitySet="ProjectRecord">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="pRUserId" ColumnName="pRUserId" />
+          <ScalarProperty Name="userCommentNum" ColumnName="userCommentNum" />
+          <ScalarProperty Name="userLoveNum" ColumnName="userLoveNum" />
+          <ScalarProperty Name="pRIfSuccess" ColumnName="pRIfSuccess" />
+          <ScalarProperty Name="pRTime" ColumnName="pRTime" />
+          <ScalarProperty Name="pRComment" ColumnName="pRComment" />
+          <ScalarProperty Name="pRContent" ColumnName="pRContent" />
+          <ScalarProperty Name="pRId" ColumnName="pRId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="UniversityModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="userVitality" ColumnName="userVitality" />
+          <ScalarProperty Name="userProjectNum" ColumnName="userProjectNum" />
+          <ScalarProperty Name="userFans" ColumnName="userFans" />
+          <ScalarProperty Name="userMeritIntro" ColumnName="userMeritIntro" />
+          <ScalarProperty Name="userWeekExpsStartTime" ColumnName="userWeekExpsStartTime" />
+          <ScalarProperty Name="userWeekExps" ColumnName="userWeekExps" />
+          <ScalarProperty Name="userVisitedNum" ColumnName="userVisitedNum" />
+          <ScalarProperty Name="planFinishNum" ColumnName="planFinishNum" />
+          <ScalarProperty Name="userDream" ColumnName="userDream" />
+          <ScalarProperty Name="userLoved" ColumnName="userLoved" />
+          <ScalarProperty Name="userAnswerNum" ColumnName="userAnswerNum" />
+          <ScalarProperty Name="userMerit" ColumnName="userMerit" />
+          <ScalarProperty Name="userMiddleSchool" ColumnName="userMiddleSchool" />
+          <ScalarProperty Name="userDorm" ColumnName="userDorm" />
+          <ScalarProperty Name="userClass" ColumnName="userClass" />
+          <ScalarProperty Name="userStartYear" ColumnName="userStartYear" />
+          <ScalarProperty Name="userDepart" ColumnName="userDepart" />
+          <ScalarProperty Name="userSchool" ColumnName="userSchool" />
+          <ScalarProperty Name="userLove" ColumnName="userLove" />
+          <ScalarProperty Name="userSex" ColumnName="userSex" />
+          <ScalarProperty Name="userRank" ColumnName="userRank" />
+          <ScalarProperty Name="userIntro" ColumnName="userIntro" />
+          <ScalarProperty Name="userAccount" ColumnName="userAccount" />
+          <ScalarProperty Name="userPaw" ColumnName="userPaw" />
+          <ScalarProperty Name="userImg" ColumnName="userImg" />
+          <ScalarProperty Name="userRealName" ColumnName="userRealName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuperiorLetter">
+      <EntityTypeMapping TypeName="UniversityModel.SuperiorLetter">
+        <MappingFragment StoreEntitySet="SuperiorLetter">
+          <ScalarProperty Name="superiorLetterNewestRlyTime" ColumnName="superiorLetterNewestRlyTime" />
+          <ScalarProperty Name="superiorLetterIfRead" ColumnName="superiorLetterIfRead" />
+          <ScalarProperty Name="superiorLetterIfComment" ColumnName="superiorLetterIfComment" />
+          <ScalarProperty Name="superiorLetterNewestRly" ColumnName="superiorLetterNewestRly" />
+          <ScalarProperty Name="superiorLetterIfReply" ColumnName="superiorLetterIfReply" />
+          <ScalarProperty Name="superiorLetterReceiveUId" ColumnName="superiorLetterReceiveUId" />
+          <ScalarProperty Name="superiorLetterSendUId" ColumnName="superiorLetterSendUId" />
+          <ScalarProperty Name="superiorLetterId" ColumnName="superiorLetterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

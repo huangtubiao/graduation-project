@@ -1,0 +1,208 @@
+﻿#main {
+    padding-top: 0px;
+}
+
+.containers {
+    width: initial;
+}
+
+.set-header {
+    width: 100%;
+    min-width: 1200px;
+    height: 75px;
+    border-bottom: 1px solid #E6E9EA;
+}
+
+.set-wrap {
+    width: 950px;
+    height: 75px;
+    min-height: 0;
+    line-height: 75px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+    .set-wrap h1 {
+        display: inline-block;
+        float: left;
+        color: #14191e;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .set-wrap a {
+        padding: 16px 15px;
+        font-size: 16px;
+        font-family: 'Microsoft Yahei';
+        color: #14191e;
+        margin-left: 100px;
+    }
+
+        .set-wrap a:hover {
+            color: #78ca99;
+        }
+
+    .set-wrap .onactive {
+        border-bottom: 3px solid #78ca99;
+    }
+
+.myspace {
+    float: right;
+}
+
+.set-container {
+    min-height: 500px;
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    background: #fff;
+}
+
+.upload-img img {
+    width: 180px;
+    height: 180px;
+}
+
+.set-panel {
+    margin-top: 20px;
+}
+
+.panel-setion {
+    padding: 20px 120px 20px 120px;
+    border-bottom: 1px solid #eee;
+}
+
+.panel-uploadimg {
+    padding: 80px 40px 20px 180px;
+}
+
+.upimgbtn {
+    position: relative;
+    bottom: 12px;
+    top: 25px;
+    left: 95px;
+}
+
+.panel-setion h4 {
+    font-size: 16px;
+    color: #14191e;
+}
+
+.inputqus {
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.ques-label {
+    width: 75px;
+    text-align: right;
+}
+
+.question-area, .editor-wrap {
+    margin-left: 90px;
+}
+
+.saveques {
+    padding-bottom: 0px;
+}
+
+.ued-btn {
+    width: 100%;
+    font-size: 13px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+#user_head_param_form {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.upPhoto {
+    margin-left: 65px;
+}
+
+#msgwin {
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    border-radius: 4px;
+}
+
+/*.btn-save-upload {
+    width: 80px;
+}*/
+
+#superior-success {
+    display: none;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+    color: #78ca99;
+    background: #fff;
+    width: 400px;
+    z-index: 1102;
+    padding-bottom: 20px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -128px 0 0 -200px;
+}
+
+    #superior-success i {
+        font-size: 29px;
+        position: relative;
+        top: 2px;
+    }
+
+.radio {
+    margin-bottom: 22px;
+}
+
+#enrollyear {
+    width: 100%;
+    border: 1px solid #ddd;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 10px;
+    margin-bottom: 25px;
+}
+
+.header-signin a, .header-signup a {
+    width: 80px;
+}
+
+.checkbox label, .radio label {
+    line-height: 20px;
+}
+
+.modal-content .modal-body {
+    padding: 0px;
+}
+
+#setting-paw {
+    padding: 40px 200px;
+}
+
+#education {
+    margin-bottom:20px;
+}
+/*选择学校*/
+.close-school, .close-depart {
+    display: none;
+}
+
+#myModal .modal-header .close, #myModalDepart .modal-header .close {
+    display: block;
+    left: 15px;
+}
+
+.modal-dialog .modal-content {
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
+}
+
+body .modal-backdrop.in {
+  opacity: 0.3;
+}

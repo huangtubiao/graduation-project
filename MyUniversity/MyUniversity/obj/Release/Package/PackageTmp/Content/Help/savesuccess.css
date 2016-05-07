@@ -1,0 +1,53 @@
+﻿#main {
+    min-height: initial;
+}
+
+.sendques {
+    padding: 40px 0;
+    text-align: center;
+    color: #787d82;
+}
+
+    .sendques h3 {
+        font-size: 22px;
+    }
+    .sendques .perfect_data:hover, .myques:hover {
+        color:#78CA99;
+        text-decoration:underline;
+    }
+
+.success-img {
+    text-align: center;
+}
+
+    .success-img i {
+        margin-bottom: 10px;
+        font-size: 130px;
+        color: #CEDFD6;
+    }
+
+.myques {
+    color: #14191e;
+}
+
+.back-wenda {
+    padding: 0px 50px;
+}
+
+.success-img {
+    height: 168px;
+}
+
+.wrap-success {
+    width: 100%;
+    min-height: 530px;
+    background: #fff;
+}
+
+.back-my-plan {
+    margin: 20px 0px 10px 0px;
+}
+
+.panel-title {
+    font-size: 16px;
+}

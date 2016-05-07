@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Home.css" rel="stylesheet" />
+    <link href="http://at.alicdn.com/t/font_1436319776_076986.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.1.2.min.js"></script>
+    <script src="~/signalr/hubs" type="text/javascript"></script>
+    <script src="~/Scripts/message/hub.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container-head" id="nav">
+            <div id="logo"><a href="/Home/Index">LOGO</a></div>
+            <ul class="nav-item l">
+                <li @(ViewBag.currentPage == "方案高手" ? "id=active" : "")><a href="/projectsuperior/index"><i class="iconfont">&#xe63f</i> 方案高手</a></li>
+                <li @(ViewBag.currentPage == "计划监督" ? "id=active" : "")><a href="/plan/index"><i class="iconfont">&#xe607</i> 计划监督</a></li>
+                <li @(ViewBag.currentPage == "互帮互助" ? "id=active" : "")><a href="/help/index"><i class="iconfont">&#xe689</i> 互帮互助</a></li>
+                <li @(ViewBag.currentPage == "发现" ? "id=active" : "")><a href="/discover"><i class="iconfont">&#xe68b</i> 发现</a></li>
+                
+            </ul>
+            <div id="login-area">
+                <ul class="header-unlogin">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="loggedin">
+                            <a href="/message/index/send/0" class="information">
+                                <span class="msg_icon">@ViewData["info"]</span>
+                                <i class="iconfont">&#xe60a</i>
+                            </a>
+                        </li>
+                        <li class="loggedin">
+                            <a class="account-num">
+                                <img src="@User.Identity.Name" />
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="header-signin"><a class="login" onclick="showlogin();"><i class="iconfont">&#xe602</i> 登录</a></li>
+                        <li class="header-signup"><a href="/account/register" class="register"><i class="iconfont">&#xe603</i> 注册</a></li>
+                    }
+                </ul>
+               @* <ul id="q" class="person-select">
+                    <li><a class="s my">个人中心</a></li>
+                    <li><a class="s my">我的设置</a></li>
+                    <li><a class="s" href="/account/loginOff">退出</a></li>
+                </ul>*@
+                <!--我的个人信息弹出-->
+                <div id="q" class="g-user-card person-select">
+                    <div class="card-inner">
+                        <div class="card-top">
+                            <img src="@User.Identity.Name" class="l">
+                            <span id="js-user-name" class="name text-ellipsis"></span>
+                            <p class="meta">
+                                <span>经验<b id="js-user-mp"></b></span>
+                                <span>粉丝<b id="js-user-fans"></b></span>
+                            </p>
+                        </div>
+                        <div class="card-links">
+                            <ul>
+                                <li>
+                                    <a>我的计划</a>
+                                </li>
+                                <li>
+                                    <a>我的订阅</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-sets clearfix">
+                            <a href="/account/setprofile" class="l">个人设置</a>
+                            <a href="/account/loginOff" class="r">退出</a>
+                        </div>
+                    </div>
+                    <i class="card-arr"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="containers clearfix">
+            @RenderBody()
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer-bd">
+        </div>
+    </div>
+    <div id="J_GotoTop">
+        <a id="backTop" href="javascript:void(0)"><i class="iconfont">&#xe678</i></a>
+    </div>
+    <!--登录窗体-->
+    <div id="login" class="modal-contact">
+        <div class="login-header">
+            <h4 class="title-header">
+                <a class="active-title">登录</a>
+                <a href="/account/register">注册</a>
+            </h4>
+            <i class="iconfont" onclick="offlogin();">&#xe630</i>
+        </div>
+        <div class="login-body">
+            <div class="wrap">
+                <form id="loginForm" action="/account/login" method="post">
+                    <div class="lg-group">
+                        <span><i class="iconfont">&#xe62e</i></span>
+                        <input type="text" id="phone" name="phone" autocomplete="off" autofocus="" class="ipt-phone" placeholder="请输入登录账号">
+                    </div>
+                    <div class="lg-group">
+                        <span><i class="iconfont">&#xe62f</i></span>
+                        <input type="password" id="password" name="password" autocomplete="off" class="ipt-pwd" placeholder="请输入密码" onkeydown="javascript:if(event.keyCode == 13) btnLogin();">
+                    </div>
+
+                    <div class="lg-btn clearfix">
+                        <label for="auto-signin" class="l" hidefocus="true">
+                            <input type="checkbox" checked="checked" id="auto-signin">自动登录</label>
+                        <a id="signin-btn" class="btn-green university-btn" onclick="btnLogin();">登录</a>
+                    </div>
+                    <div class="clearfix forgot-group">
+                        <a href="/user/newforgot" class="fogot-paw r">忘记密码 </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop in"></div>
+    <!--经验值+20-->
+    <div id="add-experience">
+        <span>经验值+20</span>
+    </div>
+    <!--通信-->
+    <div style="clear: both; position: relative; top: 10px; display: none;">
+        连接ID<input type="text" readonly="readonly" id="txtConnectionId" style="width: 300px;" />
+        <input type="button" value="断开" id="btn_stop" />
+        <input type="text" readonly="readonly" id="txtConsole" /><br />
+        发件人id：<input type="text" id="displayname" value="@(ViewBag.UserName)" /><br />
+        <input type="hidden" id="displayimg" value="@User.Identity.Name" />
+        消息:
+                    <br />
+        <input type="button" id="sendmessage" value="发送广播" /><br />
+        <hr />
+        接收人id（组）：<input type="text" id="recievename" />
+        <br />
+        <hr />
+        接收id：<input type="text" id="recieveid" />
+        <input type="button" id="sendtoconnid" value="发送给特定连接" /><br />
+        <hr />
+        当前聊天id<input type="text" id="last-chat-id" />
+        消息列表：<br />
+        <ul id="discussion"></ul>
+        <input type="button" value="断开所有" id="btn_stopall" />
+        <hr />
+        <a id="a_connection">跳转</a>
+        <br />
+        <div id="qrcode"></div>
+    </div>
+    <script src="~/Scripts/home/home.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    //到达顶部时固定页面
+    $(function () {
+        var navH = $(".sidebar").offset().top;
+        $(window).scroll(function () {
+            var scroH = $(this).scrollTop();
+            if (scroH >= navH) {
+                $(".sidebar").css({ "position": "fixed", "top": 0 });
+            } else if (scroH < navH) {
+                $(".sidebar").css({ "position": "static" });
+            }
+        })
+    });
+</script>
+

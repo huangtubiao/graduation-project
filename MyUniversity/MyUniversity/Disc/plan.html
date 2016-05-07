@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发现-计划监督</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/comman.css">
+	<link rel="stylesheet" href="css/find_plan_index.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1434210525_400011.css">
+	<!--[if lt IE 8]> 
+		<script src="lib/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+</body>
+</html>
+<script src="lib/sea.js"></script>
+<script>
+	seajs.config({
+        // 别名配置
+        alias: {
+            '$': 'jquery'
+        },
+        paths: {
+            'css': './css',
+            'js' : './js'
+        }
+    });
+	seajs.use(['./build/template','jquery'], function (template,$) {
+		var indexHtml = template('planTpl',{});
+		$('body').prepend(indexHtml);
+	})
+</script>

@@ -1,0 +1,96 @@
+﻿
+#notice-tit li a {
+    height: 50px;
+    line-height: 50px;
+}
+
+.superior-head {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+
+.headslider img {
+
+}
+
+.wendaslider {
+    margin-left: 110px;
+    padding: 0px 103px 0 0;
+}
+
+.wenda-listcon {
+    /*padding: 20px 0px 0px 0px;*/
+}
+
+.experience-nums {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    color: #787d82;
+    font-size: 12px;
+}
+
+    .experience-nums div {
+        text-align: center;
+    }
+
+.ys {
+    border-right: 1px solid #edf1f2;
+}
+
+.ys, .browsenum {
+    float: left;
+    width: 44px;
+    height: 31px;
+    margin: 10px 0;
+}
+
+.ability a {
+    position: relative;
+    bottom: 1px;
+    color: #3a3d3f;
+    font-weight: bold;
+}
+
+    .ability a:hover {
+        color: #78CA99;
+        text-decoration: underline;
+    }
+
+.school-icon {
+    margin-right: 2px;
+    font-size: 17px;
+    margin-left: 3px;
+}
+
+.list-tag i {
+    margin-right: 5px;
+}
+
+.panel-title-me {
+    font-size: 16px;
+}
+
+.panel-body .hot-label {
+    background: initial;
+}
+
+.col-right {
+    float: right;
+}
+
+.con-left .panel {
+    min-height: 718px;
+    padding-bottom: 60px;
+}
+
+#active {
+    color: #78CA99;
+}
+
+.panel-body .hot-label:hover {
+    color: #78CA99 !important;
+    border-bottom: 1px solid #78CA99;
+    background-color: initial;
+}

@@ -1,0 +1,245 @@
+
+/******************************banner*/
+.banner_box{
+	height:180px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 5px 5px -5px #C0C0C0;
+	-moz-box-shadow: 0 5px 5px -5px #C0C0C0;
+	box-shadow: 0 5px 5px -5px #C0C0C0;
+}
+.banner_box .banner{
+	height:140px;
+	background:url('../img/plan_top.png') no-repeat center #15a55f;
+}
+/*二级导航*/
+.banner_box .sub_menu{
+	text-align: center;
+}
+.banner_box .sub_menu li{
+	padding:0 10px;
+	display: inline;
+}
+.banner_box .sub_menu a{
+	display: inline-block;
+	padding:10px 15px;
+}
+.banner_box .sub_menu a:hover{
+	color:#15a55f;
+}
+.banner_box .sub_menu .active{
+	color:#15a55f;
+	border-bottom:2px solid #15a55f;
+}
+
+/*主体内容*/
+.main_content{
+	min-height:500px;
+	margin-top:10px;
+}
+.main_content .plan_box,.main_content .plan_index{
+	background-color: #fff;
+	min-height:400px;
+	-webkit-box-shadow: 0 0px 10px -3px #D3D3D3;
+	-moz-box-shadow: 0 0px 10px -3px #D3D3D3;
+	box-shadow: 0 0px 10px -3px #D3D3D3;
+}
+.main_content .plan_box{
+	width:690px;
+	padding:10px 0;
+}
+.main_content .plan_aside{
+	width:400px;
+}
+.user_info,.myplan{
+	-webkit-box-shadow: 0 0px 10px -3px #D3D3D3;
+	-moz-box-shadow: 0 0px 10px -3px #D3D3D3;
+	box-shadow: 0 0px 10px -3px #D3D3D3;
+	background-color: #fff;
+}
+.user_info .ui_top{
+	padding:35px 50px;
+}
+.user_info .ui_top img{
+	width:60px;
+	height:60px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	margin-right:20px;
+}
+.user_info .ui_top p{
+	padding:5px 0;
+}
+.user_info .ui_top .last{
+	color:#dedede;
+}
+.user_info .ui_bottom{
+	width:100%;
+	height:47px;
+	background-color: #fafafa;
+}
+.user_info .ui_bottom .ui_bt_item{
+	margin-right: -1px;
+	border-right:1px dashed #E8E8E8;
+	width:33.3%;
+}
+.user_info .ui_bottom .last_item{
+	border-right:none;
+}
+.ui_bottom .ui_bt_item p{
+	width:100%;
+	text-align: center;
+	padding-top:3px;
+	color:#8c8a8a;
+}
+
+.ui_bottom .ui_bt_item .item_num{
+	color:#1fc89e;
+}
+
+.myplan{
+	min-height:400px;
+	margin-top:10px;
+}
+.plan_aside .header_tip{
+	color:#636363;
+	padding:13px;
+	border-bottom:1px solid #f3f3f3;
+}
+.myplan .plan_today{
+	margin-bottom:40px;
+}
+.myplan .noplan{
+	text-align: center;
+}
+.myplan .noplan span{
+	margin-top:25px;
+	background-color: #f6f6f6;
+	display: inline-block;
+	width:115px;
+	height:115px;
+	-webkit-border-radius:100%;
+	-moz-border-radius:100%;
+	border-radius:100%;
+	color:#cacaca;
+	line-height: 115px;
+}
+
+.myplan .add_plan{
+	display: block;
+	width:245px;
+	height:45px;
+	line-height: 45px;
+	color:#fff;
+	background-color: #1fc89e;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	margin:0 auto;
+	text-align: center;
+	margin-top:45px;
+	-webkit-transition:all 0.3s;
+}
+.myplan .add_plan:hover{
+	width:285px;
+	background-color: #18AB86;
+}
+
+.plan_state .state_list{
+}
+.plan_state .state_list .state_user_img{
+	width:35px;
+	height:35px;
+	-webkit-border-radius:100%;
+	-moz-border-radius:100%;
+	border-radius:100%;
+}
+.state_list li{
+	padding:10px;
+}
+.state_list .state_user_img,
+.state_list .state_tip,
+.state_list .plan_title{
+	vertical-align: middle;
+}
+.state_list .state_tip{
+	font-size:12px;
+	color:#999;
+	padding:0 20px;
+}
+.state_list .plan_title{
+	color:#1fc89e;
+}
+
+.plan_index_state .pis_tab{
+	border-bottom:1px solid #f3f3f3;
+}
+.plan_index_state .pis_tab span{
+	cursor: pointer;
+	padding:10px 15px;
+	color:#b8b7b7;
+	display: inline-block;
+}
+.plan_index_state .pis_tab span:hover{
+	color:#15a55f;
+}
+.plan_index_state .pis_tab .active{
+	border-bottom:1px solid #15a55f;
+	color:#15a55f;
+}
+
+/*最新动态*/
+.mc_new_list li{
+	padding:10px 0;
+}
+.mc_new_list li .list_user img,
+.mc_new_list li .list_oprate,
+.mc_new_list li .list_aim{
+	vertical-align: middle;
+}
+.mc_new_list li .list_user img{
+	width:35px;
+	height:35px;
+}
+.mc_new_list li .list_oprate{
+	font-size:12px;
+	display: inline-block;
+	width:70px;
+	text-align: center;
+	color:#aeaeae;
+}
+.mc_new_list li .list_aim{
+	display: inline-block;
+	color:#1ba9fb;
+	width:180px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.mc_new_list li .list_aim:hover,
+.mc_new_list li .list_user:hover{
+	color:#EA7827;
+}
+.success_list li{
+	padding:10px 0;
+	height:45px;
+}
+.success_list .top_tip{
+	width:70px;
+	height:40px;
+	background-color: red;
+}
+.success_list .u_img{
+	width:40px;
+	height:40px;
+	margin:0 10px 0 10px;
+}
+.success_list .su_user_info{
+	margin-left:70px;
+}
+.success_list .us_info p{
+	padding-top:1px;
+}
+.success_list .su_count{
+	color:#999;
+}

@@ -1,0 +1,52 @@
+﻿<!--选择院系-->
+<div class="modal-dialog department">
+    <div class="modal-content">
+        <div class="login-header">
+            <h4>选择院系</h4>
+            <i class="iconfont" onclick="offDepartment();">&#xe630</i>
+        </div>
+        <div class="modal-body">
+            <div class="school-search">
+                <div class="school-input">
+                    <input id="write-depart" type="text" placeholder="请输入要查看的学院" />
+                </div>
+            </div>
+            <div class="department-show">
+                <ul id="search-depart">
+                </ul>
+                <!--搜索智能提醒-->
+                <div id="search-depart-list" style="display: none;">
+                    <h4 class="related-result">搜索到相关结果</h4>
+                    <ul id="depart-result">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择学校-->
+<div id="select-school-pop" class="modal-dialog">
+    <div class="modal-content">
+        <div class="login-header">
+            <h4>选择学校</h4>
+            <i class="iconfont" onclick="offSchool();">&#xe630</i>
+        </div>
+        <div class="modal-body">
+            <div class="school-search">
+                <div class="school-input">
+                    <input id="write-school" type="text" placeholder="请输入你的大学" />
+                </div>
+            </div>
+            <div class="department-show">
+                <ul id="school-list">
+                </ul>
+                <!--搜索智能提醒-->
+                <div id="search-school" style="display: none;">
+                    <h4 class="related-result">搜索到相关结果</h4>
+                    <ul id="school-result">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿<div class="l sidebar">
+    <div class="nav-menu">
+        <ul>
+            <li @(ViewBag.Active == "个人中心" ? "id=cur" : "")>
+                <a href="/account/person" class="menu-cur"></a>
+                <a class="nav-title">个人信息</a>
+            </li>
+            <li @(ViewBag.Active == "计划" ? "id=cur" : "")>
+                <a href="/account/plan" class="menu-cur"></a>
+                <a class="nav-title">计划</a>
+            </li>
+            <li @(ViewBag.Active == "动态" ? "id=cur" : "")>
+                <a class="menu-cur"></a>
+                <a class="nav-title">动态</a>
+            </li>
+        </ul>
+    </div>
+</div>

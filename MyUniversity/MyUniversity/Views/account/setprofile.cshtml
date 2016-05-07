@@ -1,0 +1,295 @@
+﻿@{
+    ViewBag.Title = "我的设置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@model MyUniversity.Models.DTO.UploadImageModel
+<link href="~/Scripts/imgareaselect/img/imgareaselect-animated.css" rel="stylesheet" />
+<link href="~/Content/uploadimg/User.css" rel="stylesheet" />
+<link href="~/Content/uploadimg/popup.css" rel="stylesheet" />
+<link href="~/Content/Help/publish.css" rel="stylesheet" />
+<link href="~/Content/account/set.css" rel="stylesheet" />
+<div class="set-header">
+    <div class="set-wrap">
+        <h1>我的设置</h1>
+        <ul id="notice-tit">
+            <li class="onactive"><a>个人资料</a></li>
+            <li><a>修改密码</a></li>
+            <li><a>绑定账号</a></li>
+        </ul>
+    </div>
+</div>
+<div class="set-panel">
+    <div class="set-container">
+        <div id="notice-con">
+            <div id="mod-1" class="mod" style="display: block">
+                <div class="panel-setion panel-uploadimg">
+                    <div class="upload-img">
+                        <div class="upbox clearfix">
+
+                            <div class="upPhotolist clearfix">
+                                <div class="upimg upbig">
+                                    <div class="upimgbox up_1">
+                                        <img src="@User.Identity.Name" style="width: 180px; height: 180px" id="user_head_180">
+                                    </div>
+                                    <a>换一换</a>
+                                </div>
+                            </div>
+
+                            <div class="upPhoto">
+                                <div class="upcon" id="user_head_upload_box">
+                                    <p class="phototxt">选择你要上传的头像</p>
+                                    <div class="upfile">
+                                        @using (Html.BeginForm("uploadHead", "ucenter", FormMethod.Post, new { ID = "user_head_form", enctype = "multipart/form-data" }))
+                                        {
+                                            <input type="file" name="head" class="filebtn" onchange="$('#user_head_upload_box').hide();$('#user_head_show_box').show();$('#user_head_form').submit();" />
+                                            <input type="button" class="upimgbtn btn-cancel" value="上传头像" />						
+                                        }
+                                    </div>
+                                </div>
+                                <div id="user_head_show_box" style="width: 300px; height: 300px; line-height: 300px; text-align: center; background: gray no-repeat; display: none">
+                                    <img id="user_head_origin" style="vertical-align: middle;" src="/Content/img/load.gif">
+                                </div>
+                                <div class="sysbtn">
+                                    @using (Html.BeginForm("saveHead", "ucenter", FormMethod.Post, new { ID = "user_head_param_form", enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.HiddenFor(model => model.headFileName, new { id = "head_name" })
+                                        @Html.HiddenFor(model => model.x, new { id = "head_x" })
+                                        @Html.HiddenFor(model => model.y, new { id = "head_y" })
+                                        @Html.HiddenFor(model => model.width, new { id = "head_width" })
+                                        @Html.HiddenFor(model => model.height, new { id = "head_height" })                          
+                                        <input type="submit" class="btn-cancel" value="保存">
+                                        <input type="button" class="btn-cancel" value="取消" onclick="cancelHead();">
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @foreach (User u in ViewData["user"] as IQueryable<User>)
+                { 
+                    <div id="user-profile">
+                        <div class="panel-setion">
+                            @using (Html.BeginForm("saveSuperiorInfo", "account", FormMethod.Post, new { ID = "superior_param_form" }))
+                            {
+                                <h4>修改方案高手信息</h4>
+                                <div class="inputqus">
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">高手方案：</span>
+                                        <div class="question-area">
+                                            <input type="text" id="ques-title" class="ued-btn" maxlength="255" name="ques-title" placeholder="一句话写出的你的方案技能，例如：电脑系统维修高手" value="@u.userMerit">
+                                            <p class="errortip errortip-input"></p>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail">
+                                        <span class="ques-label">高手介绍：</span>
+                                        <div class="editor-wrap">
+                                            <div class="editor-write">
+                                                <textarea id="superior-text" class="ued-btn" name="superior-text" rows="3" placeholder="详细介绍一下您哦！爱好、经历、成就等等">@u.userMeritIntro</textarea>
+                                                <p class="errortip errortip-area"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="saveques">
+                                    <input type="submit" class="university-btn publishbtn" id="submit-superior" value="提交" />
+
+                                </div>
+                            }
+                        </div>
+                        <div class="panel-setion">
+                            @using (Html.BeginForm("saveGeneralInfo", "account", FormMethod.Post, new { ID = "generalInfo_param_form" }))
+                            {
+                                <h4>修改基本信息</h4>
+                                <div class="inputqus">
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">呢称：</span>
+                                        <div class="question-area">
+                                            <input type="text" id="" class="ued-btn" maxlength="255" name="userName" placeholder="" value="@u.userName">
+                                            <p class="errortip errortip-input"></p>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">性别：</span>
+                                        <div class="question-area radio">
+                                            <label>
+                                                <input type="radio" value="0" name="sex">保密</label>
+                                            <label>
+                                                <input type="radio" value="1" checked="checked" name="sex">男</label>
+                                            <label>
+                                                <input type="radio" value="2" name="sex">女</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="saveques">
+                                    <input type="submit" class="university-btn publishbtn" value="提交" />
+                                </div>
+                            }
+
+                        </div>
+                        <div class="panel-setion">
+                            @using (Html.BeginForm("saveEducationInfo", "account", FormMethod.Post, new { ID = "education_param_form" }))
+                            {
+                                <h4>修改教育信息</h4>
+                                <div class="inputqus">
+                                    <div id="education" class="quesdetail clearfix">
+                                        <span class="ques-label">学历：</span>
+                                        <div class="question-area radio">
+                                            <label>
+                                                <input type="radio" value="0" name="education">本科/专科</label>
+                                            <label>
+                                                <input type="radio" value="1" checked="checked" name="education">研究生</label>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">学校：</span>
+                                        <div class="question-area">
+                                            <input type="text" id="school" class="ued-btn" maxlength="255" name="school" placeholder="" value="@u.userSchool" readonly="">
+                                            <p class="errortip errortip-input"></p>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">院系：</span>
+                                        <div class="question-area">
+                                            <input type="text" id="depart" class="ued-btn" maxlength="255" name="depart" placeholder="" value="@u.userDepart" readonly="">
+                                            <p class="errortip errortip-input"></p>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">入学年份：</span>
+                                        <div class="question-area">
+                                            <select class="rlf-select" name="enrollyear" id="enrollyear">
+                                                <option value="">2008</option>
+                                                <option value="1">2009</option>
+                                                <option value="2">2010</option>
+                                                <option value="3">2011</option>
+                                                <option value="4">2012</option>
+                                                <option value="5" selected="selected">2013</option>
+                                                <option value="6">2014</option>
+                                                <option value="7">2015</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">班级：</span>
+                                        <div class="question-area">
+                                            <input type="text" class="ued-btn" maxlength="255" name="class" placeholder="" value="@u.userClass">
+                                            <p class="errortip errortip-input"></p>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">宿舍：</span>
+                                        <div class="question-area">
+                                            <input type="text" id="" class="ued-btn" maxlength="255" name="dorm" placeholder="" value="@u.userDorm">
+                                            <p class="errortip errortip-input"></p>
+                                        </div>
+                                    </div>
+                                    <div class="quesdetail clearfix">
+                                        <span class="ques-label">毕业中学：</span>
+                                        <div class="question-area">
+                                            <input type="text" class="ued-btn" maxlength="255" name="middelSchool" placeholder="" value="@u.userMiddleSchool">
+                                            <p class="errortip errortip-input"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="saveques">
+                                    <input type="submit" class="university-btn publishbtn" value="提交" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <div id="mod-2" class="mod" style="display: none">
+                <div id="setting-paw">
+                    <div class="inputqus">
+                        <div class="quesdetail clearfix">
+                            <span class="ques-label">当前密码：</span>
+                            <div class="question-area">
+                                <input type="text" class="ued-btn" maxlength="255" name="class" placeholder="" >
+                                <p class="errortip errortip-input"></p>
+                            </div>
+                        </div>
+                        <div class="quesdetail clearfix">
+                            <span class="ques-label">新密码：</span>
+                            <div class="question-area">
+                                <input type="text" id="" class="ued-btn" maxlength="255" name="dorm" placeholder="">
+                                <p class="errortip errortip-input"></p>
+                            </div>
+                        </div>
+                        <div class="quesdetail clearfix">
+                            <span class="ques-label">确认密码：</span>
+                            <div class="question-area">
+                                <input type="text" class="ued-btn" maxlength="255" name="middelSchool" placeholder="" >
+                                <p class="errortip errortip-input"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="saveques">
+                        <input type="submit" class="university-btn publishbtn" value="提交" />
+                    </div>
+                </div>
+            </div>
+            <div id="mod-3" class="mod" style="display: none">
+                绑定账号
+            </div>
+        </div>
+    </div>
+</div>
+<link href="~/Content/account/register.css" rel="stylesheet" />
+@Html.Partial("_SelectEducation")
+<span id="superior-success"><i class="iconfont">&#xe638</i>更改成功</span>
+<div class="modal-backdrop in"></div>
+<script src="~/Scripts/account/setprofile.js"></script>
+<script src="~/Scripts/uploadimg/jquery.form.js"></script>
+<script src="~/Scripts/imgareaselect/jquery.imgareaselect.pack.js"></script>
+<script src="~/Scripts/uploadimg/head.js"></script>
+<script src="~/Scripts/uploadimg/popup.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#user_head_form").ajaxForm({
+            success: function (data) {
+                $('#user_head_upload_box').show();
+                $('#user_head_show_box').hide();
+                if (data != undefined && data != null) {
+                    if (data.msg == 0) {
+                        showreward("<span class=\"g_error\">请上传图片！</span>");
+                    } else if (data.msg == -1) {
+                        showreward("<span class=\"g_error\">文件格式不对！</span>");
+                    } else if (data.msg == -2) {
+                        showreward("<span class=\"g_error\">上传图片不能超过10M！</span>");
+                    } else if (data.msg == -3) {
+                        showreward("<span class=\"g_error\">出现异常，请稍后再试！！</span>");
+                    } else {
+                        var path = "/avatar/temp/" + data.msg;
+                        $("#head_name").val(data.msg);
+                        UserHeadUtil.initialize(path);
+
+                    }
+                }
+            }
+        });
+        $("#user_head_param_form").ajaxForm({
+            success: function (data) {
+                if (data.msg == 0) {
+                    showreward("<span class=\"g_error\">网络出现异常，请稍后再试！</span>");
+                } else if (data.msg == -1) {
+                    showreward("<span class=\"g_error\">系统出现异常，请稍后再试！</span>");
+                } else {
+                    //显示新改的头像
+                    $(".account-num img").attr("src", data.newImg);
+                    showreward("<span class=\"g_ok\">修改成功！</span>");
+                    $('img#user_head_origin').imgAreaSelect({ remove: true });
+                    $("#user_head_show_box").hide();
+                    $("#user_head_upload_box").show();
+                    $("#user_head_origin").attr({
+                        "src": "/Content/img/upload.png",
+                        "width": "100%",
+                        "height": "100%"
+                    });
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "计划详情";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/plancontrol/detail.css" rel="stylesheet" />
+@Html.Partial("_SquareSidebar")
+<div class="col-right">
+    <div class="detail-content">
+        <i class="iconfont hot-selected">&#xe663</i>
+        @foreach (var p in ViewData["plan"] as IQueryable<Plan>)
+        {
+            <div class="detail-head">
+                <a href="/plan">全部计划</a> &gt; 
+                <a href="/detail/@p.planId">计划详情</a>
+            </div>
+            <div class="wenda-list">
+                <div class="wenda-listcon">
+                    <div class="headslider">
+                        <a href="/account/person/@p.userId">
+                            <img src="@p.User.userImg">
+                        </a>
+                    </div>
+                    <div class="wendaslider detail-user-info">
+                        <a class="surprise-share r">
+                            <div id="supervice" class="supervice-div" title="监督"><i class="iconfont">&#xe657</i><span class="supervice-num">@p.planSuperviseNum</span></div>
+                            <div class="supervice-div" title="分享"><i class="iconfont">&#xe658</i></div>
+                        </a>
+                        <div class="plan-detail-user">
+                            <a href="/account/person/@p.userId" class="detail-sex user-name">@p.User.userName <i class="iconfont">&#xe609</i></a>
+                            <i class="iconfont school-icon">&#xe60f</i>
+                            <span>@p.User.userSchool</span>
+                            <i class="iconfont depart-icon">&#xe600</i>
+                            <span>@p.User.userDepart</span>
+                        </div>
+                        <div class="question">
+                            <span>计算机考研高手</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-plan">
+                    <h3>@p.planTitle</h3>
+                    <div class="plan-content">
+                        <span>计划</span>
+                        @p.planContent
+                    </div>
+                </div>
+                <div class="plan-content-addon">
+                    <span>@p.planTime.ToLongDateString()</span>
+                    <span class="plan-num r">@p.planViewNum 浏览</span>
+                    <span class="plan-num plan-comment r"><em>@p.planCommentNum</em> 评论<i class="iconfont">&#xe60a</i></span>
+                    <span class="plan-num plan-cheer r"><em>@p.planComeOnNum</em> 加油<i class="iconfont">&#xe60d</i></span>
+                </div>
+            </div>
+            <input id="planId" type="hidden" value="@p.planId" />
+        }
+        <div class="bookin-head">
+            TA的打卡日志
+        </div>
+        <div class="bookin">
+            <div class="clock-log">
+                @foreach (ClockLogModel c in ViewData["clockLogModel"] as List<ClockLogModel>)
+                {
+                    <div class="bookin-day">
+                        <i class="iconfont">&#xe61d</i>
+                        <span class="day">@c.clockLogDay</span>
+                        <span class="year">@c.clockLogYearMonth</span>
+                        <div class="bookin-content">
+                            @c.clockLogContent
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="lookmore">
+                加载更多
+            </div>
+            <div class="pl-input-wrap">
+                <div class="pl-input-inner">
+                    <textarea id="comment" class="js-placeholder" placeholder="扯淡、吐槽、督促、鼓励……想说啥就说啥！"></textarea>
+                    <span class="num-limit"><span id="js-pl-limit">0</span>/300</span>
+                </div>
+                <div class="pl-input-btm">
+                    <a class="university-btn r" onclick="comment();">发表评论</a>
+                    <i class="iconfont r i-success">&#xe664</i>
+                </div>
+            </div>
+            <div class="plloadlistdata">
+                <div class="pl-container">
+                    @foreach (PlanCommentModel p in ViewData["planCommentModel"] as List<PlanCommentModel>)
+                    {
+                        <div class="pl-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a class="wenda-head">
+                                        <img src="@p.userImg">
+                                    </a>
+                                    <a href="/account/person/@p.userId" class="wenda-nickname">@p.userName</a>
+                                    <i class="iconfont"></i>
+                                    <input class="user-sex" type="hidden" value="@p.userSex" />
+                                </div>
+                                <div class="wendaslider pl-write">
+                                    <div class="pl-what">
+                                        @p.planCommentContent
+                                    </div>
+                                    <div class="pl-time">
+                                        @p.planCommentPublishedTime
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="myspace-list">
+        <a href="/plan/write" class="myspace-course helpactive" title="新计划"><span><i class="iconfont">&#xe645</i></span></a>
+        <a href="/plan/index" class="myspace-plan" title="计划监督"><span><i class="iconfont">&#xe653</i></span></a>
+    </div>
+</div>
+@Html.Partial("_CheerSupervicePop")
+<script src="~/Scripts/plan/detail.js"></script>

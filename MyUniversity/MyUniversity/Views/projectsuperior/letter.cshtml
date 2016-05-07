@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "我的私信";
+    ViewBag.currentPage = "方案高手";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/findschoolmate.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/follow.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/letter.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/public.css" rel="stylesheet" />
+@Html.Partial("_SuperiorSidebar")
+<div class="col-right right-content">
+    <div class="con-left">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title panel-title-me">我的私信</h2>
+            </div>
+            <div id="notice-con">
+                <!--全部私信的方案高手-->
+                <div id="mod-1" class="mod" style="display: block">
+                    <p class="remind" style="display: none;">Ta已经提供你方案了，有木有享受到Ta的方案呢？快去采纳吧，Ta就可得到+20经验。一起来努力吧！</p>
+                    <div class="uncontent" style="display: none;">
+                        <i class="iconfont">&#xe63b</i>
+                        <p>还没有任何私信哦</p>
+                    </div>
+                    @foreach (SuperiorLetter f in ViewData["superiorLetter"] as List<SuperiorLetter>)
+                    {
+                        <div class="wenda-list">
+                            <a class="project-accept love" style="display:none;">
+                                <i class="iconfont">&#xe660</i>
+                                <span>采纳Ta的方案</span>
+                            </a>
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/account/person/@f.User1.userId" class="superior-head">
+                                        <img src="@f.User1.userImg">
+                                    </a>
+                                    @Html.ActionLink(f.User1.userName, "person", "account", new { id = f.User1.userId }, new { @class = "wenda-nickname" })
+                                    <i class="iconfont girlsex-img">&#xe639</i>
+                                    <input type="hidden" class="userSex" value="@f.User1.userSex" />
+                                    <input type="hidden" class="userId" value="@f.User1.userId" />
+                                </div>
+                                <div class="wendaslider">
+                                    <div class="ability">
+                                        <i class="iconfont">&#xe63f</i>
+                                        <a href="/projectsuperior/space/@f.User1.userId">@f.User1.userMerit</a>
+                                    </div>
+                                    <div class="department-rank">
+                                        <span class="newest_reply">[最新回复]</span>
+                                        <a href="/message/index/@f.User1.userId/s" class="newest-content">@f.superiorLetterNewestRly</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>@f.superiorLetterNewestRlyTime.ToString().AsDateTime().ToShortDateString()</span>
+                                        <div class="qa-comment-addon-r">
+                                            <span class="js-reply-item-reply"><i class="iconfont icon-msg">&#xe63b</i><a href="/message/index/@f.User1.userId/s" class="js-qa-tr-num">回复</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="letter-id" type="hidden" value="@f.superiorLetterId" />
+                            <input class="letter-if-comment" type="hidden" value="@f.superiorLetterIfComment"/>
+                            <input type="hidden" class="userId" value="@f.User1.userId" />
+                        </div>
+                    }
+                </div>
+                <!--校内私信的方案高手-->
+                <div id="mod-2" class="mod" style="display: none">
+                    <p class="remind" style="display: none;">Ta已经提供你方案了，有木有享受到Ta的方案呢？快去采纳吧，Ta就可得到+20经验。一起来努力吧！</p>
+                    <div class="uncontent" style="display: none;">
+                        <i class="iconfont">&#xe63b</i>
+                        <p>校内的还没有任何私信哦</p>
+                    </div>
+                    @foreach (SuperiorLetter f in ViewData["mySchoolsuperiorLetter"] as IQueryable<SuperiorLetter>)
+                    {
+                        <div class="wenda-list">
+                            <a class="project-accept love">
+                                <i class="iconfont">&#xe660</i>
+                                <span>采纳Ta的方案</span>
+                            </a>
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/account/person/@f.User1.userId" class="superior-head">
+                                        <img src="@f.User1.userImg">
+                                    </a>
+                                    @Html.ActionLink(f.User1.userName, "person", "account", new { id = f.User1.userId }, new { @class = "wenda-nickname" })
+                                    <i class="iconfont girlsex-img">&#xe639</i>
+                                    <input type="hidden" class="userSex" value="@f.User1.userSex" />
+                                    <input type="hidden" class="userId" value="@f.User1.userId" />
+                                </div>
+                                <div class="wendaslider">
+                                    <div class="ability">
+                                        <i class="iconfont">&#xe63f</i>
+                                        <a href="/projectsuperior/space/@f.User1.userId">@f.User1.userMerit</a>
+                                    </div>
+                                    <div class="department-rank">
+                                        <span>[最新回复]</span>
+                                        <a href="/message/index/@f.User1.userId/s" class="newest-content">@f.superiorLetterNewestRly</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>@f.superiorLetterNewestRlyTime.ToString().AsDateTime().ToShortDateString()</span>
+                                        <div class="qa-comment-addon-r">
+                                            <span class="js-reply-item-reply"><i class="iconfont icon-msg">&#xe63b</i><a href="/message/index/@f.User1.userId/s" class="js-qa-tr-num">回复</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="letter-id" type="hidden" value="@f.superiorLetterId" />
+                            <input class="letter-if-comment" type="hidden" value="@f.superiorLetterIfComment"/>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右边推荐列表-->
+    <div class="con-right">
+        @Html.Partial("_SuperiorRightSidebar")
+    </div>
+</div>
+<!--方案高数提供的方案以及对Ta的评价弹出窗体-->
+<div id="login" class="thank-superior-pop">
+    <div class="login-header">
+        <img class="private_project_userImg" src="" style="height: 40px; height: 40px; border-radius: 50%;" />
+        <h4>写下为你提供的方案，以及对我的评价哦</h4>
+    </div>
+    <div class="thank-superior">
+        @using (Html.BeginForm("commitSoluComment", "projectsuperior", FormMethod.Post, new { ID = "thank-comment-form" }))
+        { 
+            <div class="write-box btn-group clearfix">
+                <label class="btn btn-primary active"><input type="radio" name="options" id="option1" checked="" value="0">最佳方案</label>
+                <label class="btn btn-primary"><input type="radio" name="options" id="option3" value="1">方案不合</label>
+            </div>
+            <div class="write-box">
+                <input type="text" name="pRContent" class="while-btn" autofocus="" placeholder="为你提供的方案">
+            </div>
+            <div class="write-box">
+                <textarea name="pRComment" class="while-btn" autofocus="" placeholder="写点评价吧，你的评价对Ta很重要滴"></textarea>
+            </div>
+            <div class="btn-thank">
+                <button type="submit" id="signin-btn" class="btn-green university-btn">提交</button>
+            </div>
+            <input type="hidden" name="userId" class="private_project_userId" value="" />
+        }
+    </div>
+</div>
+<script src="~/Scripts/uploadimg/jquery.form.js"></script>
+<script src="~/Scripts/projectsuperior/index.js"></script>
+<script src="~/Scripts/projectsuperior/letter.js"></script>
+

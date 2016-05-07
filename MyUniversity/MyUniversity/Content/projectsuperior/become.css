@@ -1,0 +1,82 @@
+﻿.containers {
+    width: 1100px;
+}
+
+.quesdetail .ques-label {
+    width: initial;
+}
+
+.quesdetail .question-area {
+    margin-left: 75px;
+}
+
+.col-right {
+    width: initial;
+    margin-left: 0px;
+}
+
+.con-left {
+    width: 830px;
+}
+
+.quesdetail .editor-wrap {
+    margin-left: 75px;
+}
+
+.if-charge a {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    min-width: 118px;
+    border: 1px solid #d0d6d9;
+    text-align: center;
+    color: #14191e;
+}
+
+    .if-charge a:hover {
+        background: #ebf8ed;
+        border: 1px solid #78ca99;
+    }
+
+.if-charge .onactive {
+    border: 1px solid #78ca99;
+    background: #78ca99 url(/image/ico-reg-select.png) no-repeat;
+    color: #fff;
+    background-position: right bottom;
+}
+
+    .if-charge .onactive:hover {
+        background: #78ca99;
+        color: #fff;
+        background: #78ca99 url(/image/ico-reg-select.png) no-repeat;
+        background-position: right bottom;
+    }
+
+/*选择收费方式弹出窗体*/
+.select-charge-pop {
+    background: #fff;
+    width: 400px;
+    z-index: 1102;
+    padding-bottom: 30px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -210px 0 0 -200px;
+    opacity:0;
+}
+.lg-group input {
+    border:1px solid #eee;
+    padding-left: 20px;
+}
+
+    .lg-group input:focus {
+        border:1px solid #78CA99;
+    }
+
+.login-header h4 {
+    color:#78ca99;
+}
+
+#charge-btn {
+    width:100%;
+}

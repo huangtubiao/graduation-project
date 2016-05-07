@@ -1,0 +1,26 @@
+﻿<div class="l sidebar">
+    <div class="nav-menu">
+        <ul>
+            @*<li @(ViewBag.Active == "互帮互助" ? "id=cur" : "")>
+                <a href="/help/index"  class="menu-cur"></a>
+                <a class="nav-title">互帮互助</a>
+            </li>*@
+            <li @(ViewBag.Active == "计划监督" ? "id=cur" : "")>
+                <a href="/plan/index" class="menu-cur"></a>
+                <a class="nav-title">计划监督</a>
+            </li>
+            <li>
+                <a href="/dreamforest/index" class="menu-cur"></a>
+                <a class="nav-title">梦想森</a>
+            </li>
+        </ul>
+        <div class="wenda-my">
+            <h3>我的</h3>
+            <ul class="wenda-tab">
+                <li class=""><a href="/plan/mysupervice">我监督的</a></li>
+                <li><a href="/plan/myplan">我的计划</a></li>
+                <li><a href="/plan/write">写计划</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

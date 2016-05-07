@@ -1,0 +1,111 @@
+﻿body {
+}
+
+.col-right {
+    margin-left: 0px;
+    width: 1150px;
+    margin: 0 auto;
+}
+
+.con-left {
+    width: 840px;
+}
+
+.con-right {
+    width: 290px;
+}
+/*左边列表*/
+.wendatitlecon .depart i {
+    color: #7ACB58;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+    .question span a {
+        color: #333;
+    }
+
+        .question span a:hover {
+            color: #E45D4C;
+            text-decoration: underline;
+        }
+
+.commentfooter .list-tag:hover {
+    background: #D7E0E2;
+}
+
+.wenda-listcon .wendaslider {
+    padding: 10px 0px 0 0;
+}
+
+
+.padtop .rankingnum {
+    color: #F45C3C;
+    font-size: 16px;
+}
+
+.padtop .archieve {
+    color: #787d82;
+}
+
+.padtop .two {
+    color: #F4893C;
+}
+
+.padtop .three {
+    color: #F4B33C;
+}
+
+.newpost .second-select {
+    position: relative;
+    left: 280px;
+    padding: 0 10px;
+}
+
+/*最右边的今日计划*/
+.today-plan-body {
+    padding-top: 12%;
+    text-align: center;
+}
+
+    .today-plan-body i {
+        font-size: 48px;
+        color: #f8f8f8;
+        display: inline;
+    }
+
+    .today-plan-body span {
+        font-size: 18px;
+        line-height: 48px;
+        color: #78ca99;
+        display: block;
+        background: #F6FAF7;
+    }
+
+.panel .avatar {
+    float: left;
+    height: 46px;
+}
+
+    .panel .avatar img {
+        height: 46px;
+        width: 46px;
+    }
+
+.hello-right {
+    float: left;
+    margin-left: 10px;
+}
+
+.ng-binding {
+    color: #14191e;
+    font-size: 16px;
+}
+
+.today-time {
+    padding: 20px 10px;
+}

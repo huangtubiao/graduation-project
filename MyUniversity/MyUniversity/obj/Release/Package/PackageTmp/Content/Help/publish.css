@@ -1,0 +1,206 @@
+﻿/*左边输入框*/
+.inputqus {
+    padding: 40px 20px;
+}
+
+.ques-label {
+    float: left;
+    width: 44px;
+    text-align: left;
+    color: #787d82;
+    font-size: 14px;
+    line-height: 38px;
+}
+
+.question-area {
+    position: relative;
+    margin-left: 44px;
+}
+
+    .question-area .ipt {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+    }
+
+.panel .panel-heading {
+    height: 49px;
+    line-height: 49px;
+    font-size: 14px;
+    color: #d0d6d9;
+}
+
+    .panel .panel-heading a {
+        color: #787d82;
+    }
+
+.editor-wrap {
+    margin-left: 44px;
+}
+
+#ques-title {
+    width: 100%;
+    font-size: 13px;
+    height: 40px;
+    box-sizing: border-box;
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.editor-write textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    font-size: 13px;
+    color: #555;
+    box-sizing: border-box;
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.while-btn {
+    border: 1px solid #d3dce0;
+    padding: 8px 10px;
+    -webkit-box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.2s;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    -o-transition: border-color 0.2s;
+}
+
+    .while-btn:focus {
+        border-color: #49C87C;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #B3ECCA;
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #B3ECCA;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #B3ECCA;
+    }
+
+.saveques {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.publishbtn {
+    padding: 0px 75px;
+}
+
+.wenda-img {
+    width: 910px;
+    margin-bottom: 15px;
+}
+
+/*右边列表*/
+.bbs-sendques {
+    color: #787d82;
+    line-height: 2em;
+    font-size: 12px;
+}
+
+.panel-body {
+    padding: 20px 0;
+    margin-top: 0px;
+}
+
+.bbs-sendques h1 {
+    margin-bottom: 20px;
+    /*padding: 0 20px 0 55px;*/
+    /*background: url(/image/bbs.png) no-repeat 0 -88px;*/
+    color: #ff9600;
+    font-size: 16px;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.bbs-sendques dt {
+    color: #14191e;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 1em 0 0.2em;
+}
+
+.bbs-sendques dd {
+    margin: 10px 0;
+}
+
+.i-calendar {
+    display: inline-block;
+    line-height: 16px;
+    position: relative;
+    bottom: 35px;
+}
+
+    .i-calendar i {
+        font-size: 32px;
+        color: #F4DEB8;
+        line-height: 20px;
+    }
+
+.panel-body .title-write {
+    width: 143px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.plan-time {
+    margin-top: 5px;
+}
+
+    .plan-time input {
+        width: 118px;
+        font-size: 13px;
+    }
+
+/*邀请成员*/
+.avatars li {
+    width: 116px;
+    overflow: hidden;
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+ul.avatars li a {
+    color: #78CA99;
+    white-space: nowrap;
+    text-align: center;
+    width: 61px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.avatar-add .o {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 23px !important;
+    color: #78CA99;
+    border: solid 1px #78CA99;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.avatar-add:hover .o {
+    color: #78CA99;
+    border: solid 1px #78CA99;
+}
+
+.avatar-add .o i {
+    font-size: 30px;
+}
+
+.plan-invite {
+    margin-top: 20px;
+}
+
+ul.avatars li a:hover {
+    background: #f8f8f8;
+    border-radius: 5px;
+    cursor: pointer;
+}

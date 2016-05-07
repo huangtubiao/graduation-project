@@ -1,0 +1,365 @@
+﻿
+/*中间内容列表*/
+.newpost .second-select {
+    position: relative;
+    left: 340px;
+    padding: 0 10px;
+}
+
+    .newpost .second-select:hover {
+        color: #14191e;
+    }
+
+
+/*中间内容列表结束*/
+
+/*右边展示*/
+.padtop .archieve {
+    color: #787d82;
+}
+
+.padtop .rankingnum {
+    color: #F45C3C;
+    font-size: 16px;
+}
+
+.padtop .span-num {
+    top: 26px;
+    right: 3px;
+}
+
+.padtop .sex-icon {
+    margin-left: 4px;
+}
+
+.padtop .girlsex-img {
+    margin-left: 4px;
+}
+
+.padtop .two {
+    color: #F4893C;
+}
+
+.padtop .three {
+    color: #F4B33C;
+}
+/*右边展示结束*/
+
+
+/*计划监督数据列表展示*/
+
+.wenda-list {
+    margin-top: 20px;
+}
+
+    .wenda-list .wenda-listcon {
+        padding: 10px 0px 0px 0px;
+        border-bottom: none;
+        border: 1px solid #edf1f2;
+    }
+
+.list-footer {
+    background: #f8f8f8;
+    height: 35px;
+    padding-left: 90px;
+}
+
+    .list-footer .key-word {
+        position: relative;
+        padding: 3px 20px 3px 20px;
+        color: #787d82;
+        line-height: 35px;
+        font-size: 12px;
+        border-right: 1px solid #E8EBEC;
+    }
+
+        .list-footer .key-word:hover {
+            color: #78CA99;
+        }
+
+    .list-footer span {
+        color: #78CA99;
+        float: right;
+        line-height: 35px;
+        margin-right: 5px;
+    }
+
+    .list-footer .people-supevise {
+        margin-right: 20px;
+    }
+
+    .list-footer .come-on {
+        border-radius: 4px;
+        float: right;
+        margin-right: 15px;
+        background: #78CA99;
+        color: #fff;
+        margin-top: 5px;
+        padding: 4px 10px;
+        font-size: 12px;
+        -webkit-transition: background-color 0.25s;
+        -moz-transition: background-color 0.25s;
+        transition: background-color 0.25s;
+    }
+
+        .list-footer .come-on:hover {
+            background: #5CAD7C;
+        }
+
+.replydes {
+    font-size: 13px;
+}
+
+.wenda-list .wendaslider {
+    padding: 10px 20px 0 0;
+}
+
+.wenda-list .question {
+    margin-top: 10px;
+}
+
+.wendaquetitle {
+    width: 400px;
+}
+
+.wenda-time span {
+    margin-left: 15px;
+}
+
+.my-supervice {
+    position: relative;
+    padding: 20px;
+    border-left: solid 8px #f8f8f8;
+}
+
+.time {
+    position: absolute;
+    left: 12px;
+    top: -35px;
+    width: 200px;
+    margin: 15px 0px 0px 0px;
+    color: #c8cdd2;
+    font-size: 13px;
+}
+
+.iTime {
+    position: absolute;
+    left: -17.5px;
+    top: -31px;
+    font-size: 28px;
+    color: #f8f8f8;
+}
+
+.loading, .loading-second {
+    text-align: center;
+    display: none;
+}
+
+    .loading i, .loading-second i {
+        font-size: 40px;
+        color: #ccc;
+    }
+
+#mod-2 {
+    padding-top: 10px;
+    position: relative;
+}
+
+.blank-finished {
+    line-height: 21px;
+    position: absolute;
+    right: 0px;
+    opacity: 1;
+    color: #656e73;
+    font-size: 12px;
+    padding-left: 30px;
+    -o-transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    background: url(/image/dot_checkbox.png) no-repeat left -5px;
+}
+
+    .blank-finished:hover {
+        opacity: 0.6;
+    }
+
+.checked {
+    color: #78CA99;
+    background-position: left -35px !important;
+}
+
+/*发表新的计划按钮*/
+.newplan-btn i {
+    margin-right: 5px;
+}
+/*发表新的计划按钮结束*/
+
+.panel-title-me {
+    width: 100px;
+    background: #78ca99;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+
+/*加油弹出窗体*/
+#cheer, #surpervice {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -210px 0 0 -200px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    background: #fff;
+    width: 400px;
+    z-index: 1102;
+    min-height: 230px;
+    display: none;
+}
+
+.login-header {
+    line-height: 49px;
+    height: 49px;
+}
+
+    .login-header i {
+        top: 0px;
+        color: #c8cdd2;
+        font-size: 21px;
+        right: 15px;
+    }
+
+.tip-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.say-what {
+    text-align: center;
+    color: #A0A5A5;
+    margin-bottom: 18px;
+}
+
+.cheer-write {
+    border: 1px solid #78ca99;
+    padding: 8px;
+    height: 22px;
+    width: 200px;
+}
+
+.cheer-btn {
+    width: 65px;
+}
+
+.cheer-footer {
+    text-align: center;
+    position: relative;
+}
+
+    .cheer-footer .i-success {
+        font-size: 20px;
+        position: absolute;
+        line-height: 41px;
+        color: #78CA99;
+        margin-left: 5px;
+        display: none;
+    }
+
+/*最近加油的人*/
+.popover {
+    display: none;
+    background: #fff;
+    max-height: 130px;
+    top: -39px;
+    left: 80px;
+    z-index: 1002;
+    width: 210px;
+    position: absolute;
+    line-height: 1.42857143;
+    text-align: left;
+    -webkit-background-clip: padding-box;
+    border: 1px solid rgb(225, 225, 225);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 4px;
+    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 4px;
+}
+
+.popover-title {
+    color: #c8cdd2;
+    padding: 6px 14px;
+    margin: 0;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 5px 5px 0 0;
+}
+
+    .popover-title a {
+        position: absolute;
+        top: 7px;
+        right: 12px;
+        float: right;
+        color: #c8cdd2;
+        line-height: 20px;
+    }
+
+        .popover-title a:hover {
+            color: #78CA99;
+            text-decoration: underline;
+        }
+
+.popover-content {
+    padding: 9px 15px;
+    float: left;
+}
+
+    .popover-content a {
+        float: left;
+        margin: 0px 5px;
+    }
+
+        .popover-content a img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+/*监督弹出窗体*/
+.success-info {
+    padding: 0px 20px;
+    text-align: left;
+    color: #A0A5A5;
+    margin-bottom: 18px;
+}
+
+.back-plan {
+    height: 32px;
+    line-height: 32px;
+    width: 100px;
+}
+
+.look-all-surpervice {
+    display: block;
+    margin: 15px 0px;
+    font-size: 12px;
+}
+
+    .look-all-surpervice:hover {
+        color: #78CA99;
+    }
+
+/*公共样式*/
+.wenda-list .green {
+    color: #78Ca99;
+}
+
+.wendaquetitle .success {
+    color: #78CA99;
+    font-size: 23px;
+}
+
+
+/*新版本的*/

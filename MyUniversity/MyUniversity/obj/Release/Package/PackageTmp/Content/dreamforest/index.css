@@ -1,0 +1,65 @@
+﻿/*.dream-banner {
+    background: url(/image/bg-table.jpg);
+}*/
+
+.while-btn {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    -webkit-box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.2s;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    -o-transition: border-color 0.2s;
+}
+
+    .while-btn:focus {
+        border-color: #49C87C;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #B3ECCA;
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #B3ECCA;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #B3ECCA;
+    }
+
+.dream-banner form {
+    text-align: center;
+}
+
+.search-block {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-group input {
+    width: 80%;
+    float: left;
+    padding: 10px 16px;
+    line-height: 1.33;
+    border-radius: 4px;
+}
+
+.input-group-btn button {
+    height: 41px;
+    padding: 10px 16px;
+    line-height: 13px;
+    border-radius: 4px;
+    width: 14%;
+}
+
+.intro-title {
+    font-size: 20px;
+    margin: 0px 20px 20px 20px;
+    text-align: left;
+    color: #14191e;
+}
+
+.dream-banner p {
+    margin: 0px 0px 15px 57px;
+    text-align: left;
+}
+
+.second-p {
+    border-bottom: 1px dashed #d0d6d9;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,93 @@
+﻿#my-share {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.con-left {
+    width: 830px;
+}
+
+.detail-content {
+    padding: 10px 20px;
+    width: initial;
+}
+
+.panel-title {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.share-user img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: #f7f7f7;
+    -webkit-box-shadow: 0 0 1px #ddd;
+    box-shadow: 0 0 1px #ddd;
+}
+
+.share-user {
+    color: #d7d7d7;
+    padding: 10px 0px;
+}
+
+    .share-user span {
+        margin: 0px 5px;
+        position: relative;
+        top: 5px;
+        float: left;
+    }
+
+    .share-user a {
+        float: left;
+    }
+
+.wenda-list {
+    margin-top: 50px;
+}
+
+.share-diver {
+    border-right: 2px solid #eee;
+    float: left;
+    height: 15px;
+    margin: 0px 2px;
+    position: relative;
+    top: 9px;
+}
+
+.pl-input-wrap {
+    border-top: initial;
+}
+
+.plan-content {
+    text-indent: 27px;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.my-share-title {
+    font-weight: 400;
+}
+
+.share-tip {
+    padding: 20px 20px 5px 20px;
+}
+
+.plan-comment i {
+    font-size: 16px;
+}
+
+.plan-cheer i {
+    font-size: 16px;
+}
+
+.to-share {
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    width: 100px;
+    border-radius: 4px;
+    height: 32px;
+    line-height: 32px;
+}
+

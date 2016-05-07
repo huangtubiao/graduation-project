@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "成为方案高手";
+    ViewBag.currentPage = "方案高手";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/public.css" rel="stylesheet" />
+<link href="~/Content/Help/publish.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/become.css" rel="stylesheet" />
+<div class="col-right">
+    <div class="con-left">
+        <div class="panel" style="min-height: 553px;">
+            <div class="panel-heading">
+                <h2 class="panel-title panel-title-me">成为方案高手</h2>
+                <p class="remind" style="display: none;">你已经是方案高手啦！</p>
+            </div>
+            @using (Html.BeginForm("BecomeSuperior", "projectsuperior", FormMethod.Post, new { ID = "become-superior" }))
+            {
+                <div class="inputqus">
+                    <div class="quesdetail clearfix">
+                        <span class="ques-label">高手方案：</span>
+                        <div class="question-area">
+                            <input type="text" id="ques-title" class="ued-btn" maxlength="255" name="ques_title" autofocus="" placeholder="一句话写出的你的方案，例如：电脑系统维修高手">
+                            <input type="hidden" id="user-merit" value="@ViewData["userMerit"]" />
+                            <p class="errortip errortip-input"></p>
+                        </div>
+                    </div>
+                    <div class="quesdetail">
+                        <span class="ques-label">方案介绍：</span>
+                        <div class="editor-wrap">
+                            <div class="editor-write">
+                                <textarea id="superior_text" class="ued-btn" name="superior_text" rows="3" placeholder="详细介绍一下关于你的方案哦！经历、成就等等"></textarea>
+                                <input type="hidden" id="user-merit-intro" value="@ViewData["userIntro"]" />
+                                <p class="errortip errortip-area"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quesdetail">
+                        <span class="ques-label">是否收费：</span>
+                        <div class="question-area if-charge">
+                            <a href="javascript:void(0)" id="charge-false" class="onactive">否</a>
+                            <a href="javascript:void(0)" id="charge-true" class="">是</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="saveques">
+                    <button type="submit" class="university-btn publishbtn" id="submit-superior">提交</button>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="con-right">
+        <div class="panel bbs-sendques">
+            <div class="panel-body">
+                <span class="i-calendar"><i class="iconfont" style="font-size: 40px;">&#xe63f</i></span>
+                <h1 class="title-write">您想成为方案高手  还是想成为方案高手？</h1>
+                <dl>
+                    <dt>上面没有写错，是您看错啦。</dt>
+                    <dd>1、你知道你是一位方案高手？ 是的，那就去实现它吧。</dd>
+                    <dd>2、是不是一直觉得自己有才能，却没有机会展示呢？</dd>
+                    <dd>3、写下吧，实现你的个人价值，也帮助他人，认识大学的TA；</dd>
+                    <dd>4、只希望为你做些改变，求学路上，不再让你孤单。</dd>
+                    <dt>禁止填写</dt>
+                    <dd>1、禁止填写求职、交易、推广、广告类等，无关信息将一律清理。</dd>
+                    <dd>2、尽可能详细介绍您，会有更多的惊喜哦。</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="select-charge-pop">
+    <div class="login-header">
+        <h4 class="title-header">填写收费方式</h4>
+        <i class="iconfont" onclick="offCharge();"></i>
+    </div>
+    <div class="login-body">
+        <div class="wrap">
+            <div class="lg-group">
+                <input type="text" id="charge-way" autofocus class="ipt-phone" placeholder="例如：20元每次、20元每小时、再议等等" />
+            </div>
+            <div class="lg-btn clearfix">
+                <a id="charge-btn" class="btn-green university-btn" onclick="btnCharge();">提交</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/uploadimg/jquery.form.js"></script>
+<script src="~/Scripts/projectsuperior/become.js"></script>
+

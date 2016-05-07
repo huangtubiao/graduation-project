@@ -1,0 +1,41 @@
+﻿@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+
+<!--热门搜索标签-->
+<div class="panel superior-form">
+    <div class="panel-heading">
+        <h2 class="panel-title hot-search">热门搜索</h2>
+    </div>
+    <div class="panel-body">
+        @foreach (hotSuperior h in ViewData["hotSuperior"] as List<hotSuperior>)
+        {
+            <a class="hot-label">@h.hotSuperiorWrite</a>
+        }
+    </div>
+</div>
+<!--方案高手达人-->
+<div class="panel">
+    <div class="panel-heading">
+        <h2 class="panel-title">一周方案高手榜</h2>
+        <a class="honormore" title="更多"><i class="iconfont">&#xe67a</i></a>
+    </div>
+    <div class="good-helpers">
+        <ul>
+            @foreach (SuperiorModel s in ViewData["WeekExpSperior"] as List<SuperiorModel>)
+            {
+                <li class="padtop">
+                    <a href="/projectsuperior/space/@s.userId" class="wenda-head roll-head">
+                        <img src="@s.userImg" width="40" height="40">
+                    </a>
+                    <a class="rankingnickname">@s.userName
+                        <i class="iconfont girlsex-img">&#xe639</i>
+                        <input type="hidden" class="userSex" value="@s.userSex" />
+                    </a>
+                    <a class="archieve">@s.userMerit</a>
+                    <i class="adopt rankingnum" style="display:none;">@s.userRank<br>
+                        经验</i>
+                </li> 
+            }
+        </ul>
+    </div>
+</div>

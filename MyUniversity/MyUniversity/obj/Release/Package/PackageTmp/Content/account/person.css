@@ -1,0 +1,365 @@
+﻿/*************查看方案高手和用户个人中心使用************/
+/*个人中心导航*/
+#main {
+    padding-top: 0px;
+}
+
+.set-header {
+    width: 100%;
+    min-width: 1200px;
+    height: 75px;
+    border-bottom: 1px solid #E6E9EA;
+}
+
+.set-wrap {
+    width: 1150px;
+    height: 75px;
+    min-height: 0;
+    line-height: 75px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+    .set-wrap h1 {
+        display: inline-block;
+        height: 22px;
+        line-height: 22px;
+        color: #14191e;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .set-wrap a {
+        padding: 16px 15px;
+        font-size: 16px;
+        font-family: 'Microsoft Yahei';
+        color: #14191e;
+        margin-left: 100px;
+    }
+
+        .set-wrap a:hover {
+            color: #78ca99;
+        }
+/****************************/
+
+.col-right {
+    float: initial;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.nav-menu ul li .nav-title {
+    margin: 0px 5px;
+}
+
+.menu-cur {
+    width: 95px;
+}
+/*头像展示*/
+.per-info {
+    height: 220px;
+    background: #fff;
+    /*background: url(/image/cover_ta.jpg?t=1) center top no-repeat;*/
+    position: relative;
+}
+
+    .per-info .avater {
+        height: 220px;
+        width: 220px;
+    }
+
+        .per-info .avater img {
+            width: 220px;
+            height: 220px;
+        }
+
+.merit {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.profile {
+    color: #ffffff;
+    position: relative;
+    float: left;
+    padding: 40px 0px 0px 30px;
+    width: 794px;
+}
+
+    .profile h4 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: #14191e;
+        line-height: 24px;
+    }
+
+.more {
+    color: #d6d8d9;
+    margin-left: 20px;
+}
+
+    .more i {
+        font-size: 23px;
+    }
+
+.profile .addr-unversity {
+    margin-left: 20px;
+}
+
+.profile .detail-sex, .profile .addr-unversity, .profile .depart {
+    color: #14191e;
+}
+
+.exper {
+}
+
+.exper-title {
+    color: #14191e;
+}
+
+.exper-num {
+    color: #14191e;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.per-info .per-btn {
+    position: absolute;
+    top: 135px;
+    right: 0px;
+}
+
+.per-info .btn {
+    width: 100px;
+    height: 27px;
+    line-height: 27px;
+}
+
+.per-info .show {
+    font-size: 23px;
+    position: absolute;
+    color: #fff;
+    right: 10px;
+    background: rgba(48, 48, 48, 0.41);
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+    .per-info .show:hover {
+        background: rgba(36, 35, 35, 0.41);
+    }
+
+    .per-info .show i {
+        font-size: 23px;
+    }
+
+.aboutme {
+    color: #14191e;
+    margin: 5px 0px 40px 0px;
+}
+
+#notice-space {
+    margin: 0 auto;
+    width: 338px;
+}
+
+#ta-space {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*更多信息*/
+.per-body {
+    margin-top: 20px;
+}
+
+.profile-li {
+    height: 21px;
+    border-bottom: 1px dashed #e5e5e5;
+    padding: 20px 35px 20px 125px;
+    font-size: 14px;
+    color: #3a3d3f;
+    position: relative;
+    overflow: hidden;
+    zoom: 100%;
+}
+
+    .profile-li span {
+        margin-right: 38px;
+        width: 75px;
+        position: absolute;
+        left: 57px;
+        top: 20px;
+    }
+
+    .profile-li em {
+        font-style: normal;
+        font-weight: normal;
+        position: relative;
+        left: 25px;
+    }
+
+    .profile-li i {
+        position: absolute;
+        left: 30px;
+        top: 20px;
+    }
+
+/*右边数据列表*/
+.space-data {
+    padding-top: 20px;
+    color: #60686b;
+}
+
+    .space-data li {
+        height: 28px;
+        line-height: 28px;
+        position: relative;
+        font-size: 12px;
+    }
+
+    .space-data i {
+        font-size: 20px;
+    }
+
+
+.con-left .nav {
+    min-height: 649px;
+    padding-bottom: 60px;
+}
+
+.newpost {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/*方案记录*/
+.user-about {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #edf1f2;
+}
+
+    .user-about li {
+        display: inline-block;
+    }
+
+        .user-about li.repl {
+            margin: 0 100px;
+            padding: 0 100px;
+            border-left: 1px solid #d0d6d9;
+            border-right: 1px solid #d0d6d9;
+        }
+
+        .user-about li a {
+            line-height: 20px;
+        }
+
+.super-num div {
+    color: #f7af49;
+    font-size: 24px;
+}
+
+.repl div {
+    color: #f47a55;
+    font-size: 24px;
+}
+
+.comment-ta div {
+    font-size: 24px;
+    color: #88b244;
+}
+
+/*方案详情*/
+.item-text {
+    border-bottom: 1px solid #edf1f2;
+}
+
+.ta-situation h3 {
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #14191e;
+}
+
+.comment-detail p {
+    line-height: 24px;
+    color: #787d82;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.item-btm {
+    padding: 9px 0 19px;
+}
+
+.hd-pic {
+    float: left;
+}
+
+.publisher-hd img {
+    display: inline-block;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.publisher-name {
+    color: #14191e;
+    padding: 0 20px 0 10px;
+    font-size: 12px;
+}
+
+.pass-time {
+    float: left;
+}
+
+    .pass-time span {
+        font-size: 12px;
+        color: #b5b9bc;
+    }
+
+.favorite {
+    margin-right: 20px;
+    color: #b5b9bc;
+    font-size:12px;
+}
+.item-judge {
+    color: #b5b9bc;
+}
+
+    .favorite:hover {
+        color: #14191e;
+    }
+
+.item-judge:hover {
+    color: #14191e;
+}
+
+.right-info i {
+    padding-right: 5px;
+}
+
+.right-info em {
+   margin-left: 5px;
+}
+
+.ta-situation {
+    padding: 23px 0 3px;
+}
+
+    .ta-situation i {
+        float: left;
+        margin-right: 5px;
+        font-size: 16px;
+        color: #78ca99;
+    }
+
+.comment-detail i {
+    float: left;
+    margin-right: 5px;
+    font-size: 17px;
+    color: #c8cdd2;
+}

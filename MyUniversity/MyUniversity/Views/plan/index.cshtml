@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "计划监督";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "发现";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/plancontrol/index.css" rel="stylesheet" />
+<link href="~/Content/square/index.css" rel="stylesheet" />
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<div class="col-right">
+    <div class="con-left">
+        <div class="nav nav-list">
+            <div class="newpost">
+                <ul id="notice-tit">
+                    <li class="onactive"><a>全部计划</a></li>
+                    <li><a>我监督的</a></li>
+                </ul>
+                <a class="second-select onactive">最新</a>
+                <a class="second-select">最热</a>
+            </div>
+            <!--中间的内容-->
+            <div id="notice-con">
+                <!--全部计划-->
+                <div id="mod-1" class="mod" style="display: block">
+                    @foreach (Plan p in ViewData["AllNewestPlans"] as List<Plan>)
+                    {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/projectsuperior/space/@p.User.userId" class="wenda-head">
+                                        <img src="@p.User.userImg">
+                                    </a>
+                                    <a href="/projectsuperior/space/@p.User.userId" class="wenda-nickname">@p.User.userName</a>
+                                    <i class="iconfont girlsex-img">&#xe609</i>
+                                </div>
+                                <div class="wendaslider">
+                                    <div class="wendaquetitle">
+                                        <i class="iconfont">&#xe649</i>
+                                        <div class="wendatitlecon">
+                                            @Html.ActionLink(p.planTitle, "detail", new { id = p.planId })
+                                        </div>
+                                    </div>
+                                    <div class="question">
+                                        <div class="replydes">
+                                            @p.planContent
+                                        </div>
+                                    </div>
+                                    <div class="commentfooter">
+                                        <span class="footer-depart">@p.User.userDepart</span>
+                                        <div class="wenda-time"><em>开始时间：@p.planPublishedTime</em></div>
+                                    </div>
+                                </div>
+                                <div class="list-footer">
+                                    <a class="key-word plan-view">浏览 @p.planViewNum</a>
+                                    <a class="key-word if-reply plan-comment">评论 <em>@p.planCommentNum</em></a>
+                                    <a class="key-word if-reply cheerforhim">加油 <em>@p.planComeOnNum</em></a>
+                                    <a class="come-on">监督TA</a>
+                                    <span class="people-supevise">人正在监督</span>
+                                    <span>@p.planSuperviseNum</span>
+                                    <input type="hidden" value="@p.planId" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="loading">
+                        <i class="iconfont">&#xe643</i>
+                    </div>
+                    <input type="hidden" value="@ViewData["totalGroups"]" id="allPlans" />
+                </div>
+                <!--我监督的-->
+                <div id="mod-2" class="mod" style="display: none">
+                    <a class="blank-finished">不显示已完成的计划</a>
+                    <div id="my-supervice">
+                        @foreach (PlanModel p in ViewData["mySupervicePlans"] as List<PlanModel>)
+                        {
+                            <div class="wenda-list my-supervice">
+                                <div class="time">@p.superviceTime.ToShortDateString().ToString()</div>
+                                <i class="iconfont iTime">&#xe64a</i>
+                                <div class="wenda-listcon">
+                                    <div class="headslider">
+                                        <a href="/account/person/@p.userId" class="wenda-head">
+                                            <img src="@p.userImg">
+                                        </a>
+                                        <a href="/account/person/@p.userId" class="wenda-nickname">@p.userName</a>
+                                        <i class="iconfont girlsex-img">&#xe609</i>
+                                    </div>
+                                    <div class="wendaslider">
+                                        <div class="wendaquetitle">
+                                            <i class="iconfont">&#xe649</i>
+                                            <div class="wendatitlecon">
+                                                @Html.ActionLink(p.planTilte, "detail", new { id = p.planId })
+                                            </div>
+                                        </div>
+                                        <div class="question">
+                                            <div class="replydes">
+                                                @p.planContent
+                                            </div>
+                                        </div>
+                                        <div class="commentfooter">
+                                            <span class="footer-depart">@p.userDepart</span>
+                                            <div class="wenda-time">
+                                                <em>开始时间：@p.planPublishedTime</em>
+                                                <span>你和100人在监督TA</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-footer">
+                                        <a class="come-on">督促TA</a>
+                                        <span class="people-supevise">今天TA还没完成打卡日志哦</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="loading-second">
+                            <i class="iconfont">&#xe643</i>
+                        </div>
+                        <input type="hidden" value="@ViewData["totalSecondGroups"]" id="supericePlans" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_PlanPadTop")
+</div>
+@Html.Partial("_CheerSupervicePop")
+<script src="~/Scripts/plan/index.js"></script>

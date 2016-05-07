@@ -1,0 +1,313 @@
+﻿.register {
+    /*background: url(/image/bgwall.png) center 100px no-repeat;*/
+    overflow: hidden;
+}
+
+.register-wrap {
+    background: #fff;
+    height: 507px;
+    margin-top: 80px;
+    position: relative;
+    width: 1110px;
+    margin: 0 auto;
+    color: #777;
+    font-size: 16px;
+}
+
+.register-box {
+    width: 400px;
+    position: absolute;
+    right: 100px;
+    top: 115px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.register-content {
+    padding: 0 20px;
+}
+
+    .register-content li {
+        border-bottom: 1px solid #f1f1f1;
+        padding: 10px 0;
+        cursor: pointer;
+        position: relative;
+    }
+
+        .register-content li:hover {
+            background: #f8f8f8;
+        }
+
+        .register-content li a {
+            color: #14191e;
+        }
+
+        .register-content li span {
+            width: 350px;
+            position: absolute;
+            left: 103px;
+            color: #080808;
+        }
+
+.register-head {
+    padding: 10px 20px 0px 20px;
+}
+
+    .register-head h4 {
+        font-size: 18px;
+        line-height: 49px;
+        height: 49px;
+        color: #14191e;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+.btn-register {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .btn-register a {
+        width: 100%;
+        border-bottom: none;
+    }
+
+.register-phonePaw {
+    padding: 0 20px;
+    position: relative;
+}
+
+    .register-phonePaw span {
+        width: 80px;
+        display: block;
+        float: left;
+    }
+
+    .register-phonePaw li {
+        border-bottom: 1px solid #f1f1f1;
+        padding: 10px 0;
+    }
+
+    .register-phonePaw input {
+        width: 271px;
+        background: none;
+    }
+
+#second-info {
+    margin-top: 86px;
+}
+
+    #second-info h4 {
+        /*text-align: center;*/
+    }
+
+    #second-info i {
+        position: absolute;
+        top: 75px;
+        font-size: 26px;
+        color: #DDDDDD;
+        cursor: pointer;
+    }
+
+        #second-info i:hover {
+            color: #78CA99;
+        }
+
+.register-phonePaw span {
+    color: #14191e;
+}
+
+.btn-reg {
+    padding: 40px 20px 30px 20px;
+    position: relative;
+}
+
+    .btn-reg a {
+        text-align: center;
+        width: 100%;
+    }
+
+/*模态弹出窗*/
+.modal-header .close {
+    position: absolute;
+}
+
+#myModalDepart .close {
+    right: 0px;
+    display: none;
+}
+
+#myModalYear .close {
+    right: 0px;
+    display: none;
+}
+
+#myModal .close {
+    right: 0px;
+    display: none;
+}
+
+.modal-title {
+    text-align: center;
+    color: #78ca99;
+}
+
+.close i {
+    color: #8B8B8B;
+    font-size: 27px;
+}
+
+.modal-content {
+    box-shadow: initial;
+    border: none;
+    border-radius: 0px;
+}
+
+.modal-body {
+    padding: 0px;
+}
+
+.school-search {
+    background: #f8f8f8;
+    padding: 10px;
+}
+
+.school-input {
+    width: 579px;
+    height: 35px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.school-search input {
+    width: 550px;
+    height: 35px;
+    border-radius: 5px;
+    position: relative;
+    left: 10px;
+}
+
+.modal-data {
+    padding: 0px 15px 0px 15px;
+    height: 462px;
+    overflow: auto;
+}
+
+    .modal-data span {
+        color: #c8cdd2;
+        font-size: 12px;
+        line-height: 35px;
+    }
+
+    .modal-data h4 {
+        color: #78CA99;
+        border-bottom: 1px solid #78CA99;
+        font-size: 13px;
+        line-height: 23px;
+        margin-top: 10px;
+    }
+
+    .modal-data ul li {
+        border-bottom: 1px solid #e3e5e5;
+    }
+
+
+
+        .modal-data ul li a {
+            color: #14191e;
+            padding: 10px 0;
+            display: block;
+        }
+
+            .modal-data ul li a:hover {
+                background: #f8f8f8;
+            }
+
+.modal-backdrop {
+    height: 635px;
+}
+
+.department, .year {
+    z-index: 2;
+}
+
+
+.education-show, .phone-registered {
+    height: initial;
+}
+
+/*搜索学校*/
+.search-school {
+    display: none;
+}
+
+.close-depart, .close-year, .close-school {
+    position: absolute;
+    background: none;
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+    margin-top: -2px;
+}
+
+    .close-depart:hover, .close-year:hover, .close-school:hover {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        filter: alpha(opacity=50);
+        opacity: .5;
+    }
+
+    .close-depart i, .close-year i, .close-school i {
+        color: #8B8B8B;
+        font-size: 27px;
+    }
+
+
+.register-second-tip .btn-default {
+    border: 1px solid #ccc;
+}
+
+.send-code-tip {
+    padding: 20px;
+}
+
+    .send-code-tip p {
+        color: #333;
+    }
+
+.register-second-tip #write-phone {
+    padding-top: 10px;
+    color: #78ca99;
+}
+
+.phone-registered .modal-footer {
+    border-top: initial;
+}
+
+
+.text {
+    padding: 30px 20px 20px 40px;
+}
+
+    .text p {
+        color: #78Ca99;
+        font-size: 20px;
+    }
+
+    .text div {
+        margin-left: 40px;
+        margin-top: 20px;
+        font-size: 15px;
+        color: #666;
+    }
+
+.warning {
+    color:#f0ad4e;
+}
+

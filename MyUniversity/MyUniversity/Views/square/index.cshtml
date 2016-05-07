@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/square/index.css" rel="stylesheet" />
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<div class="col-right">
+    <div class="con-left">
+        <div class="nav nav-list">
+            <div class="newpost">
+                <ul id="notice-tit">
+                    <li class="onactive"><a>全部计划</a></li>
+                    <li><a>我监督的</a></li>
+                </ul>
+                <a class="onactive second-select">最新</a>
+                <a class="second-select">最热</a>
+            </div>
+            <!--中间的内容-->
+            <div id="notice-con">
+                <div id="mod-1" class="mod" style="display: block">
+                    @foreach (Plan p in ViewData["AllNewestPlans"] as List<Plan>)
+                    {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/account/person/@p.User.userId" class="wenda-head">
+                                        <img src="@p.User.userImg">
+                                    </a>
+                                    <a href="/account/person/@p.User.userId" class="wenda-nickname">@p.User.userName</a>
+                                    <i class="iconfont girlsex-img">&#xe609</i>
+                                </div>
+                                <div class="wendaslider">
+                                   @* <a class="supervise"><i class="iconfont">&#xe63d</i> 监督</a>*@
+                                    <div class="wendaquetitle">
+                                        <i class="iconfont">&#xe649</i>
+                                        <div class="wendatitlecon">
+                                            @Html.ActionLink(p.planTitle, "detail", new { id = p.planId })
+                                        </div>
+                                    </div>
+                                    <div class="question">
+                                        <div class="replydes">
+                                            @p.planContent
+                                        </div>
+                                    </div>
+                                    <div class="commentfooter">
+                                        <span class="footer-depart">@p.User.userDepart</span>
+                                        <div class="wenda-time"><em>开始时间：@p.planPublishedTime</em></div>
+                                    </div>
+                                </div>
+                                <div class="list-footer">
+                                    <a class="key-word">浏览: @p.planViewNum</a>
+                                    <a class="key-word">评论: @p.planCommentNum</a>
+                                    <a class="key-word">加油: @p.planComeOnNum</a>
+                                    <a class="come-on">监督TA</a>
+                                    <span class="people-supevise">人正在监督</span>
+                                    <span>@p.planSuperviseNum</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div id="mod-2" class="mod" style="display: none">
+                    @foreach (PlanModel p in ViewData["mySupervicePlans"] as List<PlanModel>)
+                    {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/account/person/@p.userId" class="wenda-head">
+                                        <img src="@p.userImg">
+                                    </a>
+                                    <a href="/account/person/@p.userId" class="wenda-nickname">@p.userName</a>
+                                    <i class="iconfont girlsex-img">&#xe609</i>
+                                </div>
+                                <div class="wendaslider">
+                                    <div class="wendaquetitle">
+                                        <i class="iconfont">&#xe649</i>
+                                        <div class="wendatitlecon">
+                                            @Html.ActionLink(p.planTilte, "detail", new { id = p.planId })
+                                        </div>
+                                    </div>
+                                    <div class="question">
+                                        <div class="replydes">
+                                            @p.planContent
+                                        </div>
+                                    </div>
+                                    <div class="commentfooter">
+                                        <span class="footer-depart">@p.userDepart</span>
+                                        <div class="wenda-time">
+                                            <em>开始时间：@p.planPublishedTime</em>
+                                            <span>你和100人在监督TA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-footer">
+                                    <a class="come-on">督促TA</a>
+                                    <span class="people-supevise">今天TA还没完成打卡日志哦</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="con-right">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title">他们成功完成了计划</h2>
+            </div>
+            <ul>
+                <li class="padtop">
+                    <a class="wenda-head roll-head">
+                        <img src="~/image/tttt.PNG" width="40" height="40">
+                    </a>
+                    <a class="rankingnickname">米妮<i class="iconfont"></i></a>
+                    <span class="archieve">完成计划数 8</span>
+                    <i class="iconfont rankingnum"><br>
+                        1</i>
+                </li>
+                <li class="padtop">
+                    <a class="wenda-head roll-head">
+                        <img src="~/image/tttt.PNG" width="40" height="40">
+                    </a>
+                    <a class="rankingnickname">米奇<i class="iconfont"></i></a>
+                    <span class="archieve">完成计划数 5</span>
+                    <i class="iconfont rankingnum two"><br>
+                        2</i>
+                </li>
+                <li class="padtop">
+                    <a class="wenda-head roll-head">
+                        <img src="~/image/tttt.PNG" width="40" height="40">
+                    </a>
+                    <a class="rankingnickname">唐老鸭<i class="iconfont"></i></a>
+                    <span class="archieve">完成计划数 3</span>
+                    <i class="iconfont rankingnum three"><br>
+                        3</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/square/index.js"></script>

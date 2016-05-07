@@ -1,0 +1,202 @@
+﻿.con-left {
+    width: 840px;
+}
+
+.con-right {
+    width: 290px;
+}
+
+.con-left .nav {
+    min-height: 846px;
+}
+
+.containers {
+    width: initial;
+}
+
+.person_pic {
+    float: left;
+    margin-right: 10px;
+}
+
+    .person_pic img {
+        border-radius: 40px;
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        -ms-border-radius: 40px;
+        -o-border-radius: 40px;
+    }
+
+.person-center {
+    padding-top: 30px;
+}
+
+    .person-center h3 {
+        margin-top: 20px;
+    }
+
+        .person-center h3 a {
+            font-size: 16px;
+            color: #333;
+            cursor: initial;
+        }
+
+.clear {
+    clear: both;
+}
+
+.discrip {
+    font-size: 12px;
+    color: #656e73;
+    margin-top: 10px;
+    border-bottom: 1px solid #eee;
+    line-height: 2em;
+    padding-bottom: 20px;
+}
+
+
+.mp-title {
+    color: #969b9e;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.mp-num {
+    font-size: 16px;
+    font-weight: bolder;
+    color: #364247;
+}
+
+.mp-atag span {
+    display: block;
+    text-align: center;
+}
+
+
+#notice-tit li {
+    float: initial;
+}
+
+.per-body {
+    margin-top: initial;
+}
+
+.sidebar {
+    width: 95px;
+}
+
+.col-right {
+    width: 1150px;
+}
+
+#notice-tit .cur a {
+    color: #78ca99;
+}
+
+.nav-menu ul li.cur .menu-cur {
+    border-left-color: #78CA99;
+}
+
+
+.profile-li:hover {
+    background: #FCFCFC;
+    cursor: pointer;
+}
+
+.li-education:hover {
+    cursor:default;
+    background:none;
+}
+
+.lg-group input {
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.login-body {
+    padding-top: 20px;
+}
+
+.lg-group input {
+    padding-left: 0px;
+}
+
+.login-header h4 {
+    color: #78CA99;
+    text-align: center;
+}
+
+.lg-group p {
+    color: #969b9e;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.sex, .love-statu, .person-info, #person-merit {
+    display: none;
+    background: #fff;
+    width: 400px;
+    z-index: 1102;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -210px 0 0 -200px;
+}
+
+.sex-select {
+    padding: 0px 20px;
+}
+
+    .sex-select li {
+        padding: 10px;
+    }
+
+        .sex-select li:hover {
+            background: #FCFCFC;
+            cursor: pointer;
+        }
+
+.man {
+    border-bottom: 1px solid #eee;
+}
+
+.love-statu ul li {
+    border-bottom: 1px solid #eee;
+}
+
+#notice-tit li {
+    float: left;
+}
+
+.discrip i:hover {
+    color: #14191e;
+    cursor: pointer;
+}
+
+.btn-merit {
+    width: 100%;
+}
+
+#person-merit .login-body {
+    padding-bottom: 20px;
+}
+
+
+.page-title {
+    font-size: 16px;
+    color: #14191e;
+    line-height: 78px;
+    border-bottom: 1px solid #dae0e3;
+}
+
+.superior-intro div {
+    line-height: 24px;
+    color: #3a3d3f;
+    padding-top: 20px;
+}
+
+.seleced {
+    float: right;
+    color: #78CA99;
+}

@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.currentPage = "方案高手";
+    ViewBag.Title = "提供方案总排行";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/top.css" rel="stylesheet" />
+<div id="superior-top">
+    <div class="st-wrap">
+        <div class="con-left">
+            <div class="title clearfix">
+                <h4>方案多多排行榜</h4>
+            </div>
+            <div class="nav">
+                <div class="st-item st-item-one">
+                    <div class="header project-header">
+                        <h4>方案</h4>
+                        <span class="remain-second">提供总排行</span>
+                    </div>
+                    <ul class="rank-name clearfix">
+                        <li class="user-num">排名</li>
+                        <li class="st-user-name">用户呢称</li>
+                        <li class="solution-num">提供方案</li>
+                        <li>被关注</li>
+                        <li>赚得经验</li>
+                    </ul>
+                    @foreach (RankUserModel u in ViewData["rankUser"] as List<RankUserModel>)
+                    { 
+                        <div class="integral-ranking">
+                            <span class="rank-nums">@u.rankNum.</span>
+                            <a class="rank-user project-user-name">
+                                <img src="@u.userImg">
+                                <span>@u.userName</span>
+                            </a>
+                            <span class="project-num">@u.userProjectNum</span>
+                            <span class="focus-num">@u.userFans</span>
+                            <span class="exp-num">@u.userRank</span>
+                        </div>
+                    }
+                </div>
+                <div class="st-item st-item-two">
+                    <div class="header vitality-header">
+                        <h4>活跃度</h4>
+                        <span class="remain-second">声望总排行</span>
+                    </div>
+                    <ul class="rank-name clearfix">
+                        <li class="user-num">排名</li>
+                        <li class="st-user-name">用户呢称</li>
+                        <li class="solution-num">活跃度</li>
+                    </ul>
+                    @foreach (RankUserModel u in ViewData["rankVitality"] as List<RankUserModel>)
+                    {
+                        <div class="integral-ranking">
+                            <span class="rank-nums">@u.rankNum.</span>
+                            <a class="rank-user">
+                                <img src="@u.userImg">
+                                <span>@u.userName</span>
+                            </a>
+                            <span class="arrow">
+                                <i class="iconfont"></i>
+                            </span>
+                            <span class="k">@u.userVitality<span>k</span></span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="con-right">
+            <div class="wenda-my">
+                @foreach (User u in ViewData["myRank"] as IQueryable<User>)
+                {
+                    <div class="user-info">
+                        <a class="user-img" href="/projectsuperior/space/@u.userId">
+                            <img src="@u.userImg" alt="我要当架构师">
+                        </a>
+                        <p class="username">@u.userName</p>
+                    </div>
+                    <ul class="user-about">
+                        <li class="project-my"><a>方案 </a><span>@u.userProjectNum</span></li>
+                        <li class="repl"><a>活跃度 </a><span>@u.userVisitedNum</span></li>
+                        <li class="rank-my"><a>经验 </a><span>@u.userRank</span></li>
+                    </ul>
+                }
+                <div class="become-superior">
+                    <div class="bs-tips">
+                        <a>成为方案高手</a>
+                    </div>
+                </div>
+            </div>
+            <!--方案高手达人-->
+            <div class="panel">
+                <div class="panel-heading">
+                    <h2 class="panel-title">一周方案高手榜</h2>
+                </div>
+                <div class="good-helpers">
+                    <ul>
+                        @foreach (SuperiorModel s in ViewData["WeekExpSperior"] as List<SuperiorModel>)
+                        {
+                            <li class="padtop">
+                                <a href="/projectsuperior/space/@s.userId" class="wenda-head roll-head">
+                                    <img src="@s.userImg" width="40" height="40">
+                                </a>
+                                <a class="rankingnickname">@s.userName
+                                    <i class="iconfont girlsex-img">&#xe639</i>
+                                    <input type="hidden" class="userSex" value="@s.userSex" />
+                                </a>
+                                <a class="archieve">@s.userMerit</a>
+                                <i class="adopt rankingnum" style="display: none;">@s.userRank<br>
+                                    经验</i>
+                            </li> 
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

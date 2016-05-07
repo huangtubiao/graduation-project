@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "我的计划";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/plancontrol/index.css" rel="stylesheet" />
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/plancontrol/myplan.css" rel="stylesheet" />
+@Html.Partial("_SquareSidebar")
+<div class="col-right">
+    <div class="con-left">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title panel-title-me">我的计划</h2>
+            </div>
+            @foreach (PlanModel p in ViewData["myplansModel"] as List<PlanModel>)
+            {
+                <div class="wenda-list">
+                    <div class="wenda-listcon">
+                        <div class="wendaslider">
+                            <div class="start-time"><em>发布时间：@p.planPublishedTime</em></div>
+                            <div class="wendaquetitle">
+                                <i class="iconfont"></i>
+                                <div class="wendatitlecon">
+                                    <a href="/plan/detail/@p.planId" class="wendatitle">@p.planTilte</a>
+                                </div>
+                            </div>
+                            <div class="commentfooter">
+                                <div class="wenda-time"><a class="plan-supervice" href="/plan/superviceme/@p.planId">监督人数：<span>@p.planSuperviseNum</span></a></div>
+                                <span class="border-right"></span>
+                                <a class="plan-supervice" href="/plan/cheerforme/@p.planId">为我加油：<span>@p.planComeOnNum</span></a>
+                                <a href="/plan/clocklog/@p.planId" class="list-tag clock-log"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <input class="plan-is-finish" type="hidden" value="@p.planIsFinish" />
+                    <input class="today-if-clock" type="hidden" value="@p.todayIfClockLog" />
+                </div>
+            }
+        </div>
+    </div>
+    @Html.Partial("_PlanPadTop")
+</div>
+<script src="~/Scripts/plan/myplan.js"></script>

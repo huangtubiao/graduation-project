@@ -1,0 +1,1000 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UniversityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UniversityModelStoreContainer">
+    <EntitySet Name="Answer" EntityType="UniversityModel.Store.Answer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Article" EntityType="UniversityModel.Store.Article" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArticleComment" EntityType="UniversityModel.Store.ArticleComment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="City" EntityType="UniversityModel.Store.City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clocklog" EntityType="UniversityModel.Store.Clocklog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contact" EntityType="UniversityModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Depart" EntityType="UniversityModel.Store.Depart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Follows" EntityType="UniversityModel.Store.Follows" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FollowType" EntityType="UniversityModel.Store.FollowType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hotSuperior" EntityType="UniversityModel.Store.hotSuperior" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LastChat" EntityType="UniversityModel.Store.LastChat" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Love" EntityType="UniversityModel.Store.Love" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Message" EntityType="UniversityModel.Store.Message" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Plan" EntityType="UniversityModel.Store.Plan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PlanComeOn" EntityType="UniversityModel.Store.PlanComeOn" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Plancomment" EntityType="UniversityModel.Store.Plancomment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectRecord" EntityType="UniversityModel.Store.ProjectRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Province" EntityType="UniversityModel.Store.Province" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QCategory" EntityType="UniversityModel.Store.QCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Question" EntityType="UniversityModel.Store.Question" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecentVisitor" EntityType="UniversityModel.Store.RecentVisitor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecoverAnswer" EntityType="UniversityModel.Store.RecoverAnswer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="School" EntityType="UniversityModel.Store.School" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SuperiorLetter" EntityType="UniversityModel.Store.SuperiorLetter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Supervice" EntityType="UniversityModel.Store.Supervice" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="UniversityModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Answer_Question" Association="UniversityModel.Store.FK_Answer_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="Answer" EntitySet="Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Answer_User" Association="UniversityModel.Store.FK_Answer_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Answer" EntitySet="Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Article_User" Association="UniversityModel.Store.FK_Article_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArticleComment_Article" Association="UniversityModel.Store.FK_ArticleComment_Article">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="ArticleComment" EntitySet="ArticleComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArticleComment_User" Association="UniversityModel.Store.FK_ArticleComment_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ArticleComment" EntitySet="ArticleComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Province" Association="UniversityModel.Store.FK_City_Province">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clocklog_Plan" Association="UniversityModel.Store.FK_Clocklog_Plan">
+      <End Role="Plan" EntitySet="Plan" />
+      <End Role="Clocklog" EntitySet="Clocklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clocklog_User" Association="UniversityModel.Store.FK_Clocklog_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Clocklog" EntitySet="Clocklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_User" Association="UniversityModel.Store.FK_Contact_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_User1" Association="UniversityModel.Store.FK_Contact_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Depart_School" Association="UniversityModel.Store.FK_Depart_School">
+      <End Role="School" EntitySet="School" />
+      <End Role="Depart" EntitySet="Depart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Follows_User" Association="UniversityModel.Store.FK_Follows_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Follows" EntitySet="Follows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Follows_User1" Association="UniversityModel.Store.FK_Follows_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Follows" EntitySet="Follows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LastChat_User" Association="UniversityModel.Store.FK_LastChat_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="LastChat" EntitySet="LastChat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LastChat_User1" Association="UniversityModel.Store.FK_LastChat_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="LastChat" EntitySet="LastChat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Love_User" Association="UniversityModel.Store.FK_Love_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Love" EntitySet="Love" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Love_User1" Association="UniversityModel.Store.FK_Love_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Love" EntitySet="Love" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_LastChat" Association="UniversityModel.Store.FK_Message_LastChat">
+      <End Role="LastChat" EntitySet="LastChat" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_User" Association="UniversityModel.Store.FK_Message_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_User1" Association="UniversityModel.Store.FK_Message_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Plan_User" Association="UniversityModel.Store.FK_Plan_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Plan" EntitySet="Plan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanComeOn_PlanComeOn" Association="UniversityModel.Store.FK_PlanComeOn_PlanComeOn">
+      <End Role="Plan" EntitySet="Plan" />
+      <End Role="PlanComeOn" EntitySet="PlanComeOn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanComeOn_User" Association="UniversityModel.Store.FK_PlanComeOn_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="PlanComeOn" EntitySet="PlanComeOn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Plancomment_Plan" Association="UniversityModel.Store.FK_Plancomment_Plan">
+      <End Role="Plan" EntitySet="Plan" />
+      <End Role="Plancomment" EntitySet="Plancomment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Plancomment_User" Association="UniversityModel.Store.FK_Plancomment_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Plancomment" EntitySet="Plancomment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_projectRecord_User" Association="UniversityModel.Store.FK_projectRecord_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectRecord" EntitySet="ProjectRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_projectRecord_User1" Association="UniversityModel.Store.FK_projectRecord_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectRecord" EntitySet="ProjectRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_QCategory" Association="UniversityModel.Store.FK_Question_QCategory">
+      <End Role="QCategory" EntitySet="QCategory" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_Question" Association="UniversityModel.Store.FK_Question_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="Question1" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_User" Association="UniversityModel.Store.FK_Question_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_User1" Association="UniversityModel.Store.FK_Question_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecentVisitor_User" Association="UniversityModel.Store.FK_RecentVisitor_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="RecentVisitor" EntitySet="RecentVisitor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecentVisitor_User1" Association="UniversityModel.Store.FK_RecentVisitor_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="RecentVisitor" EntitySet="RecentVisitor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecoverAnswer_Answer" Association="UniversityModel.Store.FK_RecoverAnswer_Answer">
+      <End Role="Answer" EntitySet="Answer" />
+      <End Role="RecoverAnswer" EntitySet="RecoverAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecoverAnswer_User" Association="UniversityModel.Store.FK_RecoverAnswer_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="RecoverAnswer" EntitySet="RecoverAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecoverAnswer_User1" Association="UniversityModel.Store.FK_RecoverAnswer_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="RecoverAnswer" EntitySet="RecoverAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_School_City" Association="UniversityModel.Store.FK_School_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="School" EntitySet="School" />
+    </AssociationSet>
+    <AssociationSet Name="FK_School_Province" Association="UniversityModel.Store.FK_School_Province">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="School" EntitySet="School" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuperiorLetter_SuperiorLetter" Association="UniversityModel.Store.FK_SuperiorLetter_SuperiorLetter">
+      <End Role="User" EntitySet="User" />
+      <End Role="SuperiorLetter" EntitySet="SuperiorLetter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuperiorLetter_User" Association="UniversityModel.Store.FK_SuperiorLetter_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SuperiorLetter" EntitySet="SuperiorLetter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supervice_Plan" Association="UniversityModel.Store.FK_Supervice_Plan">
+      <End Role="Plan" EntitySet="Plan" />
+      <End Role="Supervice" EntitySet="Supervice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supervice_User" Association="UniversityModel.Store.FK_Supervice_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Supervice" EntitySet="Supervice" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="answerId" />
+    </Key>
+    <Property Name="answerId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="answerContent" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="answerTime" Type="datetime" Nullable="false" />
+    <Property Name="questionId" Type="bigint" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="answerPublishedTime" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="articleId" />
+    </Key>
+    <Property Name="articleId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="articleTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="articleContent" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="articleTime" Type="datetime" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="articleViewNum" Type="int" />
+    <Property Name="articleCommentNum" Type="int" />
+    <Property Name="articlePraiseNum" Type="int" />
+    <Property Name="articleShareNum" Type="int" />
+  </EntityType>
+  <EntityType Name="ArticleComment">
+    <Key>
+      <PropertyRef Name="articleCommentId" />
+    </Key>
+    <Property Name="articleCommentId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="articleCommentContent" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="articleCommentTime" Type="datetime" Nullable="false" />
+    <Property Name="articleId" Type="bigint" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="cityId" />
+    </Key>
+    <Property Name="cityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cityName" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="provinceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clocklog">
+    <Key>
+      <PropertyRef Name="clocklogId" />
+    </Key>
+    <Property Name="clocklogId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="clocklogContent" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="clocklogTime" Type="datetime" Nullable="false" />
+    <Property Name="planId" Type="bigint" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="contactId" />
+    </Key>
+    <Property Name="contactId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="contactFriendId" Type="bigint" Nullable="false" />
+    <Property Name="contactUserId" Type="bigint" Nullable="false" />
+    <Property Name="contactTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Depart">
+    <Key>
+      <PropertyRef Name="departId" />
+    </Key>
+    <Property Name="departId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="departName" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="schoolId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Follows">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="followUserId" Type="bigint" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="followTime" Type="datetime" Nullable="false" />
+    <Property Name="followeType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FollowType">
+    <Key>
+      <PropertyRef Name="followtypeId" />
+    </Key>
+    <Property Name="followtypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="followtypeName" Type="nvarchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="hotSuperior">
+    <Key>
+      <PropertyRef Name="hotSuperiorId" />
+    </Key>
+    <Property Name="hotSuperiorId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="hotSuperiorWrite" Type="nvarchar" MaxLength="20" />
+    <Property Name="hotSuperiorNums" Type="int" />
+  </EntityType>
+  <EntityType Name="LastChat">
+    <Key>
+      <PropertyRef Name="lastChatId" />
+    </Key>
+    <Property Name="lastChatId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="lastChatfriendId" Type="bigint" Nullable="false" />
+    <Property Name="lastChatUserId" Type="bigint" Nullable="false" />
+    <Property Name="lastChatTime" Type="datetime" Nullable="false" />
+    <Property Name="lastChatContent" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Love">
+    <Key>
+      <PropertyRef Name="loveId" />
+    </Key>
+    <Property Name="loveId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="loverId" Type="bigint" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="messageId" />
+    </Key>
+    <Property Name="messageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="messageContent" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="messageSendUserId" Type="bigint" Nullable="false" />
+    <Property Name="messageTime" Type="datetime" Nullable="false" />
+    <Property Name="messageIfRead" Type="bit" Nullable="false" />
+    <Property Name="messageReceiveUserId" Type="bigint" Nullable="false" />
+    <Property Name="lastChatId" Type="int" Nullable="false" />
+    <Property Name="messageWhoSend" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="planId" />
+    </Key>
+    <Property Name="planId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="planTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="planContent" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="planTime" Type="datetime" Nullable="false" />
+    <Property Name="planViewNum" Type="int" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="planPublishedTime" Type="nvarchar" MaxLength="10" />
+    <Property Name="planCommentNum" Type="int" />
+    <Property Name="planComeOnNum" Type="int" />
+    <Property Name="planSuperviseNum" Type="int" />
+    <Property Name="planStartTime" Type="datetime" />
+    <Property Name="planEndTime" Type="datetime" />
+    <Property Name="planIsFinish" Type="bit" />
+  </EntityType>
+  <EntityType Name="PlanComeOn">
+    <Key>
+      <PropertyRef Name="planComeOnId" />
+    </Key>
+    <Property Name="planComeOnId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="planComeOnWrite" Type="nvarchar" MaxLength="50" />
+    <Property Name="planId" Type="bigint" />
+    <Property Name="userId" Type="bigint" />
+    <Property Name="planComeOnTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Plancomment">
+    <Key>
+      <PropertyRef Name="plancommentId" />
+    </Key>
+    <Property Name="plancommentId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="plancommentContent" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="plancommentTime" Type="datetime" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="planId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectRecord">
+    <Key>
+      <PropertyRef Name="pRId" />
+    </Key>
+    <Property Name="pRId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pRContent" Type="nvarchar" MaxLength="100" />
+    <Property Name="pRComment" Type="nvarchar" MaxLength="300" />
+    <Property Name="pRTime" Type="datetime" Nullable="false" />
+    <Property Name="pRIfSuccess" Type="bit" Nullable="false" />
+    <Property Name="userLoveNum" Type="int" />
+    <Property Name="userCommentNum" Type="int" />
+    <Property Name="pRUserId" Type="bigint" Nullable="false" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="provinceId" />
+    </Key>
+    <Property Name="provinceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="provinceName" Type="nvarchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="QCategory">
+    <Key>
+      <PropertyRef Name="QCategoryId" />
+    </Key>
+    <Property Name="QCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QCategoryName" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="questionId" />
+    </Key>
+    <Property Name="questionId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="questionContent" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="questionTime" Type="datetime" Nullable="false" />
+    <Property Name="questionViewNum" Type="int" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="questionTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="questionReplyNum" Type="int" />
+    <Property Name="questionNewestReply" Type="nvarchar" MaxLength="300" />
+    <Property Name="questionPublishedTime" Type="nvarchar" MaxLength="10" />
+    <Property Name="newReplyUserId" Type="bigint" />
+    <Property Name="newReplyUserName" Type="nvarchar" MaxLength="15" />
+    <Property Name="newReplyUserImg" Type="nvarchar" MaxLength="50" />
+    <Property Name="qCategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="RecentVisitor">
+    <Key>
+      <PropertyRef Name="recentvisitorId" />
+    </Key>
+    <Property Name="recentvisitorId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="visitorId" Type="bigint" Nullable="false" />
+    <Property Name="visitTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecoverAnswer">
+    <Key>
+      <PropertyRef Name="reAnswerId" />
+    </Key>
+    <Property Name="reAnswerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="reAnswerContent" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="reAnswerTime" Type="datetime" Nullable="false" />
+    <Property Name="reAnswerUserId" Type="bigint" Nullable="false" />
+    <Property Name="questionUserId" Type="bigint" />
+    <Property Name="answerId" Type="bigint" Nullable="false" />
+    <Property Name="reAnswerPublishedTime" Type="nvarchar" MaxLength="10" />
+    <Property Name="answerUserName" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="schoolId" />
+    </Key>
+    <Property Name="schoolId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="schoolName" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="provinceId" Type="int" Nullable="false" />
+    <Property Name="cityId" Type="int" Nullable="false" />
+    <Property Name="schoolRegisterNum" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SuperiorLetter">
+    <Key>
+      <PropertyRef Name="superiorLetterId" />
+    </Key>
+    <Property Name="superiorLetterId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="superiorLetterSendUId" Type="bigint" Nullable="false" />
+    <Property Name="superiorLetterReceiveUId" Type="bigint" Nullable="false" />
+    <Property Name="superiorLetterIfReply" Type="bit" Nullable="false" />
+    <Property Name="superiorLetterNewestRly" Type="nvarchar" MaxLength="50" />
+    <Property Name="superiorLetterIfComment" Type="int" Nullable="false" />
+    <Property Name="superiorLetterIfRead" Type="bit" Nullable="false" />
+    <Property Name="superiorLetterNewestRlyTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Supervice">
+    <Key>
+      <PropertyRef Name="superviceId" />
+    </Key>
+    <Property Name="superviceId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="bigint" Nullable="false" />
+    <Property Name="planId" Type="bigint" Nullable="false" />
+    <Property Name="superviceTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="nvarchar" MaxLength="10" />
+    <Property Name="userRealName" Type="nvarchar" MaxLength="10" />
+    <Property Name="userImg" Type="nvarchar" MaxLength="50" />
+    <Property Name="userPaw" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="userAccount" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="userIntro" Type="nvarchar" MaxLength="50" />
+    <Property Name="userRank" Type="bigint" />
+    <Property Name="userSex" Type="nvarchar" MaxLength="1" />
+    <Property Name="userLove" Type="nvarchar" MaxLength="5" />
+    <Property Name="userSchool" Type="nvarchar" MaxLength="15" />
+    <Property Name="userDepart" Type="nvarchar" MaxLength="15" />
+    <Property Name="userStartYear" Type="nvarchar" MaxLength="5" />
+    <Property Name="userClass" Type="nvarchar" MaxLength="15" />
+    <Property Name="userDorm" Type="nvarchar" MaxLength="15" />
+    <Property Name="userMiddleSchool" Type="nvarchar" MaxLength="15" />
+    <Property Name="userMerit" Type="nvarchar" MaxLength="15" />
+    <Property Name="userAnswerNum" Type="int" />
+    <Property Name="userLoved" Type="int" />
+    <Property Name="userDream" Type="nvarchar" MaxLength="50" />
+    <Property Name="planFinishNum" Type="int" />
+    <Property Name="userVisitedNum" Type="int" />
+    <Property Name="userWeekExps" Type="int" />
+    <Property Name="userWeekExpsStartTime" Type="datetime" />
+    <Property Name="userMeritIntro" Type="nvarchar" MaxLength="50" />
+    <Property Name="userFans" Type="int" />
+    <Property Name="userProjectNum" Type="int" />
+    <Property Name="userVitality" Type="int" />
+  </EntityType>
+  <Association Name="FK_Answer_Question">
+    <End Role="Question" Type="UniversityModel.Store.Question" Multiplicity="1" />
+    <End Role="Answer" Type="UniversityModel.Store.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="questionId" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="questionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Answer_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Answer" Type="UniversityModel.Store.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Article_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Article" Type="UniversityModel.Store.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArticleComment_Article">
+    <End Role="Article" Type="UniversityModel.Store.Article" Multiplicity="1" />
+    <End Role="ArticleComment" Type="UniversityModel.Store.ArticleComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="articleId" />
+      </Principal>
+      <Dependent Role="ArticleComment">
+        <PropertyRef Name="articleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArticleComment_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="ArticleComment" Type="UniversityModel.Store.ArticleComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="ArticleComment">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Province">
+    <End Role="Province" Type="UniversityModel.Store.Province" Multiplicity="1" />
+    <End Role="City" Type="UniversityModel.Store.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="provinceId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="provinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clocklog_Plan">
+    <End Role="Plan" Type="UniversityModel.Store.Plan" Multiplicity="1" />
+    <End Role="Clocklog" Type="UniversityModel.Store.Clocklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="Clocklog">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clocklog_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Clocklog" Type="UniversityModel.Store.Clocklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Clocklog">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Contact" Type="UniversityModel.Store.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="contactFriendId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Contact" Type="UniversityModel.Store.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="contactUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Depart_School">
+    <End Role="School" Type="UniversityModel.Store.School" Multiplicity="1" />
+    <End Role="Depart" Type="UniversityModel.Store.Depart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="schoolId" />
+      </Principal>
+      <Dependent Role="Depart">
+        <PropertyRef Name="schoolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Follows_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Follows" Type="UniversityModel.Store.Follows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Follows">
+        <PropertyRef Name="followUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Follows_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Follows" Type="UniversityModel.Store.Follows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Follows">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LastChat_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="LastChat" Type="UniversityModel.Store.LastChat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="LastChat">
+        <PropertyRef Name="lastChatUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LastChat_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="LastChat" Type="UniversityModel.Store.LastChat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="LastChat">
+        <PropertyRef Name="lastChatfriendId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Love_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Love" Type="UniversityModel.Store.Love" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Love">
+        <PropertyRef Name="loveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Love_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Love" Type="UniversityModel.Store.Love" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Love">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_LastChat">
+    <End Role="LastChat" Type="UniversityModel.Store.LastChat" Multiplicity="1" />
+    <End Role="Message" Type="UniversityModel.Store.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LastChat">
+        <PropertyRef Name="lastChatId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="lastChatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Message" Type="UniversityModel.Store.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="messageReceiveUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Message" Type="UniversityModel.Store.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="messageSendUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Plan_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Plan" Type="UniversityModel.Store.Plan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Plan">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanComeOn_PlanComeOn">
+    <End Role="Plan" Type="UniversityModel.Store.Plan" Multiplicity="0..1" />
+    <End Role="PlanComeOn" Type="UniversityModel.Store.PlanComeOn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="PlanComeOn">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanComeOn_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="0..1" />
+    <End Role="PlanComeOn" Type="UniversityModel.Store.PlanComeOn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="PlanComeOn">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Plancomment_Plan">
+    <End Role="Plan" Type="UniversityModel.Store.Plan" Multiplicity="1" />
+    <End Role="Plancomment" Type="UniversityModel.Store.Plancomment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="Plancomment">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Plancomment_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Plancomment" Type="UniversityModel.Store.Plancomment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Plancomment">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_projectRecord_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="ProjectRecord" Type="UniversityModel.Store.ProjectRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="ProjectRecord">
+        <PropertyRef Name="pRUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_projectRecord_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="ProjectRecord" Type="UniversityModel.Store.ProjectRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="ProjectRecord">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_QCategory">
+    <End Role="QCategory" Type="UniversityModel.Store.QCategory" Multiplicity="0..1" />
+    <End Role="Question" Type="UniversityModel.Store.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QCategory">
+        <PropertyRef Name="QCategoryId" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="qCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_Question">
+    <End Role="Question" Type="UniversityModel.Store.Question" Multiplicity="1" />
+    <End Role="Question1" Type="UniversityModel.Store.Question" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="questionId" />
+      </Principal>
+      <Dependent Role="Question1">
+        <PropertyRef Name="questionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Question" Type="UniversityModel.Store.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="0..1" />
+    <End Role="Question" Type="UniversityModel.Store.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="newReplyUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecentVisitor_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="RecentVisitor" Type="UniversityModel.Store.RecentVisitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="RecentVisitor">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecentVisitor_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="RecentVisitor" Type="UniversityModel.Store.RecentVisitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="RecentVisitor">
+        <PropertyRef Name="visitorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecoverAnswer_Answer">
+    <End Role="Answer" Type="UniversityModel.Store.Answer" Multiplicity="1" />
+    <End Role="RecoverAnswer" Type="UniversityModel.Store.RecoverAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Answer">
+        <PropertyRef Name="answerId" />
+      </Principal>
+      <Dependent Role="RecoverAnswer">
+        <PropertyRef Name="answerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecoverAnswer_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="RecoverAnswer" Type="UniversityModel.Store.RecoverAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="RecoverAnswer">
+        <PropertyRef Name="reAnswerUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecoverAnswer_User1">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="0..1" />
+    <End Role="RecoverAnswer" Type="UniversityModel.Store.RecoverAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="RecoverAnswer">
+        <PropertyRef Name="questionUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_School_City">
+    <End Role="City" Type="UniversityModel.Store.City" Multiplicity="1" />
+    <End Role="School" Type="UniversityModel.Store.School" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="cityId" />
+      </Principal>
+      <Dependent Role="School">
+        <PropertyRef Name="cityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_School_Province">
+    <End Role="Province" Type="UniversityModel.Store.Province" Multiplicity="1" />
+    <End Role="School" Type="UniversityModel.Store.School" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="provinceId" />
+      </Principal>
+      <Dependent Role="School">
+        <PropertyRef Name="provinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuperiorLetter_SuperiorLetter">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="SuperiorLetter" Type="UniversityModel.Store.SuperiorLetter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="SuperiorLetter">
+        <PropertyRef Name="superiorLetterSendUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuperiorLetter_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="SuperiorLetter" Type="UniversityModel.Store.SuperiorLetter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="SuperiorLetter">
+        <PropertyRef Name="superiorLetterReceiveUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supervice_Plan">
+    <End Role="Plan" Type="UniversityModel.Store.Plan" Multiplicity="1" />
+    <End Role="Supervice" Type="UniversityModel.Store.Supervice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="planId" />
+      </Principal>
+      <Dependent Role="Supervice">
+        <PropertyRef Name="planId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supervice_User">
+    <End Role="User" Type="UniversityModel.Store.User" Multiplicity="1" />
+    <End Role="Supervice" Type="UniversityModel.Store.Supervice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Supervice">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

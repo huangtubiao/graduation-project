@@ -1,0 +1,91 @@
+﻿.padtop .rankingnum {
+    color: #F45C3C;
+    font-size: 16px;
+}
+
+.padtop .two {
+    color: #F4893C;
+}
+
+.padtop .three {
+    color: #F4B33C;
+}
+
+.padtop .span-num {
+    top: 26px;
+    right: 3px;
+}
+
+.newplan-btn i {
+    margin-right: 5px;
+}
+
+.wendaslider {
+    margin-left: 0px;
+    min-height: initial;
+}
+
+.wenda-listcon {
+    padding-left: 10px;
+}
+
+.wendaquetitle .success {
+    color: #78CA99;
+    font-size: 23px;
+}
+
+.wenda-time {
+    float: left;
+}
+
+.panel-title-me {
+    /*width: 100px;
+    background: #78ca99;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;*/
+}
+
+.plan-supervice {
+    cursor: pointer;
+    color: #787d82;
+}
+
+    .plan-supervice:hover {
+        color: #78CA99;
+    }
+
+.border-right {
+    border-right: 1px solid #eee;
+    float: left;
+    display: block;
+    height: 15px;
+    margin: 5px 14px 5px 0px;
+}
+
+.start-time {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+    .start-time em {
+        color: #c8cdd2;
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+.clock-log {
+    display: none;
+    padding: 5px 10px;
+    margin-left: 21px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+    .clock-log:hover {
+        color: #14191e !important;
+        background-color: #d0d6d9;
+    }

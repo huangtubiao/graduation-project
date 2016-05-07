@@ -1,0 +1,200 @@
+﻿.newest-content:hover {
+    color: #78CA99;
+    text-decoration: underline;
+}
+
+.panel .remind {
+    height: 40px;
+    line-height: 39px;
+    border-top: 1px solid #d0d6d9;
+    position: relative;
+    background-color: #edf1f2;
+    color: #787d82;
+    padding: 0px 20px;
+    margin-bottom:0px;
+}
+
+.time {
+    margin-top: 5px;
+    margin-left: 27px;
+    position: relative;
+}
+
+    .time span, .js-qa-tr-num {
+        font-size: 12px;
+        color: #c8cdd2;
+    }
+
+.qa-comment-addon-r {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    line-height: 24px;
+}
+
+    .qa-comment-addon-r .icon-msg {
+        margin-right: 5px;
+        font-size: 15px;
+    }
+
+    .qa-comment-addon-r .js-qa-tr-num:hover {
+        color: #78ca99;
+        cursor: pointer;
+    }
+
+.wenda-list {
+    position: relative;
+}
+
+.project-accept {
+    position: absolute;
+    top: 45px;
+    right: 0px;
+    display: block;
+    width: 80px;
+    height: 55px;
+    background-color: #e5f7eb;
+    z-index: 2;
+    text-align: center;
+    border: 1px solid #78ca99;
+}
+
+    /*.project-accept:hover {
+        color: #fff;
+        background-color: #78ca99;
+    }*/
+
+    .project-accept span {
+        font-size: 12px;
+        color: #78ca99;
+    }
+
+    .project-accept i {
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin: 2px auto 0;
+        color: #78ca99;
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+#add-experience {
+    position: absolute;
+}
+
+    #add-experience span {
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        padding: 0 20px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #e5e5e5;
+        border-radius: 3px;
+        color: #14191e;
+    }
+
+.department-rank a {
+    color: #666;
+}
+
+.department-rank .newest_reply {
+    color: #787d82;
+    font-size: 12px;
+}
+
+.thank-superior {
+    padding: 0px 20px;
+}
+
+.write-box {
+    margin-top: 20px;
+}
+
+    .write-box input, .write-box textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+.login-header {
+    padding: 15px 0px 0px 0px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+    .login-header img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        float: left;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .login-header h4 {
+        color: #78ca99;
+        border-bottom: initial;
+        height: 60px;
+        font-size: 16px;
+    }
+
+.btn-thank {
+    padding-top: 20px;
+}
+
+#login {
+    padding: 0px 20px 30px 20px;
+    margin: -210px 0 0 -210px;
+}
+
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-primary.active, .btn-primary:active, .open > .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #5CAD7C;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #78ca99;
+}
+
+    .btn-primary:hover {
+        background-color: #5CAD7C;
+    }
+
+.btn-group > .btn:first-child {
+    margin-left: 0;
+}
+
+.btn-group-vertical > .btn, .btn-group > .btn {
+    position: relative;
+    float: left;
+}
+
+.btn-primary input {
+    width: initial;
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+.btn.active, .btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+
+.the-best-project {
+    background: url("/image/icon-projext.png") no-repeat 17px -2px;
+    height: 48px;
+    line-height: 48px;
+    position: absolute;
+    right: 0px;
+    padding-left: 70px;
+    color: #78ca99;
+}

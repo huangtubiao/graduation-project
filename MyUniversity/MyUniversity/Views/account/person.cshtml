@@ -1,0 +1,267 @@
+﻿@{
+    ViewBag.Title = "个人中心";
+    ViewBag.Active = "个人中心";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/account/person.css" rel="stylesheet" />
+<link href="~/Content/account/space.css" rel="stylesheet" />
+<div class="set-header">
+    <div class="set-wrap">
+        <h1>个人中心</h1>
+        <a href="/account/person">个人信息</a>
+        <a href="/account/plan">计划</a>
+        <a href="/social/index/">动态</a>
+    </div>
+</div>
+<div class="col-right">
+    <div class="per-body">
+        <div class="con-left">
+            <div class="nav nav-list">
+                <div class="newpost">
+                    <ul id="notice-tit">
+                        <li class="onactive"><a>个人介绍</a></li>
+                        <li><a>方案记录</a></li>
+                        <li><a>我的动态</a></li>
+                    </ul>
+                </div>
+                <div id="notice-con">
+                    <div id="mod-1" class="mod" style="display: block">
+                        @foreach (User u in ViewData["user"] as IQueryable<User>)
+                        {
+                            <div class="superior-intro">
+                                <h4 class="page-title">方案介绍</h4>
+                                <div>@u.userMeritIntro</div>
+                            </div>
+                            <div class="base-intro">
+                                <h4 class="page-title">基本信息</h4>
+                            </div>
+                            <div class="main-bd">
+                                <ul>
+                                    <li class="profile-li">
+                                        <i class="iconfont real-name-icon">&#xe629</i>
+                                        <span>真实姓名：</span><em>@u.userRealName</em>
+                                    </li>
+                                    <li class="profile-li">
+                                        <i class="iconfont sex-icon">&#xe608</i>
+                                        <span>性别：</span>
+                                        <em>@u.userSex</em>
+                                    </li>
+                                    <li class="profile-li">
+                                        <i class="iconfont love-icon">&#xe625</i>
+                                        <span>恋爱状态：</span>
+                                        <ul>
+                                            <li><em>@u.userLove</em></li>
+                                        </ul>
+                                    </li>
+                                    <li class="profile-li li-education">
+                                        <i class="iconfont school-icon">&#xe60f</i>
+                                        <span>学校：</span>
+                                        <em>@u.userSchool</em>
+                                    </li>
+                                    <li class="profile-li li-education">
+                                        <i class="iconfont depart-icon">&#xe600</i>
+                                        <span>院系：</span>
+                                        <em>@u.userDepart</em>
+                                    </li>
+                                    <li class="profile-li li-education">
+                                        <i class="iconfont date-icon">&#xe610</i>
+                                        <span>入学年份：</span>
+                                        <em>@u.userStartYear</em>
+                                    </li>
+                                    <li class="profile-li">
+                                        <i class="iconfont class-icon">&#xe626</i>
+                                        <span>班级：</span>
+                                        <em>@u.userClass</em>
+                                    </li>
+                                    <li class="profile-li">
+                                        <i class="iconfont dorm-icon">&#xe627</i>
+                                        <span>宿舍：</span>
+                                        <em>@u.userDorm</em>
+                                    </li>
+                                    <li class="profile-li">
+                                        <i class="iconfont moddle-school-icon">&#xe62a</i>
+                                        <span>毕业中学：</span>
+                                        <em>@u.userMiddleSchool</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                    <div id="mod-2" class="mod" style="display: none">
+                        <ul class="user-about">
+                            <li class="super-num">
+                                <div>@ViewData["projectNum"]</div>
+                                <p>提供方案</p>
+                            </li>
+                            <li class="repl">
+                                <div>@ViewData["successRate"]</div>
+                                <p>提供方案成功率 </p>
+                            </li>
+                            <li class="comment-ta">
+                                <div>@ViewData["pRComment"]</div>
+                                <p>对Ta的评价 </p>
+                            </li>
+                        </ul>
+                        <h4 class="page-title">方案详情</h4>
+                        <div class="super-note-wrap">
+                            <div class="uncontent" style="display: none;">
+                                <i class="iconfont">&#xe685</i>
+                                <p>
+                                    你还没有提供任何方案,
+                                    <a href="/projectsuperior/become">还不是方案高手吗？去成为方案高手</a>
+                                </p>
+                            </div>
+                            @foreach (ProjectRecordsModel p in ViewData["ProjectRecords"] as List<ProjectRecordsModel>)
+                            {
+                                <div class="item-text">
+                                    <div class="ta-situation">
+                                        <i class="iconfont">&#xe649</i>
+                                        <h3>@p.pRContent</h3>
+                                    </div>
+                                    <div class="comment-detail">
+                                        <i class="iconfont">&#xe62d</i>
+                                        <p>@p.pRComment</p>
+                                    </div>
+                                    <div class="item-btm clearfix">
+                                        <ul class="l left-info">
+                                            <li class="hd-pic">
+                                                <a class="publisher-hd" href="/projectsuperior/space/@p.userId" target="_blank">
+                                                    <img src="@p.userImg" alt="" width="20" height="20">
+                                                </a>
+                                                <a class="publisher-name" href="/projectsuperior/space/@p.userId">@p.userName</a>
+                                            </li>
+                                            <li class="pass-time"><span>@p.pRPublishedTime</span></li>
+                                        </ul>
+                                        <div class="r right-info">
+                                            <a class="favorite l">
+                                                <i class="iconfont">&#xe60d</i>点赞<em>@p.userLoveNum</em>
+                                            </a>
+                                            <a class="item-judge l" style="display: none;">
+                                                <i class="iconfont">&#xe60a</i><em>评论 @p.userCommentNum</em>
+                                            </a>
+                                            <input type="hidden" value="@p.pRId" />
+                                        </div>
+                                    </div>
+                                </div> 
+                            }
+                        </div>
+                    </div>
+                    <div id="mod-3" class="mod" style="display: none">
+                        <div class="uncontent" style="display: none;">
+                            <i class="iconfont">&#xe68f</i>
+                            <p>还没有任何分享哦！分享是一种快乐，为了提高自己的声望和知名度，<span>现在去分享。</span></p>
+                        </div>
+                        @foreach (Article m in ViewData["myShare"] as IQueryable<Article>)
+                        { 
+                            <div class="share">
+                                <div class="share-header">
+                                    <h4><a onclick="window.open('/projectsuperior/share/@m.articleId')">@m.articleTitle</a></h4>
+                                    <span>@m.articleTime</span>
+                                </div>
+                                <div class="share-content">
+                                    @m.articleContent
+                                </div>
+                                <div class="share-footer">
+                                    <a><i class="iconfont">&#xe60d</i><span>@m.articlePraiseNum</span></a><i class="share-diver"></i>
+                                    <a><i class="iconfont">&#xe63b</i><span>@m.articleCommentNum</span></a><i class="share-diver"></i>
+                                    <a><i class="iconfont">&#xe658</i><span>@m.articleShareNum</span></a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--右边列表-->
+        @Html.Partial("_AccountRight")
+    </div>
+</div>
+<div id="login" class="person-info" style="display: none;">
+    <div class="login-header">
+        <h4>真实姓名</h4>
+        <i class="iconfont" onclick="offlogin();">&#xe630</i>
+    </div>
+    <div class="login-body">
+        <div class="wrap">
+            <div>
+                <div class="lg-group">
+                    <input type="text" class="real-name person-text" autofocus="" />
+                    <p>填写真实姓名，方便你的同学找到你</p>
+                </div>
+                <div class="lg-btn">
+                    <a id="signin-btn" class="btn-green university-btn" onclick="realNameSave();">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改性别-->
+<div class="sex">
+    <div class="login-header">
+        <h4>选择</h4>
+        <i class="iconfont" onclick="offsex();">&#xe630</i>
+    </div>
+    <ul class="sex-select user-select-sex">
+        <li class="man">
+            <a>男</a>
+            @*<i class="iconfont seleced">&#xe68e</i>*@
+        </li>
+        <li id="girl">
+            <a>女</a>
+        </li>
+    </ul>
+</div>
+<!--恋爱状态-->
+<div class="love-statu">
+    <div class="login-header">
+        <h4>选择</h4>
+        <i class="iconfont" onclick="offlove();">&#xe630</i>
+    </div>
+    <ul class="sex-select user-select-love">
+        <li>
+            <a>保密</a>
+        </li>
+        <li>
+            <a>初恋还在</a>
+        </li>
+        <li>
+            <a>单身</a>
+        </li>
+        <li>
+            <a>关系很难解释</a>
+        </li>
+        <li>
+            <a>刚交往</a>
+        </li>
+        <li>
+            <a>热恋中</a>
+        </li>
+        <li>
+            <a>刚分手</a>
+        </li>
+    </ul>
+</div>
+<!--方案高手信息-->
+<div id="person-merit">
+    <div class="login-header">
+        <h4>个性签名</h4>
+        <i class="iconfont" onclick="offmerit();">&#xe630</i>
+    </div>
+    <div class="login-body">
+        <div class="wrap">
+            <form>
+                <div class="lg-group">
+                    <input type="text" autofocus="" class="person-text user-intro" />
+                </div>
+                <div class="lg-btn">
+                    <a class="btn-merit university-btn" onclick="superiorSave();">保存</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/account/person.js"></script>

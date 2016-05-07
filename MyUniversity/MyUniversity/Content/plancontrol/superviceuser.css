@@ -1,0 +1,63 @@
+﻿.panel-heading h4 {
+    font-size: 16px;
+    margin: -10px 0px 15px 0px;
+}
+
+    .panel-heading h4 i {
+        font-size: 25px;
+        color: #78CA99;
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+        .panel-heading h4 i:hover {
+            background: #f8f8f8;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+.avatars li {
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+ul.avatars li a {
+    color: #787d82;
+    white-space: nowrap;
+    text-align: center;
+    width: 61px;
+    display: inline-block;
+    padding: 5px;
+}
+
+    ul.avatars li a:hover {
+        background: #f8f8f8;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+.avatar-add .avatar-face {
+    font-size: 23px !important;
+}
+
+.supervice-people {
+    margin-top: 15px;
+}
+
+.avatar-face img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f7f7f7;
+    -webkit-box-shadow: 0 0 1px #ddd;
+    box-shadow: 0 0 1px #ddd;
+}
+
+.avatar-name {
+    position: relative;
+    bottom: 7px;
+}

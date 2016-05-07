@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "发问题";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Help/publish.css" rel="stylesheet" />
+<div class="col-right">
+    <img class="wenda-img" src="~/image/wenda.PNG" />
+    <div class="con-left">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title">发问题</h2>
+            </div>
+            <div class="inputqus">
+                <div class="quesdetail clearfix">
+                    <span class="ques-label">标题：</span>
+                    <div class="question-area">
+                        <input type="text" id="ques-title" class="ipt autocomplete" maxlength="255" name="title" placeholder="请输入问题标题">
+                        <p class="errortip"></p>
+                    </div>
+                </div>
+                <div class="quesdetail">
+                    <span class="ques-label">内容：</span>
+                    <div class="editor-wrap">
+                        <div class="editor-write">
+                            <textarea id="ques-text" class="ipt" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="saveques">
+                <a class="university-btn publishbtn" onclick="publish();">发布</a>
+            </div>
+        </div>
+    </div>
+    <!--右边列表-->
+    <div class="con-right">
+        <div class="panel bbs-sendques">
+            <div class="panel-body">
+                <h1>您想发问题 还是发问题还是想发问题？</h1>
+                <dl>
+                    <dt>上面没有写错，是您看错啦。</dt>
+                    <dd>1、您遇到什么问题了吗，不用怕，有师兄师姐在。</dd>
+                    <dd>2、您是来解决问题？请先搜索是否已经有同类问题吧。这样您就省心少打字。</dd>
+                    <dd>3、没找到是么？就在发问题时精确描述你的问题，不要写与问题无关的内容哟；</dd>
+                    <dd>4、这里讨论更热衷于解达您想要的答案。能引起思考和讨论的知识性问题；</dd>
+                    <dt>问答禁止这些提问</dt>
+                    <dd>1、禁止发布求职、交易、推广、广告类与问答无关信息将一律清理。</dd>
+                    <dd>2、尽可能详细描述您的问题，如标题与内容不符，或与问答无关的信息将被关闭。</dd>
+                    <dd>3、问答刷屏用户一律冻结帐号</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/help/publish.js"></script>

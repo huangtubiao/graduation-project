@@ -1,0 +1,231 @@
+﻿#active a {
+    color: #17AD7F;
+}
+/*计划监督、快乐校园主题*/
+#main {
+    padding-top: 0px;
+    background: #fff;
+}
+
+.containers {
+    width: inherit;
+}
+
+.discver-theme {
+    background: #fff;
+    border-top: 1px solid #edf1f2;
+    border-bottom: 1px solid #edf1f2;
+}
+
+.theme-wrap a {
+    float: left;
+}
+
+.theme-wrap .bias {
+    float: left;
+}
+    .theme-wrap .bias img {
+        cursor:initial;
+    }
+.theme-item {
+    padding-top: 10px;
+}
+
+    .theme-item img {
+        float: left;
+    }
+
+    .theme-item .title {
+        float: left;
+        width: 160px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+        .theme-item .title h4 {
+            font-size: 15px;
+            color: #14191e;
+        }
+
+            .theme-item .title h4:hover {
+                color: #17AD7F;
+            }
+
+        .theme-item .title p {
+            color: #787d82;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+    .theme-item .go {
+        float: left;
+        background: #17AD7F;
+        color: #fff;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        margin: 20px 0px 0px 10px;
+        -webkit-transition: background-color 0.3s;
+        -moz-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+        .theme-item .go:hover {
+            background: #12936B;
+        }
+
+.theme-wrap {
+    width: 778px;
+    margin: 0 auto;
+}
+
+.item-second {
+    float: right;
+}
+
+.bias {
+}
+
+/*动态、积分榜*/
+.integral-dynamic {
+    background: #fff;
+    padding-bottom: 40px;
+}
+
+    .integral-dynamic .title {
+        line-height: 78px;
+        border-bottom: 1px solid #dae0e3;
+    }
+
+        .integral-dynamic .title h4 {
+            float: left;
+            color: #14191e;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 40px;
+            width: 48%;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            height: 40px;
+            margin-top: 40px;
+        }
+
+.id-wrap {
+    width: 1150px;
+    margin: 0 auto;
+}
+
+/*最新动态模块*/
+.book-user-img img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.interval {
+    margin-left: 40px;
+}
+
+.item-box {
+    padding: 20px 0 10px 20px;
+    position: relative;
+}
+
+
+.newest, .integral {
+    float: left;
+    width: 50%;
+}
+
+.item-box .content {
+    color: #17AD7F;
+}
+
+    .item-box .content:hover {
+        text-decoration: underline;
+    }
+
+.item-box .time {
+    color: #c8cdd2;
+    font-size: 12px;
+    position: absolute;
+    right: 65px;
+    top: 31px;
+}
+
+.action {
+    width: 60px;
+    display: inline-block;
+    color: #787d82;
+}
+
+/*积分榜*/
+.integral-item {
+    float: left;
+    width: 46%;
+    padding-left: 20px;
+}
+
+    .integral-item h4 {
+        float: left;
+        color: #14191e;
+        font-size: 23px;
+    }
+
+.integral {
+    padding-top: 20px;
+}
+
+.integral-item .remain-second {
+    line-height: 43px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #787d82;
+}
+
+.integral-ranking a img {
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.rank-user span {
+    color: #14191e;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.integral-ranking .num {
+    background: #17AD7F;
+    color: #fff;
+    padding: 0px 6px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.integral-ranking .rank-nums {
+    margin-right: 15px;
+    font-size: 13px;
+    color: #14191e;
+}
+
+.arrow i {
+    color: #c8cdd2;
+}
+
+.integral-ranking .k {
+    color: #787d82;
+    font-size: 13px;
+}
+
+.integral-item .header {
+    margin-bottom: 10px;
+}
+
+.integral-ranking {
+    margin-bottom: 13px;
+}

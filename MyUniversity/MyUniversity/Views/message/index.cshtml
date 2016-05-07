@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "消息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/message/index.css" rel="stylesheet" />
+<div class="message">
+    <div id="left_panel">
+        <ul id="notice-tit" class="left_panel_nav">
+            <li class="msg_new onactive"><a title="最近">消息</a></li>
+            <li class="msg_friends"><a title="好友">联系人</a></li>
+        </ul>
+        <div id="notice-con">
+            <!--最近联系人-->
+            <div id="mod-1" class="mod">
+                <ul id="lastChat" class="user_list">
+                    @foreach (LastChatsModel l in ViewData["lastChats"] as List<LastChatsModel>)
+                    {
+                        <li id="@l.lastChatId">
+                            <img src="@l.userImg" />
+                            <div class="info">
+                                <h5>@l.userName</h5>
+                                <p class="theLastMsg">@l.lastChatContent</p>
+                            </div>
+                            <div class="unread_num">@l.messageUnreadNum</div>
+                            <input type="hidden" value="@l.lastChatfriendId" />
+                        </li>
+                    }
+                </ul>
+            </div>
+            <!--我的联系人-->
+            <div id="mod-2" class="mod" style="display: none">
+                <ul id="friends" class="user_list">
+                    @foreach (ContactModel c in ViewData["contacts"] as List<ContactModel>)
+                    {
+                        <li class="@c.contactFriendId">
+                            <img src="@c.userImg" />
+                            <div class="info">
+                                <h5>@c.userName</h5>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div id="chat_container">
+            <div id="chat_content">
+                <div class="chat-header" style="display: none;">
+                    <h4>@ViewData["recieverName"]</h4>
+                    <i class="iconfont">&#xe671</i>
+                </div>
+                <div style="display:none;" class="save-friend"><i class="iconfont"></i><span>是否保存为联系人？   保存后将显示在联系人列表中</span><a class="btn-cancel btn-save-friend">保存</a></div>
+                @foreach (UserChatModel u in ViewData["userChatModels"] as List<UserChatModel>)
+                {
+                    <ul class="@u.userchat" style="display:none;">
+                        @foreach (Message c in ViewData[u.userchat.ToString()] as List<Message>)
+                        {
+                            <li class="@c.messageWhoSend">
+                                <div class="chat_avata">
+                                    <a>
+                                        <img class="img_border_one" src="@c.User1.userImg">
+                                    </a>
+                                </div>
+                                <div class="a_msg_info">
+                                    <span>@c.messageContent</span>
+                                    <i class="arrow_left_b"></i>
+                                </div>
+                                <small class="time">@c.messageTime</small>
+                            </li>
+                        }
+                    </ul>
+                }
+                <div class="userinfo_layer" style="display: none;">
+                    <div class="headpic">
+                        <img src="http://img.mukewang.com/user/533e4c0500010c7602000200-150-150.jpg" width="130" height="130">
+                        <div class="user-info">
+                            <a class="user-name">米茶乐</a>
+                            <i class="iconfont girlsex-img">&#xe609</i>
+                            <div>电脑系统维修方案高手</div>
+                        </div>
+                    </div>
+                    <p class="address">
+                        <span class="user-school">惠州学院</span>
+                        <span class="user-depart">计算机系</span>
+                    </p>
+                    <p class="user-merit-intro">方案高手</p>
+                    <div class="btn_area">
+                        <a class="btn btn-info">访问主页</a>
+                        <a class="btn university-btn send-message">发消息</a>
+                        <a class="btn btn-red delete-friend">删除好友</a>
+                        <input class="user-id" type="hidden" value="" />
+                    </div>
+                </div>
+            </div>
+            <div id="chat_editor">
+                <form>
+                    <ul>
+                        <li>
+                            <textarea id="message" maxlength="300" style="line-height: 28px;"></textarea>
+                        </li>
+                        <li>
+                            <input type="button" class="chatSend university-btn" id="sendmessagetoGroup" value="发送" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--警告提示,是否确定删除联系人-->
+<div id="warning">
+    <div class="w-content">
+        删除“偶然看到”后该将不再在联系人列表中
+    </div>
+    <ul class="w-select clearfix">
+       <li class="w-cancel">
+           <a>取消</a>
+       </li> 
+        <li class="w-submit">
+            <a>确定删除</a>
+        </li>
+    </ul>
+</div>
+<input id="save-friend-click" type="hidden" />
+<script src="~/Scripts/message/message.js"></script>
+

@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "写新计划";
+    ViewBag.Active = "计划监督";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/Help/publish.css" rel="stylesheet" />
+@Html.Partial("_SquareSidebar")
+<!--发表计划框-->
+<div class="col-right">
+    <div class="con-left">
+        <div class="panel" style="min-height: 611px;">
+            <div class="panel-heading">
+                <a href="/plan">全部计划</a> &gt; 
+                <a href="/plan/write">写新计划</a>
+            </div>
+            <div class="inputqus">
+                <div class="quesdetail clearfix">
+                    <span class="ques-label">目标：</span>
+                    <div class="question-area">
+                        <input type="text" id="ques-title" class="while-btn" maxlength="255" name="title" placeholder="请输入要实现的目标">
+                        <p class="errortip errortip-input">@*<i class="iconfont">&#xe65e</i>标题不能少于5个字符！*@</p>
+                    </div>
+                </div>
+                <div class="quesdetail">
+                    <span class="ques-label">计划：</span>
+                    <div class="editor-wrap">
+                        <div class="editor-write">
+                            <textarea id="ques-text" class="while-btn" rows="3" placeholder="请写下总的计划安排"></textarea>
+                            <p class="errortip errortip-area"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan-time">
+                    <span class="ques-label">时间：</span>
+                    <input id="start-time" type="text" class="ipt" placeholder="开始时间" />
+                    <input id="end-time" type="text" class="ipt" placeholder="结束时间" />
+                </div>
+                <div class="plan-invite">
+                    <span class="ques-label">监督：</span>
+                    <ul class="avatars">
+                        <li class="avatar-invite">
+                            <a href="/plan/invite" class="avatar-add">
+                                <span class="o">
+                                    <i class="iconfont">&#xe63d</i>
+                                </span>
+                                <br />
+                                邀请
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="saveques">
+                <a class="university-btn publishbtn" id="writePlan">发布</a>
+            </div>
+        </div>
+    </div>
+    <div class="con-right">
+        <div class="panel bbs-sendques">
+            <div class="panel-body">
+                <span class="i-calendar"><i class="iconfont">&#xe65c</i></span>
+                <h1 class="title-write">您想写计划 还是写计划还是想写计划？</h1>
+                <dl>
+                    <dt>上面没有写错，是您看错啦。</dt>
+                    <dd>1、您有梦想吗？ 有，那就去实现它吧。</dd>
+                    <dd>2、是不是担心实现的过程中坚持不下，希望有人一直陪伴；</dd>
+                    <dd>3、写下你的计划，邀请你想的人监督你；</dd>
+                    <dd>4、只希望为你做些改变，求学路上，不再让你孤单。</dd>
+                    <dt>禁止这些计划</dt>
+                    <dd>1、禁止发布求职、交易、推广、广告类与计划无关信息将一律清理。</dd>
+                    <dd>2、尽可能详细描述您的计划，如目标与计划不符，或与计划无关的信息将被关闭。</dd>
+                    <dd>3、计划刷屏用户一律冻结帐号</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/plan/write.js"></script>

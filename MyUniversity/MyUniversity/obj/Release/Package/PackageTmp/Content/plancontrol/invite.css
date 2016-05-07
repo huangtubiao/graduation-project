@@ -1,0 +1,101 @@
+﻿.navigation {
+    float: left;
+}
+
+#notice-tit {
+    float: right;
+}
+
+    #notice-tit a {
+        height: 48px;
+        margin: 0px 10px 0 10px;
+        padding: 0 15px;
+        display: block;
+        font-size: 15px;
+    }
+
+        #notice-tit a:hover {
+            border-bottom: solid 2px rgba(216,76,49,0.4);
+            color: #323a45;
+        }
+
+    #notice-tit .onactive a {
+        color: #323a45;
+        border-bottom: solid 2px #E45D4C !important;
+    }
+
+.panel-section {
+    padding: 10px 20px;
+}
+
+.section-header h4 {
+    color: #78CA99;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.section-body {
+    margin-top: 15px;
+}
+
+    .section-body input {
+        box-sizing: border-box;
+        height: 40px;
+        width: 83.33333333333334%;
+    }
+
+    .section-body .remove {
+        width: 16.666666666666664%;
+        margin-left: 20px;
+        color: #c8cdd2;
+    }
+
+        .section-body .remove:hover {
+            color: #78CA99;
+        }
+
+    .section-body .js-remove {
+        margin-left: 24px;
+    } 
+
+.add-more {
+    margin-top: 20px;
+    border: 1px solid #78CA99;
+    text-shadow: 0 0 0 transparent;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    padding: 6px 12px;
+    color: #78CA99;
+}
+
+    .add-more:hover {
+        background: #f8f8f8;
+    }
+
+.invite_members {
+    margin-top: 20px;
+}
+
+.university-btn {
+    padding: 0px 30px;
+    margin-right: 15px;
+}
+
+#reason-text {
+    width: 80.333333%;
+    resize: none;
+}
+
+.invite-reason {
+    margin-top: 5px;
+}
+
+.i-calendar {
+    position: relative;
+    bottom: 8px;
+}
+
+    .i-calendar i {
+        font-size: 48px;
+    }

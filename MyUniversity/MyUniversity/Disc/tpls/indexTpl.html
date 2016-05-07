@@ -1,0 +1,84 @@
+{{include './public/header'}}
+<div class="top_container" id="top_container">
+	<div class="wrap">
+		<div class="tc_linkbox fl pt10">
+			<a href="plan.html" title="进入计划监督">
+				<img class="img fl" src="img/tc_img1.jpg" alt="计划监督">
+				<hgroup class="remark fl pt10">
+					<h2>计划监督</h2>
+					<h3 class="pt5">从此，坚持是一件很简单的事情！</h3>
+				</hgroup>
+			</a>
+			<a class="go fl" href="plan.html" title="进入计划监督">GO</a>
+		</div>
+		<span class="tc_line fl"></span>
+		<div class="tc_linkbox fr">
+			<a href="school.html" title="进入快乐校园">
+				<img class="img fl" src="img/tc_img1.jpg" alt="快乐校园">
+				<hgrup class="remark fl">
+					<h2>快乐校园</h2>
+					<h3>你会发现，融入惠大是多么充实！</h3>
+				</hgrup>
+				<a class="go fl" href="school.html" title="进入快乐校园">GO</a>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- 主体内容 -->
+<div class="wrap main_container clearfix">
+	<!-- 最新动态 -->
+	<div class="mc_new fl pd10">
+		<h2 class="box_tip">最新动态</h2>
+		<ul class="mc_new_list pd15">
+			{{each dynamic.list as value index}}
+				<li>
+					<a class="list_user" href="{{value.user_link}}">{{value.user_name}}</a>
+					<span class="list_oprate">{{value.oprate}}</span>
+					<a class="list_aim" href="{{value.op_aim_link}}" title="{{value.op_aim}}">{{value.op_aim}}</a>
+					<span class="list_oprate">{{value.time}}</span>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<!-- 积分榜 -->
+	<div class="mc_rank fr pd10">
+		<h2 class="box_tip">积分榜</h2>
+
+		<!-- 今日排行 -->
+		<div class="mc_rank_box mc_today fl pd15">
+			<header class="mc_rank_hd">
+				<h2>今天</h2>
+				还剩<span>10时22分18秒</span>
+			</header>
+			<ol class="rank_list">
+				{{each rank_today.list as value index}}
+					<li>
+						<a class="rank_item" href="{{value.user_link}}">
+							<img src="{{value.user_img_url}}" alt="用户头像">
+							<span>{{value.user_name}}</span>
+						</a>
+						<span class="rank_scroe">+{{value.score}}</span>
+					</li>
+				{{/each}}
+			</ol>
+		</div>
+		<!-- 总榜 -->
+		<div class="mc_rank_box mc_total fl pd15">
+			<header class="mc_rank_hd">
+				<h2>综合排名</h2>
+			</header>
+			<ol class="rank_list">
+				{{each rank_all.list as value index}}
+					<li>
+						<a class="rank_item" href="{{value.user_link}}">
+							<img src="{{value.user_img_url}}" alt="用户头像">
+							<span>{{value.user_name}}</span>
+						</a>
+						<span class="rank_scroe">+{{value.score}}</span>
+					</li>
+				{{/each}}
+			</ol>
+		</div>
+	</div>
+</div>
+{{include './public/footer'}}

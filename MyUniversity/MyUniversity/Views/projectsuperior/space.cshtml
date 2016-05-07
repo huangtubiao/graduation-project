@@ -1,0 +1,256 @@
+﻿@{
+    ViewBag.Title = ViewData["title"];
+    ViewBag.currentPage = "方案高手";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+@using MyUniversity.Models.DTO;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<link href="~/Content/account/person.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/space.css" rel="stylesheet" />
+<link href="~/Content/projectsuperior/public.css" rel="stylesheet" />
+<div id="ta-space">
+    @foreach (User u in ViewData["user"] as IQueryable<User>)
+    {
+        <div class="per-info">
+            <div class="per-container">
+                <div class="avater l">
+                    <img src="@u.userImg" width="180" height="180">
+                </div>
+                <div class="profile">
+                    <h4 class="tadename">@u.userMerit</h4>
+                    <div id="charge">
+                        <span class="charge-icon"><i class="iconfont">&#xe690</i></span>收费
+                        <div class="tooltip top" role="tooltip">
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner">
+                                20元每次
+                            </div>
+                        </div>
+                    </div>
+                    <span class="detail-sex">@u.userName
+                        <i class="iconfont sex"></i>
+                        <input type="hidden" class="user-sex" value="@u.userSex" />
+                    </span>
+                    <p class="aboutme">@u.userIntro</p>
+                    <div class="exper">
+                        <span class="exper-title">经验值</span>
+                        <span class="exper-num help-rank">@u.userRank</span>
+                        <i class="diver"></i>
+                        <span class="exper-title">粉丝</span>
+                        <span id="fans" class="exper-num help-rank">@u.userFans</span>
+                    </div>
+                    <div class="per-btn">
+                        <a id="private-letter" class="btn university-btn"><i class="iconfont private-i">&#xe671</i> 私信</a>
+                        <a id="focus" class="btn university-btn"><i class="iconfont focus-i"></i><span>@ViewData["focus"]</span></a>
+                    </div>
+                    <input id="userId" type="hidden" value="@u.userId" />
+                </div>
+            </div>
+        </div>
+    }
+    <div class="newpost">
+        <ul id="notice-space">
+            <li class="onactive"><a>个人介绍</a></li>
+            <li><a>方案记录</a></li>
+            <li><a>Ta的分享</a></li>
+        </ul>
+    </div>
+</div>
+<div id="space" class="per-body">
+    <div class="con-left">
+        <div class="nav nav-list">
+            <div id="notice-con">
+                <div id="mod-1" class="mod" style="display: block">
+                    @foreach (User u in ViewData["user"] as IQueryable<User>)
+                    {
+                        <div class="superior-intro">
+                            <h4 class="page-title">方案介绍</h4>
+                            <div>@u.userMeritIntro</div>
+                        </div>
+                        <div class="base-intro">
+                            <h4 class="page-title">基本信息</h4>
+                        </div>
+                        <div class="main-bd">
+                            <ul>
+                                <li class="profile-li">
+                                    <i class="iconfont real-name-icon">&#xe629</i>
+                                    <span>真实姓名：</span><em>@u.userRealName</em>
+                                </li>
+                                <li class="profile-li">
+                                    <i class="iconfont sex-icon">&#xe608</i>
+                                    <span>性别：</span>
+                                    <em>@u.userSex</em>
+                                </li>
+                                <li class="profile-li">
+                                    <i class="iconfont love-icon">&#xe625</i>
+                                    <span>恋爱状态：</span>
+                                    <ul>
+                                        <li><em>@u.userLove</em></li>
+                                    </ul>
+                                </li>
+                                <li class="profile-li">
+                                    <i class="iconfont school-icon">&#xe60f</i>
+                                    <span>学校：</span>
+                                    <em>@u.userSchool</em>
+                                </li>
+                                <li class="profile-li">
+                                    <i class="iconfont depart-icon">&#xe600</i>
+                                    <span>院系：</span>
+                                    <em>@u.userDepart</em>
+                                </li>
+                                <li class="profile-li city last">
+                                    <i class="iconfont date-icon">&#xe610</i>
+                                    <span>入学年份：</span>
+                                    <em>@u.userStartYear</em>
+                                </li>
+                                <li class="profile-li">
+                                    <i class="iconfont class-icon">&#xe626</i>
+                                    <span>班级：</span>
+                                    <em>@u.userClass</em>
+                                </li>
+                                <li class="profile-li">
+                                    <i class="iconfont dorm-icon">&#xe627</i>
+                                    <span>宿舍：</span>
+                                    <em>@u.userDorm</em>
+                                </li>
+                                <li class="profile-li">
+                                    <i class="iconfont moddle-school-icon">&#xe62a</i>
+                                    <span>毕业中学：</span>
+                                    <em>@u.userMiddleSchool</em>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+                <!--方案记录-->
+                <div id="mod-2" class="mod" style="display: none">
+                    <ul class="user-about">
+                        <li class="super-num">
+                            <div>@ViewData["projectNum"]</div>
+                            <p>提供方案</p>
+                        </li>
+                        <li class="repl">
+                            <div>@ViewData["successRate"]</div>
+                            <p>提供方案成功率 </p>
+                        </li>
+                        <li class="comment-ta">
+                            <div>@ViewData["pRComment"]</div>
+                            <p>对Ta的评价 </p>
+                        </li>
+                    </ul>
+                    <h4 class="page-title">方案详情</h4>
+                    <div class="super-note-wrap">
+                        <div class="uncontent" style="display: none;">
+                            <i class="iconfont">&#xe685</i>
+                            <p>Ta还没有提供任何方案</p>
+                        </div>
+                        @foreach (ProjectRecordsModel p in ViewData["ProjectRecords"] as List<ProjectRecordsModel>)
+                        {
+                            <div class="item-text">
+                                <div class="ta-situation">
+                                    <i class="iconfont">&#xe649</i>
+                                    <h3>@p.pRContent</h3>
+                                </div>
+                                <div class="comment-detail">
+                                    <i class="iconfont">&#xe62d</i>
+                                    <p>@p.pRComment</p>
+                                </div>
+                                <div class="item-btm clearfix">
+                                    <ul class="l left-info">
+                                        <li class="hd-pic">
+                                            <a class="publisher-hd" href="/projectsuperior/space/@p.userId" target="_blank">
+                                                <img src="@p.userImg" alt="" width="20" height="20">
+                                            </a>
+                                            <a class="publisher-name" href="/projectsuperior/space/@p.userId">@p.userName</a>
+                                        </li>
+                                        <li class="pass-time"><span>@p.pRPublishedTime</span></li>
+                                    </ul>
+                                    <div class="r right-info">
+                                        <a class="favorite l">
+                                            <i class="iconfont">&#xe60d</i>点赞<em>@p.userLoveNum</em>
+                                        </a>
+                                        <a class="item-judge l" style="display: none;">
+                                            <i class="iconfont">&#xe60a</i><em>评论 @p.userCommentNum</em>
+                                        </a>
+                                        <input type="hidden" value="@p.pRId" />
+                                    </div>
+                                </div>
+                            </div> 
+                        }
+                    </div>
+                </div>
+                <div id="mod-3" class="mod" style="display: none">
+                    <div class="uncontent" style="display: none;">
+                        <i class="iconfont">&#xe68f</i>
+                        <p>Ta还没有任何分享</p>
+                    </div>
+                    @foreach (Article m in ViewData["myShare"] as IQueryable<Article>)
+                    { 
+                        <div class="share">
+                            <div class="share-header">
+                                <h4><a onclick="window.open('/projectsuperior/share/@m.articleId')">@m.articleTitle</a></h4>
+                                <span>@m.articleTime</span>
+                            </div>
+                            <div class="share-content">
+                                @m.articleContent
+                            </div>
+                            <div class="share-footer">
+                                <a><i class="iconfont">&#xe60d</i><span>@m.articlePraiseNum</span></a><i class="share-diver"></i>
+                                <a><i class="iconfont">&#xe63b</i><span>@m.articleCommentNum</span></a><i class="share-diver"></i>
+                                <a><i class="iconfont">&#xe658</i><span>@m.articleShareNum</span></a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右边列表-->
+    <div class="con-right">
+        <div class="panel">
+            <ul class="space-data">
+                <li><i class="iconfont">&#xe62c</i> 分享：<a href="#">12</a>
+                </li>
+                <li><i class="iconfont">&#xe62b</i> 计划监督：<a href="#">1条</a>
+                </li>
+                <li><i class="iconfont">&#xe689</i> 快乐校园：<a href="#">0条</a>
+                </li>
+            </ul>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title">最近访客</h2>
+            </div>
+            <div class="good-helpers">
+                <ul>
+                    @foreach (RecentVisitor l in ViewData["recentVisitors"] as List<RecentVisitor>)
+                    {
+                        <li class="padtop">
+                            <a class="wenda-head roll-head">
+                                <img src="@l.User1.userImg" width="40" height="40">
+                            </a>
+                            <a class="rankingnickname">@l.User1.userName
+                                <i class="iconfont sex"></i>
+                                <input type="hidden" class="user-sex" value="@l.User1.userSex" />
+                            </a>
+                            <a href="/projectsuperior/space/@l.visitorId" class="archieve">@l.User1.userMerit</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--关注成功-->
+<div id="success-follow">
+    <div class="login-header">
+        <i class="iconfont" onclick="offPop;">&#xe630</i>
+    </div>
+    <div class="tip-title">关注TA成功！</div>
+    <p class="success-info">你成功关注TA啦！记得可以在我的关注里找到TA哦！</p>
+</div>
+
+<script src="~/Scripts/projectsuperior/space.js"></script>

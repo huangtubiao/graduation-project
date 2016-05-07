@@ -1,0 +1,435 @@
+﻿@{
+    ViewBag.Title = "互帮互助";
+    ViewBag.Active = "互帮互助";
+    ViewBag.currentPage = "广场";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyUniversity.Models;
+<link href="~/Content/Help/Index.css" rel="stylesheet" />
+<div class="l sidebar">
+    <div class="nav-menu">
+        <ul>
+            <li @(ViewBag.Active == "互帮互助" ? "id=cur" : "")>
+                <a href="/help/index"  class="menu-cur"></a>
+                <a class="nav-title">一分钟帮助</a>
+            </li>
+            <li @(ViewBag.Active == "计划监督" ? "id=cur" : "")>
+                <a href="/plan/index" class="menu-cur"></a>
+                <a class="nav-title">计划监督</a>
+            </li>
+            <li><a class="menu-cur" href="#"></a><a class="nav-title">心愿墙</a></li>
+        </ul>
+        <div class="wenda-my">
+            <h3>我的</h3>
+            <ul class="wenda-tab">
+                <li class="/help/myquestion"><a href="#">提问</a></li>
+                <li><a href="/help/reply">回复</a></li>
+                <li><a href="/help/follow">关注</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-right" style="float: right">
+    <div class="con-left">
+        <div class="nav nav-search">
+            <div class="search-bor">
+                <input type="text" id="search-write" class="form-univ" name="searchWrite" placeholder="搜索问答" autocomplete="off" value="@ViewData["words"]" />
+                <button id="search" class="university-btn search-btn" type="submit" onclick="btnSearch();">搜索</button>
+            </div>
+            <!--搜索智能提醒-->
+            <div id="search-suggest">
+                <h4>搜索到相关结果</h4>
+                <ul id="search-result">
+                    <li>搜索结果1</li>
+                    <li>搜索结果2</li>
+                </ul>
+            </div>
+            <a href="/help/publish" class="university-btn help-btn">
+                <i class="iconfont">&#xe645</i> 发求助
+            </a>
+        </div>
+        <!--左侧内容-->
+        <div class="nav nav-list">
+            <div class="newpost">
+                <ul id="notice-tit">
+                    <li><a>最新</a></li>
+                    <li><a>热门</a></li>
+                    <li><a>等待回复</a></li>
+                </ul>
+            </div>
+            <!--左侧列表的内容-->
+            <div id="notice-con">
+                <div id="mod-1" class="mod" style="display: none">
+                    @foreach (Question q in ViewData["Questions"] as List<Question>)
+                    {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/account/person/@q.User.userId" class="wenda-head">
+                                        <img src="@q.User.userImg">
+                                    </a>
+                                    <a href="/account/person/@q.User.userId" class="wenda-nickname">@q.User.userName</a>
+                                    <i class="iconfont girlsex-img">&#xe609</i>
+                                </div>
+                                <div class="wendaslider">
+                                    <a class="wen-time">
+                                        <div class="help-sum">
+                                            <div class="numbers">
+                                                <span class="reply-num">@q.questionReplyNum</span>
+                                            </div>
+                                            <div class="help-ta">帮助TA</div>
+                                        </div>
+                                        <div class="browsenum">
+                                            <div class="numbers">
+                                                <span>@q.questionViewNum</span>
+                                            </div>
+                                            <div>浏览</div>
+                                        </div>
+                                    </a>
+                                    <div class="wendaquetitle">
+                                        <i class="iconfont">&#xe636</i>
+                                        <div class="wendatitlecon">
+                                            @Html.ActionLink(q.questionTitle, "detail", new { id = q.questionId })
+                                        </div>
+                                    </div>
+                                    <div class="question">
+                                        <i class="iconfont">&#xe62d</i>
+                                        <div class="replydes">
+                                            <a href="/account/person/@q.newReplyUserId" class="replyuserhead">
+                                                <img class="replyheadimg" src="@q.newReplyUserImg" />
+                                            </a>
+                                            <a href="/account/person/@q.newReplyUserId" class="nickname">@q.newReplyUserName</a>
+                                            <span class="replycontent">@q.questionNewestReply</span>
+                                        </div>
+                                    </div>
+                                    <div class="commentfooter">
+                                        <span class="footer-depart">@q.User.userDepart</span>
+                                        <div class="wenda-time l"><em>提问时间：@q.questionPublishedTime</em></div>
+                                        <input class="questionId" type="hidden" value="@q.questionId" />
+                                    </div>
+                                </div>
+                                <input type="hidden" value="@q.questionId" />
+                            </div>
+                            <!--回复框-->
+                            <div class="reply">
+                                <div class="js-reply-ibox">
+                                    <div class="reply-iavator l">
+                                        <a href="#">
+                                            <img src="~/image/tt.PNG" width="40" height="40">
+                                        </a>
+                                    </div>
+                                    <div class="reply-iwrap">
+                                        <div class="reply-iarea">
+                                            <textarea class="js-reply-ipt-default textarea-wrap" placeholder="写下你的评论..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="reply-ifoot">
+                                        <div class="reply-footright r">
+                                            <span class="success-tips"><i class="iconfont">&#xe638</i> 提交成功</span>
+                                            <button class="university-btn btn-cancel">取消</button>
+                                            <button class="university-btn btn-submit-reply" onclick="replysbumit();">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="page">
+                        <a href="javascript:void(0)" class="removeCss">首页</a>
+                        <a href="javascript:void(0)" class="removeCss">上一页</a>
+                        <a href="javascript:void(0)" class="active">1</a>
+                        <a href="/help/index/0/2">2</a>
+                        <a href="/help/index/0/3">3</a>
+                        <a href="/help/index/0/4">4</a>
+                        <a href="/help/index/0/5">5</a>
+                        <a>下一页</a>
+                        <a>尾页</a>
+                    </div>
+                    <input type="hidden" value="@ViewData["totalGroups"]" id="all-newest" />
+                </div>
+                <div id="mod-2" class="mod" style="display: none">
+                    @foreach (Question q in ViewData["hotQuestion"] as List<Question>)
+                    {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/account/person/@q.User.userId" class="wenda-head">
+                                        <img src="@q.User.userImg">
+                                    </a>
+                                    <a href="/account/person/@q.User.userId" class="wenda-nickname">@q.User.userName</a>
+                                    <i class="iconfont girlsex-img">&#xe609</i>
+                                </div>
+                                <div class="wendaslider">
+                                    <a class="wen-time">
+                                        <div class="help-sum">
+                                            <div class="numbers">
+                                                <span class="reply-num">@q.questionReplyNum</span>
+                                            </div>
+                                            <div class="help-ta">帮助TA</div>
+                                        </div>
+                                        <div class="browsenum">
+                                            <div class="numbers">
+                                                <span>@q.questionViewNum</span>
+                                            </div>
+                                            <div>浏览</div>
+                                        </div>
+                                    </a>
+                                    <div class="wendaquetitle">
+                                        <i class="iconfont">&#xe636</i>
+                                        <div class="wendatitlecon">
+                                            @Html.ActionLink(q.questionTitle, "detail", new { id = q.questionId })
+                                        </div>
+                                    </div>
+                                    <div class="question">
+                                        <i class="iconfont">&#xe62d</i>
+                                        <div class="replydes">
+                                            <a href="/account/person/@q.newReplyUserId" class="replyuserhead">
+                                                <img class="replyheadimg" src="@q.newReplyUserImg" />
+                                            </a>
+                                            <a href="/account/person/@q.newReplyUserId" class="nickname">@q.newReplyUserName</a>
+                                            <span class="replycontent">@q.questionNewestReply</span>
+                                        </div>
+                                    </div>
+                                    <div class="commentfooter">
+                                        <span class="footer-depart">@q.User.userDepart</span>
+                                        <div class="wenda-time l"><em>提问时间：@q.questionPublishedTime</em></div>
+                                        <input class="questionId" type="hidden" value="@q.questionId" />
+                                    </div>
+                                </div>
+                                <input type="hidden" value="@q.questionId" />
+                            </div>
+                            <!--回复框-->
+                            <div class="reply">
+                                <div class="js-reply-ibox">
+                                    <div class="reply-iavator l">
+                                        <a href="#">
+                                            <img src="~/image/tt.PNG" width="40" height="40">
+                                        </a>
+                                    </div>
+                                    <div class="reply-iwrap">
+                                        <div class="reply-iarea">
+                                            <textarea class="js-reply-ipt-default textarea-wrap" placeholder="写下你的评论..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="reply-ifoot">
+                                        <div class="reply-footright r">
+                                            <span class="success-tips"><i class="iconfont">&#xe638</i> 提交成功</span>
+                                            <button class="university-btn btn-cancel">取消</button>
+                                            <button class="university-btn btn-submit-reply" onclick="replysbumit();">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="pageSecond">
+                        <a href="javascript:void(0)" class="removeCss">首页</a>
+                        <a href="javascript:void(0)" class="removeCss">上一页</a>
+                        <a href="javascript:void(0)" class="active">1</a>
+                        <a href="/help/index/1/2">2</a>
+                        <a href="/help/index/1/3">3</a>
+                        <a href="/help/index/1/4">4</a>
+                        <a href="/help/index/1/5">5</a>
+                        <a>下一页</a>
+                        <a>尾页</a>
+                    </div>
+                    <input type="hidden" value="@ViewData["totalSecondGroups"]" id="all-hot" />
+                </div>
+                <div id="mod-3" class="mod" style="display: none">
+                    @foreach (Question q in ViewData["waitReplyQuestion"] as List<Question>)
+                    {
+                        <div class="wenda-list">
+                            <div class="wenda-listcon">
+                                <div class="headslider">
+                                    <a href="/account/person/@q.User.userId" class="wenda-head">
+                                        <img src="@q.User.userImg">
+                                    </a>
+                                    <a href="/account/person/@q.User.userId" class="wenda-nickname">@q.User.userName</a>
+                                    <i class="iconfont girlsex-img">&#xe609</i>
+                                </div>
+                                <div class="wendaslider">
+                                    <a class="wen-time">
+                                        <div class="help-sum">
+                                            <div class="numbers">
+                                                <span class="reply-num">@q.questionReplyNum</span>
+                                            </div>
+                                            <div class="help-ta">帮助TA</div>
+                                        </div>
+                                        <div class="browsenum">
+                                            <div class="numbers">
+                                                <span>@q.questionViewNum</span>
+                                            </div>
+                                            <div>浏览</div>
+                                        </div>
+                                    </a>
+                                    <div class="wendaquetitle">
+                                        <i class="iconfont">&#xe636</i>
+                                        <div class="wendatitlecon">
+                                            @Html.ActionLink(q.questionTitle, "detail", new { id = q.questionId })
+                                        </div>
+                                    </div>
+                                    <div class="question">
+                                        <i class="iconfont">&#xe62d</i>
+                                        <div class="replydes">
+                                            <a href="/account/person/@q.newReplyUserId" class="replyuserhead">
+                                                <img class="replyheadimg" src="@q.newReplyUserImg" />
+                                            </a>
+                                            <a href="/account/person/@q.newReplyUserId" class="nickname">@q.newReplyUserName</a>
+                                            <span class="replycontent">@q.questionNewestReply</span>
+                                        </div>
+                                    </div>
+                                    <div class="commentfooter">
+                                        <span class="footer-depart">计算机系</span>
+                                        <div class="wenda-time l"><em>提问时间：@q.questionPublishedTime</em></div>
+                                        <input class="questionId" type="hidden" value="@q.questionId" />
+                                    </div>
+                                </div>
+                                <input type="hidden" value="@q.questionId" />
+                            </div>
+                            <!--回复框-->
+                            <div class="reply">
+                                <div class="js-reply-ibox">
+                                    <div class="reply-iavator l">
+                                        <a href="#">
+                                            <img src="~/image/tt.PNG" width="40" height="40">
+                                        </a>
+                                    </div>
+                                    <div class="reply-iwrap">
+                                        <div class="reply-iarea">
+                                            <textarea class="js-reply-ipt-default textarea-wrap" placeholder="写下你的评论..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="reply-ifoot">
+                                        <div class="reply-footright r">
+                                            <span class="success-tips"><i class="iconfont">&#xe638</i> 提交成功</span>
+                                            <button class="university-btn btn-cancel">取消</button>
+                                            <button class="university-btn btn-submit-reply" onclick="replysbumit();">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="pageThird">
+                        <a href="javascript:void(0)" class="removeCss">首页</a>
+                        <a href="javascript:void(0)" class="removeCss">上一页</a>
+                        <a href="javascript:void(0)" class="active">1</a>
+                        <a href="/help/index/2/2">2</a>
+                        <a href="/help/index/2/3">3</a>
+                        <a href="/help/index/2/4">4</a>
+                        <a href="/help/index/2/5">5</a>
+                        <a>下一页</a>
+                        <a>尾页</a>
+                    </div>
+                    <input type="hidden" value="@ViewData["totalThirdGroups"]" id="all-waitReply" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右边列表-->
+    <div class="con-right">
+        <!--热门搜索标签-->
+        <div class="panel superior-form">
+            <div class="panel-heading">
+                <h2 class="panel-title hot-search">问题分类</h2>
+            </div>
+            <div class="panel-body clearfix">
+                <a href="/help/index/0/1?tag=1" class="hot-label">学习</a>
+                <a href="/help/index/0/1?tag=2" class="hot-label">出行</a>
+                <a href="/wenda/tag/tagId/5" class="hot-label" target="_self">Html/CSS</a>
+                <a href="/wenda/tag/tagId/7" class="hot-label" target="_self">Maya</a>
+                <a href="/wenda/tag/tagId/8" class="hot-label" target="_self">MongoDB</a>
+                <a href="/wenda/tag/tagId/9" class="hot-label" target="_self">Premiere</a>
+                <a href="/wenda/tag/tagId/10" class="hot-label" target="_self">Photoshop</a>
+                <a href="/wenda/tag/tagId/11" class="hot-label" target="_self">Mysql</a>
+                <a href="/wenda/tag/tagId/12" class="hot-label" target="_self">Android</a>
+                <a href="/wenda/tag/tagId/13" class="hot-label" target="_self">Node.js</a>
+                <a href="/wenda/tag/tagId/14" class="hot-label" target="_self">Html5</a>
+                <a href="/wenda/tag/tagId/15" class="hot-label" target="_self">JQuery</a>
+                <a href="/wenda/tag/tagId/17" class="hot-label" target="_self">JavaScript</a>
+                <a href="/wenda/tag/tagId/18" class="hot-label" target="_self">Python</a>
+                <a href="/wenda/tag/tagId/19" class="hot-label" target="_self">iOS</a>
+                <a href="/wenda/tag/tagId/20" class="hot-label" target="_self">Linux</a>
+                <a href="/wenda/tag/tagId/21" class="hot-label" target="_self">云计算</a>
+                <a href="/wenda/tag/tagId/22" class="hot-label" target="_self">AngularJS</a>
+                <a href="/wenda/tag/tagId/24" class="hot-label" target="_self">Bootstrap</a>
+                <a href="/wenda/tag/tagId/25" class="hot-label" target="_self">CSS3</a>
+                <a href="/wenda/tag/tagId/26" class="hot-label" target="_self">前端工具</a>
+                <a href="/wenda/tag/tagId/27" class="hot-label" target="_self">WebApp</a>
+                <a href="/wenda/tag/tagId/28" class="hot-label" target="_self">C</a>
+                <a href="/wenda/tag/tagId/29" class="hot-label" target="_self">Oracle</a>
+            </div>
+        </div>
+        <!--热门问题-->
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title">一周校园热门问题</h2>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>
+                        <span class="hoticon hot1">热</span>
+                        <a>如何考试不挂科</a>
+                        <i class="requestnum">10<br>
+                            回答</i>
+                    </li>
+                    <li>
+                        <span class="hoticon hot2">热</span>
+                        <a>马庄哪里的饭比较好吃</a>
+                        <i class="requestnum">10<br>
+                            回答</i>
+                    </li>
+                    <li>
+                        <span class="hoticon hot3">热</span>
+                        <a>如何在后山爬山</a>
+                        <i class="requestnum">10<br>
+                            回答</i>
+                    </li>
+                    <li>
+                        <span class="hoticon hot4">热</span>
+                        <a>红花湖怎样去</a>
+                        <i class="requestnum">10<br>
+                            回答</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h2 class="panel-title">一周回答好帮手</h2>
+            </div>
+            <div class="good-helpers">
+                <ul>
+                    <li class="padtop">
+                        <a class="wenda-head roll-head">
+                            <img src="http://img.mukewang.com/user/5453449f0001c36e05520522-40-40.jpg" width="40" height="40">
+                        </a>
+                        <a class="rankingnickname">Michael <i class="iconfont">&#xe608</i></a>
+                        <span class="archieve">修电脑高手</span>
+                        <i class="adopt rankingnum">3956<br>
+                            回答</i>
+                    </li>
+                    <li class="padtop">
+                        <a class="wenda-head roll-head">
+                            <img src="http://img.mukewang.com/user/5453449f0001c36e05520522-40-40.jpg" width="40" height="40">
+                        </a>
+                        <a class="rankingnickname">Michael <i class="iconfont">&#xe608</i></a>
+                        <span class="archieve">英语高手</span>
+                        <i class="adopt rankingnum">3956<br>
+                            回答</i>
+                    </li>
+                    <li class="padtop">
+                        <a class="wenda-head roll-head">
+                            <img src="http://img.mukewang.com/user/5453449f0001c36e05520522-40-40.jpg" width="40" height="40">
+                        </a>
+                        <a class="rankingnickname">Michael <i class="iconfont">&#xe608</i></a>
+                        <span class="archieve">考研高手</span>
+                        <i class="adopt rankingnum">3956<br>
+                            回答</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/help/index.js"></script>

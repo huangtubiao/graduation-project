@@ -1,0 +1,315 @@
+﻿.containers {
+    width: 1100px;
+}
+
+#space {
+    margin-left: 0px;
+    margin: 0 auto;
+}
+
+.con-left {
+    width: 790px;
+}
+
+.con-right {
+    width: 290px;
+}
+
+#notice-tit li {
+    float: initial;
+}
+
+    #notice-tit li a {
+        height: 50px;
+        line-height: 50px;
+    }
+
+#notice-space li {
+    float: left;
+}
+
+.rankingnickname i {
+    position: relative;
+    bottom: 1px;
+}
+
+.newpost a:hover {
+    color: #14191e;
+}
+
+.focus-i {
+    font-size: 20px;
+}
+
+.private-i {
+    font-size: 18px;
+}
+
+.chat-on-i {
+    color: #60686b;
+}
+
+
+#success-follow {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -200px;
+    background: #fff;
+    width: 400px;
+    z-index: 1102;
+    min-height: 130px;
+}
+
+.login-header {
+    line-height: 49px;
+    height: 49px;
+}
+
+    .login-header i {
+        top: 0px;
+        color: #c8cdd2;
+        font-size: 21px;
+        right: 15px;
+    }
+
+.tip-title {
+    color: #78CA99;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.success-info {
+    padding: 0px 20px;
+    text-align: center;
+    color: #A0A5A5;
+    margin-bottom: 18px;
+}
+
+.diver {
+    border-right: 1px solid #14191e;
+    margin: 0px 10px 0px 5px;
+    height: 12px;
+}
+
+.tadename {
+    display: inline-block;
+}
+
+.detail-sex {
+    display: block;
+}
+
+#charge {
+    border: 1px solid #62d5bb;
+    display: inline-block;
+    padding-right: 8px;
+    color: #62d5bb;
+    font-size: 13px;
+    margin-left: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+    #charge .charge-icon {
+        padding: 4px;
+        background: #62d5bb;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+
+        #charge .charge-icon i {
+            color: #fff;
+        }
+
+    #charge:hover .tooltip {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+        transform: translate3d(0,0,0) scale3d(1,1,1);
+    }
+
+/*Ta的分享*/
+.share {
+    border-bottom: 1px dashed #e5e5e5;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.share-header {
+    padding: 10px 20px 0px 20px;
+}
+
+    .share-header h4 {
+        font-weight: bold;
+        float: left;
+    }
+
+        .share-header h4 a {
+            color: #14191e;
+        }
+
+            .share-header h4 a:hover {
+                color: #78CA99;
+                text-decoration: underline;
+            }
+
+    .share-header span {
+        font-size: 13px;
+        color: #c8cdd2;
+        float: right;
+    }
+
+.share-content {
+    padding: 10px 20px;
+    color: #60686b;
+    text-indent: 27px;
+    clear: both;
+}
+
+.share-footer {
+    height: 30px;
+    padding-left: 20px;
+}
+
+    .share-footer a {
+        height: 30px;
+        display: block;
+        float: left;
+        line-height: 30px;
+    }
+
+        .share-footer a:hover {
+            color: #14191e;
+        }
+
+    .share-footer span {
+        font-size: 13px;
+        position: relative;
+        top: 1px;
+        left: 8px;
+    }
+
+.share-diver {
+    border-right: 1px solid #eee;
+    float: left;
+    height: 22px;
+    margin: 0px 44px;
+    position: relative;
+    top: 5px;
+}
+
+.page-title {
+    font-size: 16px;
+    color: #14191e;
+    line-height: 78px;
+    border-bottom: 1px solid #dae0e3;
+}
+
+.superior-intro div {
+    line-height: 24px;
+    color: #3a3d3f;
+    padding-top: 20px;
+}
+
+/*方案记录*/
+.user-about {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #edf1f2;
+    border-bottom: 1px solid #edf1f2;
+}
+
+    .user-about li {
+        display: inline-block;
+    }
+
+        .user-about li.repl {
+            margin: 0 100px;
+            padding: 0 100px;
+            border-left: 1px solid #d0d6d9;
+            border-right: 1px solid #d0d6d9;
+        }
+
+        .user-about li a {
+            line-height: 20px;
+        }
+
+.super-num div {
+    color: #f7af49;
+    font-size: 24px;
+}
+
+.repl div {
+    color: #f47a55;
+    font-size: 24px;
+}
+
+.comment-ta div {
+    font-size: 24px;
+    color: #88b244;
+}
+
+/*方案详情*/
+.ta-situation h3 {
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #14191e;
+}
+
+.comment-detail p {
+    line-height: 24px;
+    color: #787d82;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.item-btm {
+    padding: 9px 0 19px;
+}
+
+.hd-pic {
+    float: left;
+}
+
+.publisher-hd img {
+    display: inline-block;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.publisher-name {
+    color: #14191e;
+    padding: 0 20px 0 10px;
+    font-size: 12px;
+}
+
+.pass-time {
+    float: left;
+}
+
+    .pass-time span {
+        font-size: 12px;
+        color: #b5b9bc;
+    }
+
+.ta-situation {
+    padding: 23px 0 3px;
+}
+
+    .ta-situation i {
+        float: left;
+        margin-right: 5px;
+        font-size: 16px;
+        color: #78ca99;
+    }
+
+.comment-detail i {
+    float: left;
+    margin-right: 5px;
+    font-size: 17px;
+    color: #c8cdd2;
+}
